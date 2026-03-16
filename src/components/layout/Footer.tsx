@@ -79,7 +79,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Image
-              src="/logos/Vendoh_Logo_Main.png"
+              src="/logos/vendoh_purple_w_logo.png"
               alt="Vendoh"
               width={100}
               height={31}

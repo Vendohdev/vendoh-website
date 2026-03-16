@@ -35,7 +35,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 relative z-10">
             <Image
-              src="/logos/Vendoh_Logo_Main.png"
+              src="/logos/vendoh_purple_w_logo.png"
               alt="Vendoh"
               width={110}
               height={34}
