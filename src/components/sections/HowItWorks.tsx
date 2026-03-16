@@ -10,7 +10,7 @@ const STEPS = [
     title: "Say Hello",
     description:
       "Voice search or type what you need. Vendoh understands English and Pidgin.",
-    gradient: "from-vendoh-blue to-blue-400",
+    gradient: "from-vendoh-blue to-vendoh-plum-400",
     bg: "bg-vendoh-blue-light",
   },
   {
@@ -18,7 +18,7 @@ const STEPS = [
     title: "Get Matched",
     description:
       "Instantly matched with verified vendors near you based on ratings, distance, and availability.",
-    gradient: "from-vendoh-orange to-amber-400",
+    gradient: "from-vendoh-orange to-vendoh-orange-400",
     bg: "bg-vendoh-orange-light",
   },
   {
@@ -33,7 +33,7 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 sm:py-32 bg-surface">
+    <section id="how-it-works" className="py-24 sm:py-32 bg-surface section-glow">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-20">

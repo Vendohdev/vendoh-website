@@ -21,11 +21,10 @@ Please read this Privacy Policy carefully. If you do not agree with our policies
 
 **Data Controller:**
 - **Name:** Vendoh Limited
-- **Registered Address:** Lagos, Nigeria
-- **Registration Number:** [Company Registration Number]
-- **Email:** privacy@vendoh.com
-- **Data Protection Officer:** [DPO Name and Contact]
-- **Contact for Data Protection Requests:** dpo@vendoh.com
+- **Registered Address:** Abuja, FCT, Nigeria
+- **Registration Number:** RC 8672040
+- **Email:** privacy@vendoh.io
+- **Contact for Data Protection Requests:** dpo@vendoh.io
 
 The Data Protection Officer is responsible for overseeing our data protection compliance and can be contacted for any data protection matters, exercising your rights, or lodging complaints.
 

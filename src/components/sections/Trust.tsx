@@ -49,7 +49,7 @@ const TRUST_POINTS = [
     icon: Star,
     title: "Community-driven ratings",
     description:
-      "Real reviews from real customers. See ratings, response time, and completed jobs.",
+      "Honest reviews from verified customers. See ratings, response time, and completed jobs.",
   },
 ];
 
@@ -120,8 +120,7 @@ export function Trust() {
         <ScrollReveal delay={0.3}>
           <div className="mt-14 text-center">
             <p className="text-xs text-text-tertiary font-medium">
-              Vendoh Technologies Ltd &middot; RC 1815446 &middot; Registered in
-              Nigeria
+              &copy; 2025 Vendoh Limited &nbsp;|&nbsp; Registered in Nigeria
             </p>
           </div>
         </ScrollReveal>

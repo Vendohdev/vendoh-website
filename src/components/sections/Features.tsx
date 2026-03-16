@@ -17,7 +17,7 @@ const FEATURES = [
     title: "Voice Search",
     description:
       "Just speak. Vendoh understands English and Pidgin — find vendors without typing.",
-    gradient: "from-vendoh-blue to-blue-400",
+    gradient: "from-vendoh-blue to-vendoh-plum-400",
     bgLight: "bg-vendoh-blue-light",
   },
   {
@@ -33,7 +33,7 @@ const FEATURES = [
     title: "Secure Payments",
     description:
       "Escrow protection on every booking. Your money is held safely until the job is done.",
-    gradient: "from-vendoh-orange to-amber-400",
+    gradient: "from-vendoh-orange to-vendoh-orange-400",
     bgLight: "bg-vendoh-orange-light",
   },
   {
@@ -41,15 +41,15 @@ const FEATURES = [
     title: "Real-Time Tracking",
     description:
       "Live updates from booking to completion. Know exactly where things stand.",
-    gradient: "from-violet-500 to-purple-400",
-    bgLight: "bg-violet-50",
+    gradient: "from-vendoh-plum-400 to-vendoh-plum-300",
+    bgLight: "bg-vendoh-blue-light",
   },
   {
     icon: ArrowLeftRight,
     title: "Dual-Role Platform",
     description:
       "Client today, vendor tomorrow. One app, both sides. Switch roles with a swipe.",
-    gradient: "from-vendoh-orange to-rose-400",
+    gradient: "from-vendoh-orange to-vendoh-orange-300",
     bgLight: "bg-vendoh-orange-light",
   },
   {
@@ -57,14 +57,14 @@ const FEATURES = [
     title: "Nearby Matching",
     description:
       "Find vendors within 5km of you. No more long waits or distant providers.",
-    gradient: "from-vendoh-blue to-cyan-400",
+    gradient: "from-vendoh-blue to-vendoh-plum-300",
     bgLight: "bg-vendoh-blue-light",
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="py-24 sm:py-32">
+    <section id="features" className="py-24 sm:py-32 section-glow">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-20">

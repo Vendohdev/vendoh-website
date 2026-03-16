@@ -72,22 +72,22 @@ const CITIES = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F0F1E] text-white">
+    <footer className="bg-[#2A1C3A] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         {/* Main Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
             <Image
-              src="/logos/Vendoh_transparent_blue_2.svg"
+              src="/logos/Vendoh_Logo_Main.png"
               alt="Vendoh"
               width={100}
-              height={28}
-              className="brightness-200"
+              height={31}
+              className="brightness-150"
             />
             <p className="mt-5 text-sm text-gray-400 leading-relaxed max-w-xs">
-              Nigeria&apos;s voice-powered service marketplace. Find trusted vendors
-              near you with just a voice command.
+              Nigeria&apos;s first voice-powered service marketplace.
+              Coming soon to Lagos, Abuja, and more.
             </p>
             {/* Social Icons */}
             <div className="mt-6 flex gap-3">
@@ -129,7 +129,7 @@ export function Footer() {
         {/* Cities */}
         <div className="mt-14 pt-8 border-t border-white/8">
           <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-3">
-            Available in
+            Launching in
           </p>
           <div className="flex flex-wrap gap-2">
             {CITIES.map((city) => (
@@ -146,8 +146,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-white/8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Vendoh Technologies Ltd. RC
-            1815446. Lagos, Nigeria.
+            &copy; 2025 Vendoh Limited &nbsp;|&nbsp; Registered in Nigeria
           </p>
           <div className="flex gap-5">
             <Link

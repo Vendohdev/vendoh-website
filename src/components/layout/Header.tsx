@@ -27,18 +27,18 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b border-border-light"
-          : "bg-transparent"
+          ? "bg-[#EDE6DA]/95 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b border-[#E2D9CA]"
+          : "bg-[#EDE6DA]"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 relative z-10">
             <Image
-              src="/logos/vendoh_blue_w_logo.svg"
+              src="/logos/Vendoh_Logo_Main.png"
               alt="Vendoh"
               width={110}
-              height={30}
+              height={34}
               priority
             />
           </Link>
@@ -58,7 +58,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#waitlist"
-              className="inline-flex items-center justify-center rounded-full bg-vendoh-orange px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(255,107,0,0.25)] hover:shadow-[0_4px_16px_rgba(255,107,0,0.35)] hover:bg-vendoh-orange-dark transition-all duration-200 hover:-translate-y-px"
+              className="inline-flex items-center justify-center rounded-full bg-vendoh-orange px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(240,125,74,0.3)] hover:shadow-[0_4px_16px_rgba(240,125,74,0.4)] hover:bg-vendoh-orange-dark transition-all duration-200 hover:-translate-y-px"
             >
               Get Early Access
             </a>
@@ -81,7 +81,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-border-light"
+            className="md:hidden overflow-hidden bg-[#EDE6DA]/95 backdrop-blur-xl border-t border-[#E2D9CA]"
           >
             <div className="px-5 py-5 space-y-1">
               {NAV_LINKS.map((link, i) => (
@@ -106,7 +106,7 @@ export function Header() {
                 <a
                   href="#waitlist"
                   onClick={() => setMobileOpen(false)}
-                  className="block w-full text-center rounded-full bg-vendoh-orange px-5 py-3.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(255,107,0,0.25)]"
+                  className="block w-full text-center rounded-full bg-vendoh-orange px-5 py-3.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(240,125,74,0.3)]"
                 >
                   Get Early Access
                 </a>

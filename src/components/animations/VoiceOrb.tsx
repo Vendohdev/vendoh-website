@@ -13,7 +13,7 @@ export function VoiceOrb({ size = 80 }: { size?: number }) {
         className="absolute inset-0 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(75,108,255,0.12) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(107,74,138,0.14) 0%, transparent 65%)",
         }}
         animate={{
           scale: [1, 1.4, 1],
@@ -27,7 +27,7 @@ export function VoiceOrb({ size = 80 }: { size?: number }) {
         className="absolute inset-1 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 60%)",
+            "radial-gradient(circle, rgba(240,125,74,0.1) 0%, transparent 60%)",
         }}
         animate={{
           scale: [1, 1.25, 1],
@@ -52,17 +52,17 @@ export function VoiceOrb({ size = 80 }: { size?: number }) {
           marginTop: -coreSize / 2,
           marginLeft: -coreSize / 2,
           background:
-            "linear-gradient(135deg, #4B6CFF 0%, #7B9AFF 35%, #FF8533 70%, #FF6B00 100%)",
+            "linear-gradient(135deg, #6B4A8A 0%, #A687C4 35%, #FF9A6C 70%, #F07D4A 100%)",
           boxShadow:
-            "0 0 24px rgba(75,108,255,0.35), 0 0 48px rgba(255,107,0,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
+            "0 0 24px rgba(107,74,138,0.35), 0 0 48px rgba(240,125,74,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
         }}
         animate={{
           scale: [1, 1.06, 1],
           rotate: [0, 5, 0],
           boxShadow: [
-            "0 0 24px rgba(75,108,255,0.35), 0 0 48px rgba(255,107,0,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
-            "0 0 36px rgba(75,108,255,0.5), 0 0 64px rgba(255,107,0,0.25), inset 0 -2px 6px rgba(0,0,0,0.1)",
-            "0 0 24px rgba(75,108,255,0.35), 0 0 48px rgba(255,107,0,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
+            "0 0 24px rgba(107,74,138,0.35), 0 0 48px rgba(240,125,74,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
+            "0 0 36px rgba(107,74,138,0.5), 0 0 64px rgba(240,125,74,0.25), inset 0 -2px 6px rgba(0,0,0,0.1)",
+            "0 0 24px rgba(107,74,138,0.35), 0 0 48px rgba(240,125,74,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
           ],
         }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}

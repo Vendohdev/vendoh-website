@@ -32,7 +32,7 @@ export function ForVendors() {
       className="py-24 sm:py-32 relative overflow-hidden"
     >
       {/* Rich gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FF7A1A] via-vendoh-orange to-[#E85D00]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A6C] via-vendoh-orange to-[#D4612F]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.12),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.08),transparent_50%)]" />
 
@@ -48,8 +48,8 @@ export function ForVendors() {
                 Turn your skills into daily bookings
               </h2>
               <p className="mt-5 text-lg text-white/75 leading-relaxed max-w-lg">
-                We bring the bookings. You bring the service. Join 1,800+
-                vendors already growing on Vendoh.
+                We bring the bookings. You bring the service. Be among the
+                first vendors to grow your business on Vendoh.
               </p>
             </ScrollReveal>
 
@@ -93,21 +93,19 @@ export function ForVendors() {
               <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full scale-75 pointer-events-none" />
 
               <motion.div
-                className="relative w-[270px] sm:w-[290px]"
+                className="relative w-[300px] sm:w-[340px]"
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <div className="rounded-[2.5rem] border-[6px] border-white/20 bg-white overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
-                  <Image
-                    src="/screenshots/vendor-dashboard.png"
-                    alt="Vendoh Vendor Dashboard"
-                    width={290}
-                    height={580}
-                    className="w-full h-auto"
-                  />
-                </div>
+                <Image
+                  src="/screenshots/vendor-dashboard.png"
+                  alt="Vendoh Vendor Dashboard"
+                  width={680}
+                  height={1200}
+                  className="w-full h-auto rounded-2xl drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
+                />
               </motion.div>
             </div>
           </ScrollReveal>

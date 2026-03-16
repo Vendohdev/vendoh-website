@@ -135,8 +135,8 @@ export function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
               disabled={status === "loading"}
               className={`rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 disabled:opacity-60 hover:-translate-y-px ${
                 role === "vendor"
-                  ? "bg-vendoh-orange hover:bg-vendoh-orange-dark shadow-[0_2px_8px_rgba(255,107,0,0.25)]"
-                  : "bg-vendoh-blue hover:bg-vendoh-blue-dark shadow-[0_2px_8px_rgba(75,108,255,0.25)]"
+                  ? "bg-vendoh-orange hover:bg-vendoh-orange-dark shadow-[0_2px_8px_rgba(240,125,74,0.3)]"
+                  : "bg-vendoh-blue hover:bg-vendoh-blue-dark shadow-[0_2px_8px_rgba(107,74,138,0.25)]"
               }`}
             >
               {status === "loading" ? (

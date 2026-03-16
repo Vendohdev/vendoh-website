@@ -8,9 +8,9 @@ export function DownloadCTA() {
   return (
     <section id="waitlist" className="py-24 sm:py-32 relative overflow-hidden">
       {/* Rich gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#3D5CFF] via-vendoh-blue to-[#2A45CC]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#8E6BAF] via-vendoh-blue to-[#553A70]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.08),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,107,0,0.12),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(240,125,74,0.12),transparent_50%)]" />
 
       {/* Decorative dots pattern */}
       <div className="absolute top-8 left-8 w-32 h-32 opacity-[0.06]" style={{
@@ -26,11 +26,11 @@ export function DownloadCTA() {
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
-              Ready to find your next vendor?
+              Be the first to experience Vendoh
             </h2>
             <p className="mt-5 text-lg text-white/75 max-w-lg mx-auto">
-              Join thousands of Nigerians who trust Vendoh for home services,
-              beauty, food, events, and more.
+              Join our waitlist and get early access when we launch.
+              Home services, beauty, food, events, and more — all voice-powered.
             </p>
           </ScrollReveal>
 

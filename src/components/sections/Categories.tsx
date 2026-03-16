@@ -17,21 +17,22 @@ import {
 } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const CATEGORIES = [
-  { icon: Wrench, name: "Home Services", count: "45+", gradient: "from-blue-500 to-blue-400" },
-  { icon: Scissors, name: "Beauty & Grooming", count: "38+", gradient: "from-pink-500 to-pink-400" },
-  { icon: ChefHat, name: "Food & Catering", count: "32+", gradient: "from-amber-500 to-amber-400" },
-  { icon: PartyPopper, name: "Events & Lifestyle", count: "28+", gradient: "from-purple-500 to-purple-400" },
-  { icon: Truck, name: "Logistics & Errands", count: "18+", gradient: "from-emerald-500 to-emerald-400" },
-  { icon: Baby, name: "Childcare", count: "12+", gradient: "from-rose-500 to-rose-400" },
-  { icon: GraduationCap, name: "Education & Lessons", count: "15+", gradient: "from-indigo-500 to-indigo-400" },
-  { icon: Shirt, name: "Fashion & Tailoring", count: "22+", gradient: "from-violet-500 to-violet-400" },
-  { icon: Car, name: "Auto & Transport", count: "16+", gradient: "from-slate-500 to-slate-400" },
-  { icon: Briefcase, name: "Business Services", count: "20+", gradient: "from-cyan-500 to-cyan-400" },
-  { icon: SprayCan, name: "Cleaning", count: "25+", gradient: "from-teal-500 to-teal-400" },
-  { icon: Hammer, name: "Artisans", count: "30+", gradient: "from-orange-500 to-orange-400" },
-  { icon: Heart, name: "Health & Wellness", count: "20+", gradient: "from-red-500 to-red-400" },
+  { icon: Scissors, name: "Beauty & Grooming", image: "/categories/beauty-grooming.jpg", gradient: "from-vendoh-orange to-vendoh-orange-400" },
+  { icon: Wrench, name: "Home Services", image: "/categories/home-services.jpg", gradient: "from-vendoh-blue to-vendoh-plum-400" },
+  { icon: Hammer, name: "Artisans", image: "/categories/artisans.jpg", gradient: "from-vendoh-orange-dark to-vendoh-orange" },
+  { icon: Car, name: "Auto & Transport", image: "/categories/auto-transport.jpg", gradient: "from-vendoh-blue-dark to-vendoh-blue" },
+  { icon: SprayCan, name: "Cleaning", image: "/categories/cleaning.jpg", gradient: "from-teal-500 to-teal-400" },
+  { icon: ChefHat, name: "Food & Catering", image: "/categories/food-catering.jpg", gradient: "from-vendoh-orange-400 to-vendoh-orange-300" },
+  { icon: PartyPopper, name: "Events & Lifestyle", image: "/categories/events-lifestyle.jpg", gradient: "from-vendoh-plum-400 to-vendoh-plum-300" },
+  { icon: Truck, name: "Logistics & Errands", image: "/categories/logistics-errands.jpg", gradient: "from-emerald-500 to-emerald-400" },
+  { icon: Baby, name: "Childcare", image: "/categories/childcare.jpg", gradient: "from-vendoh-orange to-vendoh-orange-300" },
+  { icon: GraduationCap, name: "Education & Lessons", image: "/categories/education-lessons.jpg", gradient: "from-vendoh-blue to-vendoh-plum-300" },
+  { icon: Shirt, name: "Fashion & Tailoring", image: "/categories/fashion-tailoring.jpg", gradient: "from-vendoh-plum-500 to-vendoh-plum-400" },
+  { icon: Briefcase, name: "Business Services", image: "/categories/business-services.jpg", gradient: "from-vendoh-plum-300 to-vendoh-plum-200" },
+  { icon: Heart, name: "Health & Wellness", image: "/categories/health-wellness.jpg", gradient: "from-vendoh-orange to-vendoh-plum-400" },
 ];
 
 export function Categories() {
@@ -44,7 +45,7 @@ export function Categories() {
               Service marketplace
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-              321+ services across 13 categories
+              13 categories, 321+ services — launching soon
             </h2>
             <p className="mt-4 text-lg text-text-secondary">
               From plumbers to makeup artists, chefs to electricians — find exactly who you need.
@@ -56,24 +57,26 @@ export function Categories() {
           {CATEGORIES.map((cat, i) => (
             <ScrollReveal key={cat.name} delay={Math.min(i * 0.04, 0.4)}>
               <motion.div
-                className="group rounded-2xl border border-border-light bg-elevated p-5 cursor-pointer overflow-hidden relative"
+                className="group rounded-2xl overflow-hidden relative cursor-pointer h-44 sm:h-52"
                 whileHover={{ y: -3, transition: { duration: 0.2 } }}
               >
-                {/* Hover background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-0 group-hover:opacity-[0.05] transition-opacity duration-300`} />
-
-                <div className="relative">
+                <Image
+                  src={cat.image}
+                  alt={cat.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div
-                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center mb-3.5 shadow-sm`}
+                    className={`w-8 h-8 rounded-lg bg-gradient-to-br ${cat.gradient} flex items-center justify-center mb-2 shadow-sm`}
                   >
-                    <cat.icon size={20} className="text-white" />
+                    <cat.icon size={16} className="text-white" />
                   </div>
-                  <h3 className="text-sm font-semibold text-foreground leading-snug">
+                  <h3 className="text-sm font-semibold text-white leading-snug drop-shadow-sm">
                     {cat.name}
                   </h3>
-                  <p className="text-xs text-text-tertiary mt-1.5 font-medium">
-                    {cat.count} vendors
-                  </p>
                 </div>
               </motion.div>
             </ScrollReveal>

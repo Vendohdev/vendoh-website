@@ -2,24 +2,43 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-vendoh-blue: #4B6CFF;
-  --color-vendoh-blue-dark: #3355DD;
-  --color-vendoh-blue-light: #EEF1FF;
-  --color-vendoh-blue-50: #F5F7FF;
-  --color-vendoh-orange: #FF6B00;
-  --color-vendoh-orange-dark: #CC5500;
-  --color-vendoh-orange-light: #FFF0E6;
-  --color-background: #FEFDFB;
-  --color-surface: #F8F7F4;
+  /* Grape Plum — primary brand */
+  --color-vendoh-blue: #6B4A8A;
+  --color-vendoh-blue-dark: #553A70;
+  --color-vendoh-blue-light: #F4F0F7;
+  --color-vendoh-blue-50: #F9F6FB;
+  --color-vendoh-plum-100: #E8DDF0;
+  --color-vendoh-plum-200: #D4C3E3;
+  --color-vendoh-plum-300: #BEA5D4;
+  --color-vendoh-plum-400: #A687C4;
+  --color-vendoh-plum-500: #8E6BAF;
+
+  /* Powder Orange — accent */
+  --color-vendoh-orange: #F07D4A;
+  --color-vendoh-orange-dark: #D4612F;
+  --color-vendoh-orange-light: #FFF5EE;
+  --color-vendoh-orange-200: #FFD0AE;
+  --color-vendoh-orange-300: #FFB584;
+  --color-vendoh-orange-400: #FF9A6C;
+
+  /* Warm Cream — backgrounds */
+  --color-background: #FFFDFB;
+  --color-surface: #FBF8F3;
   --color-elevated: #FFFFFF;
-  --color-foreground: #1A1A2E;
-  --color-text-secondary: #5A5A6E;
-  --color-text-tertiary: #9CA3AF;
+
+  /* Text on warm cream */
+  --color-foreground: #2A1C3A;
+  --color-text-secondary: #5E4A6E;
+  --color-text-tertiary: #9B8FA5;
+
+  /* Status */
   --color-success: #22C55E;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
-  --color-border: #E5E7EB;
-  --color-border-light: #F0F0F0;
+
+  /* Borders — warm-tinted */
+  --color-border: #E2D9CA;
+  --color-border-light: #EDE6DA;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -46,24 +65,46 @@ html {
 
 /* Phone mockup premium shadow */
 .phone-glow {
-  filter: drop-shadow(0 20px 60px rgba(75, 108, 255, 0.15))
+  filter: drop-shadow(0 20px 60px rgba(107, 74, 138, 0.18))
           drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
 }
 
-/* Gradient text utility */
+/* Accent text utility — solid dusty purple (no gradient) */
 .gradient-text {
-  background: linear-gradient(135deg, #4B6CFF 0%, #FF6B00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #6B4A8A;
 }
 
-/* Glass card */
+/* Glass card — enhanced glassmorphism */
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 24px rgba(107, 74, 138, 0.06),
+              0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* 3D phone tilt on hover */
+.phone-3d {
+  transform: perspective(1200px) rotateY(-2deg) rotateX(1deg);
+  transition: transform 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+.phone-3d:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+/* Section divider glow */
+.section-glow {
+  position: relative;
+}
+.section-glow::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(107, 74, 138, 0.15), rgba(240, 125, 74, 0.1), transparent);
 }
 
 @media print {

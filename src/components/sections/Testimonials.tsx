@@ -6,27 +6,27 @@ import { motion } from "framer-motion";
 
 const TESTIMONIALS = [
   {
-    name: "Chioma A.",
-    role: "Client, Lekki",
-    text: "I said 'Hello Vendoh, I need a plumber' and within minutes I had three verified options. The one I booked fixed my kitchen sink the same day.",
+    name: "Ngozi O.",
+    role: "Beta Tester, Lagos",
+    text: "The voice search is incredibly smooth. I described what I needed in Pidgin and it understood perfectly. This is going to change how Nigerians find service providers.",
     rating: 5,
-    avatar: "C",
+    avatar: "N",
     color: "bg-vendoh-blue",
   },
   {
-    name: "Kabiru M.",
-    role: "Electrician, Surulere",
-    text: "Since joining Vendoh, I get 3-4 bookings a week without having to hustle for clients. The payments are always on time.",
+    name: "Emeka K.",
+    role: "Founding Vendor, Surulere",
+    text: "I've been waiting for something like this. A platform that actually helps artisans get discovered by people nearby — not just big companies. Signed up the moment I heard about it.",
     rating: 5,
-    avatar: "K",
+    avatar: "E",
     color: "bg-vendoh-orange",
   },
   {
-    name: "Aisha B.",
-    role: "Client, Abuja",
-    text: "The verification badges give me confidence. I know the makeup artist coming to my house has been vetted. That peace of mind is priceless.",
+    name: "Fatima A.",
+    role: "Early Access, Abuja",
+    text: "The design is clean and the three-tier verification system gives me confidence. Knowing vendors will be vetted before I book them is exactly what we need.",
     rating: 5,
-    avatar: "A",
+    avatar: "F",
     color: "bg-emerald-500",
   },
 ];
@@ -38,13 +38,13 @@ export function Testimonials() {
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-sm font-semibold text-vendoh-blue uppercase tracking-wider mb-3">
-              Testimonials
+              Early feedback
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-              What people are saying
+              What our community is saying
             </h2>
             <p className="mt-4 text-lg text-text-secondary">
-              Real stories from Lagos, Abuja, and Port Harcourt
+              From beta testers and founding vendors across Nigeria
             </p>
           </div>
         </ScrollReveal>

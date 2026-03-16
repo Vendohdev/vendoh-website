@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vendoh — Find Trusted Vendors Near You",
+  title: "Vendoh — Nigeria's Voice-Powered Service Marketplace | Coming Soon",
   description:
-    "Nigeria's service marketplace. Find verified plumbers, electricians, makeup artists, chefs and more — just say what you need. Voice search, secure payments, real-time tracking.",
+    "Nigeria's first voice-powered service marketplace. Find verified plumbers, electricians, makeup artists, chefs and more — just say what you need. Join the waitlist for early access.",
   keywords: [
     "Vendoh",
     "service marketplace",
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     "Abuja",
     "home services",
   ],
-  authors: [{ name: "Vendoh Technologies Ltd" }],
+  authors: [{ name: "Vendoh Limited" }],
   openGraph: {
-    title: "Vendoh — Find Trusted Vendors Near You",
+    title: "Vendoh — Nigeria's Voice-Powered Service Marketplace | Coming Soon",
     description:
-      "Nigeria's service marketplace. Voice search, verified vendors, secure payments.",
+      "Nigeria's first voice-powered service marketplace. Join the waitlist for early access.",
     url: "https://vendoh.io",
     siteName: "Vendoh",
     locale: "en_NG",
@@ -38,9 +38,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vendoh — Find Trusted Vendors Near You",
+    title: "Vendoh — Nigeria's Voice-Powered Service Marketplace | Coming Soon",
     description:
-      "Nigeria's service marketplace. Voice search, verified vendors, secure payments.",
+      "Nigeria's first voice-powered service marketplace. Join the waitlist for early access.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   robots: { index: true, follow: true },
 };

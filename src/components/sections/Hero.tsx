@@ -7,20 +7,25 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mic } from "lucide-react";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 
 const STATS = [
-  { value: "5,800+", label: "Users" },
-  { value: "1,800+", label: "Verified Vendors" },
   { value: "13", label: "Service Categories" },
-  { value: "321", label: "Service Options" },
+  { value: "321+", label: "Service Options" },
+  { value: "AI", label: "Voice-Powered Search" },
+  { value: "2026", label: "Launching Soon" },
 ];
 
 export function Hero() {
   return (
     <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Subtle background accents */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-vendoh-blue-50/60 via-vendoh-blue-light/20 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-vendoh-orange-light/20 to-transparent pointer-events-none" />
+      {/* Layered background — dusty purple top fading to warm cream */}
+      <div className="absolute inset-0 bg-gradient-to-b from-vendoh-blue-50/80 via-background to-background pointer-events-none" />
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-vendoh-plum-100/30 via-vendoh-blue-light/15 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-vendoh-orange-light/15 to-transparent pointer-events-none" />
+
+      {/* Floating 3D service elements */}
+      <FloatingElements />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -47,8 +52,8 @@ export function Hero() {
             {/* Subheadline */}
             <ScrollReveal delay={0.16}>
               <p className="mt-7 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-xl">
-                Find trusted vendors near you — just say what you need.
-                Verified professionals, secure payments, real-time tracking.
+                Nigeria&apos;s first voice-powered service marketplace — coming soon.
+                Find verified vendors near you with just a voice command.
               </p>
             </ScrollReveal>
 
@@ -63,28 +68,25 @@ export function Hero() {
           {/* Right — Phone Mockup */}
           <ScrollReveal delay={0.15} direction="right">
             <div className="relative flex justify-center lg:justify-end">
-              {/* Decorative gradient blob behind phone */}
-              <div className="absolute -top-8 -right-8 w-72 h-72 bg-gradient-to-br from-vendoh-blue/10 to-vendoh-orange/5 rounded-full blur-3xl pointer-events-none" />
+              {/* Layered gradient blobs behind phone — depth illusion */}
+              <div className="absolute -top-12 -right-12 w-80 h-80 bg-gradient-to-br from-vendoh-plum-200/25 to-vendoh-blue/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-1/3 -left-16 w-48 h-48 bg-gradient-to-tr from-vendoh-orange-200/20 to-transparent rounded-full blur-2xl pointer-events-none" />
 
               {/* Phone frame */}
               <motion.div
-                className="relative w-[280px] sm:w-[300px] phone-glow"
+                className="relative w-[300px] sm:w-[340px] phone-glow phone-3d"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               >
-                <div className="rounded-[2.5rem] border-[6px] border-foreground/8 bg-foreground/5 overflow-hidden shadow-2xl">
-                  {/* Status bar notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-foreground/8 rounded-b-2xl z-10" />
-                  <Image
-                    src="/screenshots/home-screen.png"
-                    alt="Vendoh App — Home Screen"
-                    width={300}
-                    height={600}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
+                <Image
+                  src="/screenshots/home-screen.png"
+                  alt="Vendoh App — Home Screen"
+                  width={680}
+                  height={1200}
+                  className="w-full h-auto rounded-2xl"
+                  priority
+                />
               </motion.div>
 
               {/* Floating card — active vendors */}
@@ -95,12 +97,12 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.9, ease: "easeOut" }}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-success animate-pulse" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-vendoh-orange animate-pulse" />
                   <span className="text-sm font-semibold text-foreground">
-                    14+ vendors online
+                    Join the waitlist
                   </span>
                 </div>
-                <p className="text-xs text-text-tertiary mt-0.5">within 5km of you</p>
+                <p className="text-xs text-text-tertiary mt-0.5">Be first to know when we launch</p>
               </motion.div>
 
               {/* Floating card — rating */}
@@ -114,7 +116,7 @@ export function Hero() {
                   <span className="text-amber-400 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                   <span className="text-sm font-semibold text-foreground">4.8</span>
                 </div>
-                <p className="text-xs text-text-tertiary mt-0.5">avg. vendor rating</p>
+                <p className="text-xs text-text-tertiary mt-0.5">target vendor quality</p>
               </motion.div>
             </div>
           </ScrollReveal>
