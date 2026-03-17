@@ -19,10 +19,10 @@ const STATS = [
 export function Hero() {
   return (
     <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Layered background — dusty purple top fading to warm cream */}
-      <div className="absolute inset-0 bg-gradient-to-b from-vendoh-blue-50/80 via-background to-background pointer-events-none" />
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-vendoh-plum-100/30 via-vendoh-blue-light/15 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-vendoh-orange-light/15 to-transparent pointer-events-none" />
+      {/* Clean white base with subtle brand accent blushes */}
+      <div className="absolute inset-0 bg-white pointer-events-none" />
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-vendoh-blue-50/40 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-vendoh-orange-light/20 to-transparent pointer-events-none" />
 
       {/* Floating 3D service elements */}
       <FloatingElements />

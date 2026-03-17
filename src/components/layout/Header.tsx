@@ -27,8 +27,8 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#EDE6DA]/95 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b border-[#E2D9CA]"
-          : "bg-[#EDE6DA]"
+          ? "bg-white/95 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] border-b border-border-light"
+          : "bg-white"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -81,7 +81,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-[#EDE6DA]/95 backdrop-blur-xl border-t border-[#E2D9CA]"
+            className="md:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-border-light"
           >
             <div className="px-5 py-5 space-y-1">
               {NAV_LINKS.map((link, i) => (

@@ -49,8 +49,8 @@ const FLOAT_ITEMS = [
   {
     icon: Zap,
     label: "Electric",
-    color: "from-amber-400/80 to-amber-300/80",
-    shadow: "rgba(251,191,36,0.3)",
+    color: "from-vendoh-orange-300/80 to-vendoh-orange-200/80",
+    shadow: "rgba(255,163,102,0.3)",
     size: 72,
     position: "top-[35%] left-[8%]",
     delay: 2,
@@ -71,8 +71,8 @@ const FLOAT_ITEMS = [
   {
     icon: SprayCan,
     label: "Cleaning",
-    color: "from-teal-400/80 to-teal-300/80",
-    shadow: "rgba(45,212,191,0.25)",
+    color: "from-vendoh-plum-300/80 to-vendoh-plum-200/80",
+    shadow: "rgba(176,138,212,0.3)",
     size: 68,
     position: "top-[55%] right-[3%]",
     delay: 0.5,

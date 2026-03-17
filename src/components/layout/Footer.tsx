@@ -72,7 +72,7 @@ const CITIES = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#2A1C3A] text-white">
+    <footer className="bg-[#1A0E2E] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         {/* Main Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">

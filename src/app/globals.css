@@ -5,40 +5,40 @@
   /* Grape Plum — primary brand */
   --color-vendoh-blue: #6B4A8A;
   --color-vendoh-blue-dark: #553A70;
-  --color-vendoh-blue-light: #F4F0F7;
-  --color-vendoh-blue-50: #F9F6FB;
-  --color-vendoh-plum-100: #E8DDF0;
-  --color-vendoh-plum-200: #D4C3E3;
-  --color-vendoh-plum-300: #BEA5D4;
-  --color-vendoh-plum-400: #A687C4;
-  --color-vendoh-plum-500: #8E6BAF;
+  --color-vendoh-blue-light: #F0EAFF;
+  --color-vendoh-blue-50: #F7F4FF;
+  --color-vendoh-plum-100: #E0D1F0;
+  --color-vendoh-plum-200: #C9ADE3;
+  --color-vendoh-plum-300: #B08AD4;
+  --color-vendoh-plum-400: #9B6DC4;
+  --color-vendoh-plum-500: #8250B0;
 
   /* Powder Orange — accent */
   --color-vendoh-orange: #F07D4A;
   --color-vendoh-orange-dark: #D4612F;
-  --color-vendoh-orange-light: #FFF5EE;
-  --color-vendoh-orange-200: #FFD0AE;
-  --color-vendoh-orange-300: #FFB584;
-  --color-vendoh-orange-400: #FF9A6C;
+  --color-vendoh-orange-light: #FFF3EB;
+  --color-vendoh-orange-200: #FFC599;
+  --color-vendoh-orange-300: #FFA366;
+  --color-vendoh-orange-400: #FF8C52;
 
-  /* Warm Cream — backgrounds */
-  --color-background: #FFFDFB;
-  --color-surface: #FBF8F3;
+  /* Clean white backgrounds */
+  --color-background: #FFFFFF;
+  --color-surface: #F8F7FC;
   --color-elevated: #FFFFFF;
 
-  /* Text on warm cream */
-  --color-foreground: #2A1C3A;
-  --color-text-secondary: #5E4A6E;
-  --color-text-tertiary: #9B8FA5;
+  /* Text — higher contrast */
+  --color-foreground: #1A0E2E;
+  --color-text-secondary: #4A3660;
+  --color-text-tertiary: #8878A0;
 
   /* Status */
   --color-success: #22C55E;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
 
-  /* Borders — warm-tinted */
-  --color-border: #E2D9CA;
-  --color-border-light: #EDE6DA;
+  /* Borders — cool purple-tinted */
+  --color-border: #E0D8EE;
+  --color-border-light: #EDE8F5;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -104,7 +104,23 @@ html {
   left: 10%;
   right: 10%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(107, 74, 138, 0.15), rgba(240, 125, 74, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(107, 74, 138, 0.25), rgba(240, 125, 74, 0.18), transparent);
+}
+
+/* Marquee animations for PopularServices */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee 35s linear infinite reverse;
+}
+.marquee-track:hover .animate-marquee,
+.marquee-track:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }
 
 @media print {
