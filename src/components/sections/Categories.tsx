@@ -41,10 +41,10 @@ export function Categories() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xl sm:text-2xl font-extrabold text-[#6B4A8A] uppercase tracking-wider mb-3">
+            <p className="text-xl sm:text-2xl font-extrabold text-vendoh-plum-400 uppercase tracking-wider mb-3">
               Service marketplace
             </p>
-            <h2 className="text-xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
               13 categories, 321+ services — launching soon
             </h2>
             <p className="mt-4 text-lg text-text-secondary font-bold italic">

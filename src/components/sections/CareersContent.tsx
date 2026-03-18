@@ -130,7 +130,7 @@ export function CareersContent() {
       <section className="py-20 sm:py-28 section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-lg font-extrabold uppercase tracking-widest text-vendoh-blue">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
               Roles — Opening Soon
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -169,7 +169,7 @@ export function CareersContent() {
       <section className="py-20 sm:py-28 bg-surface section-glow">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-lg font-extrabold uppercase tracking-widest text-vendoh-orange">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-orange">
               How We Hire
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -198,7 +198,7 @@ export function CareersContent() {
       <section className="py-20 sm:py-28 section-glow" id="join">
         <div className="mx-auto max-w-xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="text-lg font-extrabold uppercase tracking-widest text-vendoh-blue">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
               Talent Waitlist
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">

@@ -13,7 +13,7 @@ const POSTS = [
   {
     tag: "Industry Insight",
     title:
-      "Why 95% of Nigeria's Service Economy Is Still Offline \u2014 And What It Will Take to Change That",
+      "Why 95% of Nigeria's Service Economy Is Still Offline, And What It Will Take to Change That",
     desc: "Nigeria has 120M+ smartphone users, yet finding a plumber still requires a WhatsApp scavenger hunt. We unpack the trust deficit, the WhatsApp trap, and what needs to change.",
     read: "8 min read",
     author: "Alex Nwoko",
@@ -25,19 +25,19 @@ const POSTS = [
     tag: "Vendor Stories",
     title:
       "Meet the Vendors: How Lagos Service Providers Are Building Businesses One Booking at a Time",
-    desc: "From Instagram DMs to a full booking calendar \u2014 three vendors share how structured visibility and trust are transforming their livelihoods.",
+    desc: "From Instagram DMs to a full booking calendar. Three vendors share how structured visibility and trust are transforming their livelihoods.",
     read: "6 min read",
     gradient: "from-vendoh-orange to-vendoh-orange-300",
-    emoji: "\u270d\ufe0f",
+    emoji: "\u{270D}\u{FE0F}",
   },
   {
     tag: "Product & Technology",
     title:
       "Hello Vendoh: Why We Bet Everything on Voice-First in a Text-First World",
-    desc: "78% of Nigerians send voice messages daily. Here's why we built an entire marketplace around that reality \u2014 and the technical challenge of making it work.",
+    desc: "78% of Nigerians send voice messages daily. Here's why we built an entire marketplace around that reality, and the technical challenge of making it work.",
     read: "7 min read",
     gradient: "from-vendoh-blue to-vendoh-plum-300",
-    emoji: "\ud83c\udf99\ufe0f",
+    emoji: "\u{1F399}\u{FE0F}",
   },
   {
     tag: "Product Philosophy",
@@ -46,25 +46,25 @@ const POSTS = [
     desc: "A school teacher who does makeup on weekends. A banker who caters events. In Nigeria's economy, people don't fit into one box. Neither should your app.",
     read: "5 min read",
     gradient: "from-[#0D9488] to-[#14B8A6]",
-    emoji: "\u21c4",
+    emoji: "\u{21C4}",
   },
   {
     tag: "Founder Journey",
     title:
       "Building Vendoh: What It's Really Like to Build a Tech Startup Solo in Lagos",
-    desc: "No co-founder, no external funding, no team. Just a vision, a laptop, and AI tools. The honest story of building alone \u2014 and why it's worth it.",
+    desc: "No co-founder, no external funding, no team. Just a vision, a laptop, and AI tools. The honest story of building alone, and why it's worth it.",
     read: "8 min read",
     gradient: "from-vendoh-plum-400 to-vendoh-plum-200",
-    emoji: "\ud83d\udcbb",
+    emoji: "\u{1F4BB}",
   },
   {
     tag: "Market Insight",
     title:
       "Dirty December and Beyond: How Seasonal Demand Shapes Nigeria's Service Economy",
-    desc: "Owambes, weddings, homecomings \u2014 December demand spikes 3\u20135x. How Vendoh is built for Nigeria's unique seasonal rhythms.",
+    desc: "Owambes, weddings, homecomings. December demand spikes 3-5x. How Vendoh is built for Nigeria's unique seasonal rhythms.",
     read: "5 min read",
     gradient: "from-[#DC2626] to-vendoh-orange",
-    emoji: "\ud83c\udf89",
+    emoji: "\u{1F389}",
   },
 ];
 
@@ -120,7 +120,7 @@ export function BlogContent() {
               </span>
             </div>
             <div className="p-7 sm:p-9 flex flex-col justify-center">
-              <span className="text-xs font-bold uppercase tracking-widest text-vendoh-blue">
+              <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
                 {featured.tag}
               </span>
               <h2 className="mt-3 text-xl sm:text-2xl font-bold text-foreground leading-tight tracking-tight">
@@ -155,7 +155,7 @@ export function BlogContent() {
                   <span className="text-4xl opacity-25">{post.emoji}</span>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-bold uppercase tracking-widest text-vendoh-blue">
+                  <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
                     {post.tag}
                   </span>
                   <h3 className="mt-2 font-bold text-foreground leading-snug tracking-tight">

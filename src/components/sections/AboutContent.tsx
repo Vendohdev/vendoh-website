@@ -102,7 +102,7 @@ export function AboutContent() {
         <div className="absolute inset-0 bg-gradient-to-b from-vendoh-blue-50 via-surface to-background" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-blue/10 px-4 py-1.5 text-xs font-semibold text-vendoh-blue mb-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-blue/10 px-4 py-1.5 text-lg font-extrabold text-vendoh-blue mb-6">
               About Vendoh
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
@@ -122,7 +122,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-orange">
               The Problem
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -154,7 +154,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 bg-surface section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
               The Solution
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -206,7 +206,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-orange">
               Our Vision
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -245,7 +245,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 bg-surface section-glow">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
               Voice That Truly Understands
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -276,7 +276,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-orange">
               What We Believe
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -308,7 +308,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 bg-surface section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-blue">
               The Opportunity
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -337,7 +337,7 @@ export function AboutContent() {
       <section className="py-20 sm:py-28 section-glow" id="join">
         <div className="mx-auto max-w-xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+            <span className="text-lg font-extrabold uppercase tracking-wider text-vendoh-orange">
               Get Early Access
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">

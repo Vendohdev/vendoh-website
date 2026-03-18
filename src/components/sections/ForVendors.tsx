@@ -41,7 +41,7 @@ export function ForVendors() {
           {/* Content */}
           <div>
             <ScrollReveal>
-              <span className="inline-block text-sm font-semibold text-white/60 uppercase tracking-widest mb-5">
+              <span className="inline-block text-lg font-extrabold text-white/60 uppercase tracking-wider mb-5">
                 For Vendors
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
