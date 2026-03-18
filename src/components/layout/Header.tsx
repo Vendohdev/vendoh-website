@@ -7,9 +7,9 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#features", label: "Features" },
-  { href: "#categories", label: "Services" },
+  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/#features", label: "Features" },
+  { href: "/#categories", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/careers", label: "Careers" },
   { href: "/blog", label: "Blog" },
@@ -69,7 +69,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#waitlist"
+              href="/#waitlist"
               className="inline-flex items-center justify-center rounded-full bg-[#FF9A6C] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(255,154,108,0.35)] hover:shadow-[0_4px_16px_rgba(255,154,108,0.45)] hover:bg-[#FF8A58] transition-all duration-200 hover:-translate-y-px"
             >
               Get Early Access
@@ -133,7 +133,7 @@ export function Header() {
                 className="pt-3"
               >
                 <a
-                  href="#waitlist"
+                  href="/#waitlist"
                   onClick={() => setMobileOpen(false)}
                   className="block w-full text-center rounded-full bg-vendoh-orange px-5 py-3.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(240,125,74,0.3)]"
                 >
