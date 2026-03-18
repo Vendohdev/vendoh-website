@@ -37,7 +37,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <p className="text-sm font-semibold text-vendoh-blue uppercase tracking-wider mb-3">
+            <p className="text-2xl font-extrabold text-vendoh-blue uppercase tracking-wider mb-3">
               Simple by design
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -54,7 +54,7 @@ export function HowItWorks() {
             <ScrollReveal key={step.title} delay={i * 0.12}>
               <div className="relative group">
                 {/* Card */}
-                <div className="rounded-2xl bg-elevated border border-border-light p-8 h-full hover:shadow-lg hover:border-vendoh-blue/15 transition-all duration-300">
+                <div className="rounded-2xl bg-elevated border border-border-light p-8 h-full hover:shadow-lg hover:border-vendoh-blue/15 hover:-translate-y-3 transition-all duration-300 cursor-default">
                   {/* Step number */}
                   <div className="flex items-center justify-between mb-6">
                     <div

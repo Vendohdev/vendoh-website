@@ -68,13 +68,13 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <p className="text-sm font-semibold text-vendoh-orange uppercase tracking-wider mb-3">
+            <p className="text-xl sm:text-2xl font-extrabold text-vendoh-orange uppercase tracking-wider mb-3">
               Platform features
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
               Everything you need
             </h2>
-            <p className="mt-4 text-lg text-text-secondary">
+            <p className="mt-4 text-lg text-text-secondary font-bold">
               Built for Nigeria. Designed for trust.
             </p>
           </div>

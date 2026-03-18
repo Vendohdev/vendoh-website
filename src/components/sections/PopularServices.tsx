@@ -68,7 +68,7 @@ export function PopularServices() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-vendoh-orange uppercase tracking-wider mb-3">
+            <p className="text-xl sm:text-2xl font-extrabold text-vendoh-orange uppercase tracking-wider mb-3">
               Trending now
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">

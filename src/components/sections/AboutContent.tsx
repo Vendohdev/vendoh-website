@@ -1,0 +1,373 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  Mic,
+  Users,
+  ShieldCheck,
+  TrendingUp,
+  Building2,
+  Heart,
+  Zap,
+  Globe,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
+import Link from "next/link";
+import { LeadCaptureForm } from "@/components/ui/LeadCaptureForm";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.5, ease: "easeOut" as const },
+};
+
+const VALUES = [
+  {
+    icon: Mic,
+    title: "Voice Is How We're Built",
+    desc: "We're not a search engine with a microphone button. Voice-first discovery is how we're built \u2014 designed around the way Nigerians actually communicate.",
+  },
+  {
+    icon: Heart,
+    title: "Vendors Are Partners, Not Commodities",
+    desc: "Their dignity, income, and success are core to our mission. We build tools that help vendors grow. When vendors thrive, everyone wins.",
+  },
+  {
+    icon: Zap,
+    title: "Speed Over Perfection",
+    desc: "We ship fast, learn fast, and fix fast. Lagos doesn't wait, and neither do we.",
+  },
+  {
+    icon: Globe,
+    title: "Emerging Markets First, World-Class Always",
+    desc: "Built for Lagos street realities with world-class engineering. Not a Western app reskinned for Africa \u2014 a platform engineered for how Africa works.",
+  },
+  {
+    icon: Sparkles,
+    title: "Every User Is an Entrepreneur",
+    desc: "We believe the millions of Nigerians working in the informal service economy aren't a problem to be solved \u2014 they're a force to be empowered, formalised, and unleashed.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trust Is Earned, Never Assumed",
+    desc: "Every vendor is verified. Every transaction is protected. We're building the trust infrastructure Nigeria's service sector has always needed.",
+  },
+];
+
+const VISION_PILLARS = [
+  {
+    icon: Building2,
+    title: "Formalise the Informal",
+    desc: "Give every service provider the digital tools, verified profiles, and structured booking systems that turn informal hustle into professional businesses.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Grow Without Gatekeeping",
+    desc: "Fair pricing, transparent commissions, and business analytics that help vendors scale on their own terms \u2014 not ours.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Build Trust at Scale",
+    desc: "Our three-tier verification system and escrow payments create the trust layer the entire sector has been missing.",
+  },
+  {
+    icon: Users,
+    title: "Create a Dual-Role Economy",
+    desc: "In Nigeria, the teacher does makeup on weekends. The banker caters events. One tap switches between client and vendor \u2014 because Nigerians don't fit in one box.",
+  },
+];
+
+const NUMBERS = [
+  { value: "~60%", desc: "of Nigeria's GDP comes from the informal economy" },
+  { value: "80%", desc: "of Nigeria's workforce operates informally" },
+  {
+    value: "41M+",
+    desc: "small businesses across Nigeria \u2014 most without formal structure",
+  },
+  {
+    value: "95%",
+    desc: "of service transactions still happen via WhatsApp, Instagram & word-of-mouth",
+  },
+  { value: "78%", desc: "of Nigerians send voice messages daily" },
+  { value: "30s", desc: "average time from search to booking on Vendoh" },
+];
+
+export function AboutContent() {
+  return (
+    <>
+      {/* HERO */}
+      <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+        <div className="absolute inset-0 bg-gradient-to-b from-vendoh-blue-50 via-surface to-background" />
+        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
+          <motion.div {...fadeUp}>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-blue/10 px-4 py-1.5 text-xs font-semibold text-vendoh-blue mb-6">
+              About Vendoh
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+              Empowering Vendors.{" "}
+              <span className="gradient-text">Elevating an Industry.</span>
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+              Vendoh is building Africa&apos;s first voice-powered service
+              marketplace \u2014 connecting clients with trusted, verified
+              vendors through the power of voice, technology, and trust.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* THE PROBLEM */}
+      <section className="py-20 sm:py-28 section-glow">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+              The Problem
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              A Broken System Hiding in Plain Sight
+            </h2>
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            className="bg-surface rounded-2xl border border-border-light p-8 sm:p-10"
+          >
+            <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
+              Nigeria&apos;s service economy employs over 80% of the workforce
+              and generates roughly 60% of GDP. Yet almost all of it operates
+              informally \u2014 no verified reviews, no guaranteed pricing, no
+              booking systems. Finding a trusted plumber, makeup artist, or
+              caterer still means a WhatsApp scavenger hunt, second-hand
+              referrals, and blind hope.
+            </p>
+            <p className="mt-5 text-text-secondary text-base sm:text-lg leading-relaxed">
+              Meanwhile, over 41 million small businesses and talented vendors
+              across the country have no structured way to reach the customers
+              who need them. Their skills are real. Their visibility isn&apos;t.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* THE SOLUTION */}
+      <section className="py-20 sm:py-28 bg-surface section-glow">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+              The Solution
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              Just Say What You Need
+            </h2>
+            <p className="mt-4 text-text-secondary max-w-xl mx-auto">
+              Vendoh replaces the chaos with a single voice command. Speak
+              naturally \u2014 in English or Pidgin \u2014 and we connect you
+              with the closest verified vendors, instantly.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            <motion.div
+              {...fadeUp}
+              className="rounded-2xl border border-border-light bg-white p-7"
+            >
+              <div className="w-10 h-10 rounded-xl bg-vendoh-blue/10 flex items-center justify-center mb-4">
+                <Users size={20} className="text-vendoh-blue" />
+              </div>
+              <h3 className="font-bold text-foreground text-lg">
+                For Clients
+              </h3>
+              <p className="mt-2 text-text-secondary text-sm leading-relaxed">
+                Search by voice, browse verified vendors, compare prices, book
+                instantly, and pay securely \u2014 all within a single app.
+              </p>
+            </motion.div>
+            <motion.div
+              {...fadeUp}
+              className="rounded-2xl border border-border-light bg-white p-7"
+            >
+              <div className="w-10 h-10 rounded-xl bg-vendoh-orange/10 flex items-center justify-center mb-4">
+                <TrendingUp size={20} className="text-vendoh-orange" />
+              </div>
+              <h3 className="font-bold text-foreground text-lg">
+                For Vendors
+              </h3>
+              <p className="mt-2 text-text-secondary text-sm leading-relaxed">
+                Get discovered by nearby clients, manage bookings, track
+                earnings, build your reputation \u2014 and switch between client
+                and vendor mode with one tap.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* VISION */}
+      <section className="py-20 sm:py-28 section-glow">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+              Our Vision
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              Empowering Vendors, Elevating an Industry
+            </h2>
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
+              Vendoh doesn&apos;t compete with vendors \u2014 we empower them.
+              Our vision is to elevate Nigeria&apos;s service sector from its
+              informal roots into a trusted, professional industry where small
+              businesses and entrepreneurs can grow and scale to global
+              standards.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {VISION_PILLARS.map((p, i) => (
+              <motion.div
+                key={p.title}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i * 0.08 }}
+                className="rounded-2xl border border-border-light bg-surface p-7"
+              >
+                <div className="w-10 h-10 rounded-xl bg-vendoh-blue/10 flex items-center justify-center mb-4">
+                  <p.icon size={20} className="text-vendoh-blue" />
+                </div>
+                <h3 className="font-bold text-foreground">{p.title}</h3>
+                <p className="mt-2 text-text-secondary text-sm leading-relaxed">
+                  {p.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VOICE-FIRST */}
+      <section className="py-20 sm:py-28 bg-surface section-glow">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+          <motion.div {...fadeUp}>
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+              Voice That Truly Understands
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              Built for How Nigerians Communicate
+            </h2>
+            <p className="mt-5 text-text-secondary max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              78% of Nigerians send voice messages daily. Vendoh is built around
+              that reality. Our voice AI understands Nigerian English, Pidgin,
+              and the way people naturally describe what they need \u2014
+              &ldquo;I need someone to fix my AC in Lekki&rdquo; returns
+              verified results in seconds.
+            </p>
+            <div className="mt-8 inline-flex items-center gap-3 rounded-full bg-vendoh-blue/10 px-6 py-3">
+              <Mic size={20} className="text-vendoh-blue" />
+              <span className="text-sm font-medium text-vendoh-blue">
+                &ldquo;I need a plumber near Ikeja&rdquo;
+              </span>
+              <ArrowRight size={16} className="text-vendoh-blue" />
+              <span className="text-sm font-medium text-vendoh-blue">
+                3 verified results in 2 seconds
+              </span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="py-20 sm:py-28 section-glow">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+              What We Believe
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              Our Values
+            </h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {VALUES.map((v, i) => (
+              <motion.div
+                key={v.title}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i * 0.06 }}
+                className="rounded-2xl border border-border-light bg-white p-7"
+              >
+                <div className="w-10 h-10 rounded-xl bg-vendoh-blue/10 flex items-center justify-center mb-4">
+                  <v.icon size={20} className="text-vendoh-blue" />
+                </div>
+                <h3 className="font-bold text-foreground">{v.title}</h3>
+                <p className="mt-2 text-text-secondary text-sm leading-relaxed">
+                  {v.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NUMBERS */}
+      <section className="py-20 sm:py-28 bg-surface section-glow">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+              The Opportunity
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              Vendoh in Numbers
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+            {NUMBERS.map((n, i) => (
+              <motion.div
+                key={n.value}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i * 0.06 }}
+                className="rounded-2xl border border-border-light bg-white p-6 text-center"
+              >
+                <div className="text-3xl sm:text-4xl font-extrabold gradient-text">
+                  {n.value}
+                </div>
+                <p className="mt-2 text-text-secondary text-sm">{n.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LEAD CAPTURE */}
+      <section className="py-20 sm:py-28 section-glow" id="join">
+        <div className="mx-auto max-w-xl px-4 sm:px-6 text-center">
+          <motion.div {...fadeUp}>
+            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+              Get Early Access
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+              Be the First to Experience Vendoh
+            </h2>
+            <p className="mt-4 text-text-secondary">
+              Join our waitlist and we&apos;ll notify you as soon as Vendoh
+              launches in your area.
+            </p>
+            <div className="mt-8">
+              <LeadCaptureForm source="waitlist" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="py-16 bg-surface">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
+          <p className="text-text-secondary text-sm">
+            Questions? Reach us at{" "}
+            <a
+              href="mailto:hello@vendoh.io"
+              className="text-vendoh-blue font-medium hover:underline"
+            >
+              hello@vendoh.io
+            </a>
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}

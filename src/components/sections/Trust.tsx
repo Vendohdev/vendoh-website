@@ -59,7 +59,7 @@ export function Trust() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <p className="text-sm font-semibold text-success uppercase tracking-wider mb-3">
+            <p className="text-2xl font-extrabold text-success uppercase tracking-wider mb-3">
               Safety first
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">

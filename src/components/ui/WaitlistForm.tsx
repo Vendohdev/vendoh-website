@@ -9,8 +9,25 @@ interface WaitlistFormProps {
   variant?: "hero" | "footer";
 }
 
+const COUNTRY_CODES = [
+  { code: "+234", flag: "\u{1F1F3}\u{1F1EC}", name: "Nigeria" },
+  { code: "+233", flag: "\u{1F1EC}\u{1F1ED}", name: "Ghana" },
+  { code: "+254", flag: "\u{1F1F0}\u{1F1EA}", name: "Kenya" },
+  { code: "+250", flag: "\u{1F1F7}\u{1F1FC}", name: "Rwanda" },
+  { code: "+27", flag: "\u{1F1FF}\u{1F1E6}", name: "South Africa" },
+  { code: "+44", flag: "\u{1F1EC}\u{1F1E7}", name: "United Kingdom" },
+  { code: "+353", flag: "\u{1F1EE}\u{1F1EA}", name: "Ireland" },
+  { code: "+1", flag: "\u{1F1FA}\u{1F1F8}", name: "United States" },
+  { code: "+1", flag: "\u{1F1E8}\u{1F1E6}", name: "Canada" },
+  { code: "+61", flag: "\u{1F1E6}\u{1F1FA}", name: "Australia" },
+  { code: "+971", flag: "\u{1F1E6}\u{1F1EA}", name: "UAE" },
+  { code: "+974", flag: "\u{1F1F6}\u{1F1E6}", name: "Qatar" },
+];
+
 export function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+234");
   const [role, setRole] = useState<"client" | "vendor">("client");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -23,21 +40,26 @@ export function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
 
     setStatus("loading");
     try {
+      const cleanPhone = phone.replace(/^0+/, "").replace(/\D/g, "");
       const { error } = await supabase.from("waitlist").insert({
         email: email.trim().toLowerCase(),
         role,
+        country_code: cleanPhone ? countryCode : null,
+        phone: cleanPhone || null,
       });
 
       if (error) {
         if (error.code === "23505") {
           setStatus("success");
           setEmail("");
+          setPhone("");
           return;
         }
         throw error;
       }
       setStatus("success");
       setEmail("");
+      setPhone("");
     } catch (err: unknown) {
       setStatus("error");
       setErrorMsg(
@@ -113,8 +135,8 @@ export function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
             ))}
           </div>
 
-          {/* Email Input + Submit */}
-          <div className="flex gap-2.5">
+          {/* Email Input */}
+          <div className="mb-3">
             <input
               type="email"
               value={email}
@@ -124,12 +146,47 @@ export function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
               }}
               placeholder="Enter your email"
               required
-              className={`flex-1 rounded-full px-5 py-3.5 text-sm outline-none transition-all ${
+              className={`w-full rounded-full px-5 py-3.5 text-sm outline-none transition-all ${
                 isHero
                   ? "bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 shadow-sm"
                   : "bg-white/10 border border-white/15 text-white placeholder:text-white/40 focus:border-white/40 focus:ring-2 focus:ring-white/15 backdrop-blur-sm"
               }`}
             />
+          </div>
+
+          {/* Phone + Submit */}
+          <div className="flex gap-2.5">
+            <div className="flex flex-1 gap-0">
+              <select
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                className={`rounded-l-full pl-3 pr-1 py-3.5 text-sm outline-none border-r-0 cursor-pointer ${
+                  isHero
+                    ? "bg-white border border-border text-foreground shadow-sm"
+                    : "bg-white/10 border border-white/15 text-white backdrop-blur-sm"
+                }`}
+              >
+                {COUNTRY_CODES.map((c) => (
+                  <option key={c.code} value={c.code} className="text-foreground bg-white">
+                    {c.flag} {c.name} ({c.code})
+                  </option>
+                ))}
+              </select>
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  if (status === "error") setStatus("idle");
+                }}
+                placeholder="Phone number"
+                className={`flex-1 min-w-0 rounded-r-full px-4 py-3.5 text-sm outline-none transition-all ${
+                  isHero
+                    ? "bg-white border border-border border-l-0 text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 shadow-sm"
+                    : "bg-white/10 border border-white/15 border-l-0 text-white placeholder:text-white/40 focus:border-white/40 focus:ring-2 focus:ring-white/15 backdrop-blur-sm"
+                }`}
+              />
+            </div>
             <button
               type="submit"
               disabled={status === "loading"}
