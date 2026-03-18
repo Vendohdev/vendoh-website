@@ -27,7 +27,7 @@ const VALUES = [
   {
     icon: Mic,
     title: "Voice Is How We're Built",
-    desc: "We're not a search engine with a microphone button. Voice-first discovery is how we're built \u2014 designed around the way Nigerians actually communicate.",
+    desc: "We're not a search engine with a microphone button. Voice-first discovery is how we're built, designed around the way Nigerians actually communicate.",
   },
   {
     icon: Heart,
@@ -42,12 +42,12 @@ const VALUES = [
   {
     icon: Globe,
     title: "Emerging Markets First, World-Class Always",
-    desc: "Built for Lagos street realities with world-class engineering. Not a Western app reskinned for Africa \u2014 a platform engineered for how Africa works.",
+    desc: "Built for Lagos street realities with world-class engineering. Not a Western app reskinned for Africa, but a platform engineered for how Africa works.",
   },
   {
     icon: Sparkles,
     title: "Every User Is an Entrepreneur",
-    desc: "We believe the millions of Nigerians working in the informal service economy aren't a problem to be solved \u2014 they're a force to be empowered, formalised, and unleashed.",
+    desc: "We believe the millions of Nigerians working in the informal service economy aren't a problem to be solved. They're a force to be empowered, formalised, and unleashed.",
   },
   {
     icon: ShieldCheck,
@@ -65,7 +65,7 @@ const VISION_PILLARS = [
   {
     icon: TrendingUp,
     title: "Grow Without Gatekeeping",
-    desc: "Fair pricing, transparent commissions, and business analytics that help vendors scale on their own terms \u2014 not ours.",
+    desc: "Fair pricing, transparent commissions, and business analytics that help vendors scale on their own terms, not ours.",
   },
   {
     icon: ShieldCheck,
@@ -75,7 +75,7 @@ const VISION_PILLARS = [
   {
     icon: Users,
     title: "Create a Dual-Role Economy",
-    desc: "In Nigeria, the teacher does makeup on weekends. The banker caters events. One tap switches between client and vendor \u2014 because Nigerians don't fit in one box.",
+    desc: "In Nigeria, the teacher does makeup on weekends. The banker caters events. One tap switches between client and vendor, because Nigerians don't fit in one box.",
   },
 ];
 
@@ -84,7 +84,7 @@ const NUMBERS = [
   { value: "80%", desc: "of Nigeria's workforce operates informally" },
   {
     value: "41M+",
-    desc: "small businesses across Nigeria \u2014 most without formal structure",
+    desc: "small businesses across Nigeria, most without formal structure",
   },
   {
     value: "95%",
@@ -111,7 +111,7 @@ export function AboutContent() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
               Vendoh is building Africa&apos;s first voice-powered service
-              marketplace \u2014 connecting clients with trusted, verified
+              marketplace, connecting clients with trusted, verified
               vendors through the power of voice, technology, and trust.
             </p>
           </motion.div>
@@ -136,7 +136,7 @@ export function AboutContent() {
             <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
               Nigeria&apos;s service economy employs over 80% of the workforce
               and generates roughly 60% of GDP. Yet almost all of it operates
-              informally \u2014 no verified reviews, no guaranteed pricing, no
+              informally with no verified reviews, no guaranteed pricing, no
               booking systems. Finding a trusted plumber, makeup artist, or
               caterer still means a WhatsApp scavenger hunt, second-hand
               referrals, and blind hope.
@@ -162,7 +162,7 @@ export function AboutContent() {
             </h2>
             <p className="mt-4 text-text-secondary max-w-xl mx-auto">
               Vendoh replaces the chaos with a single voice command. Speak
-              naturally \u2014 in English or Pidgin \u2014 and we connect you
+              naturally in English or Pidgin, and we connect you
               with the closest verified vendors, instantly.
             </p>
           </motion.div>
@@ -179,7 +179,7 @@ export function AboutContent() {
               </h3>
               <p className="mt-2 text-text-secondary text-sm leading-relaxed">
                 Search by voice, browse verified vendors, compare prices, book
-                instantly, and pay securely \u2014 all within a single app.
+                instantly, and pay securely. All within a single app.
               </p>
             </motion.div>
             <motion.div
@@ -194,7 +194,7 @@ export function AboutContent() {
               </h3>
               <p className="mt-2 text-text-secondary text-sm leading-relaxed">
                 Get discovered by nearby clients, manage bookings, track
-                earnings, build your reputation \u2014 and switch between client
+                earnings, build your reputation, and switch between client
                 and vendor mode with one tap.
               </p>
             </motion.div>
@@ -213,7 +213,7 @@ export function AboutContent() {
               Empowering Vendors, Elevating an Industry
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-              Vendoh doesn&apos;t compete with vendors \u2014 we empower them.
+              Vendoh doesn&apos;t compete with vendors. We empower them.
               Our vision is to elevate Nigeria&apos;s service sector from its
               informal roots into a trusted, professional industry where small
               businesses and entrepreneurs can grow and scale to global
@@ -254,7 +254,7 @@ export function AboutContent() {
             <p className="mt-5 text-text-secondary max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               78% of Nigerians send voice messages daily. Vendoh is built around
               that reality. Our voice AI understands Nigerian English, Pidgin,
-              and the way people naturally describe what they need \u2014
+              and the way people naturally describe what they need.
               &ldquo;I need someone to fix my AC in Lekki&rdquo; returns
               verified results in seconds.
             </p>
