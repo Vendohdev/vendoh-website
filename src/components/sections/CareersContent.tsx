@@ -24,8 +24,8 @@ const fadeUp = {
 const ROLES = [
   {
     icon: Users,
-    title: "Vendor Onboarding & Community Manager",
-    type: "Full-time \u00b7 Lagos",
+    title: "Vendor Onboarding & Community Lead",
+    type: "Full-time \u00b7 Lagos / Abuja / PH",
     desc: "Lead vendor recruitment, onboarding, and retention. Build the community that powers Vendoh's supply side across Lagos and beyond.",
   },
   {
@@ -110,7 +110,7 @@ export function CareersContent() {
         <div className="absolute inset-0 bg-gradient-to-b from-vendoh-orange-light via-surface to-background" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-orange/10 px-4 py-1.5 text-xs font-semibold text-vendoh-orange mb-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-orange/10 px-4 py-1.5 text-lg font-extrabold text-vendoh-orange mb-6">
               Hiring Soon
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
@@ -130,11 +130,11 @@ export function CareersContent() {
       <section className="py-20 sm:py-28 section-glow">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
-              Open Roles
+            <span className="text-lg font-extrabold uppercase tracking-widest text-vendoh-blue">
+              Roles — Opening Soon
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-              Positions We&apos;re Hiring For
+              Building the Vendoh Talent Community
             </h2>
             <p className="mt-4 text-text-secondary max-w-xl mx-auto">
               All roles are pre-launch positions. Early team members shape the
@@ -169,7 +169,7 @@ export function CareersContent() {
       <section className="py-20 sm:py-28 bg-surface section-glow">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <motion.div {...fadeUp} className="text-center mb-14">
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-orange">
+            <span className="text-lg font-extrabold uppercase tracking-widest text-vendoh-orange">
               How We Hire
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -198,7 +198,7 @@ export function CareersContent() {
       <section className="py-20 sm:py-28 section-glow" id="join">
         <div className="mx-auto max-w-xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="text-xs font-semibold uppercase tracking-widest text-vendoh-blue">
+            <span className="text-lg font-extrabold uppercase tracking-widest text-vendoh-blue">
               Talent Waitlist
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">

@@ -146,7 +146,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-white/8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
-            &copy; 2025 Vendoh Limited &nbsp;|&nbsp; RC 1815446
+            &copy; 2025 Vendoh Limited &nbsp;|&nbsp; Registered in Nigeria
           </p>
           <div className="flex gap-5">
             <Link
