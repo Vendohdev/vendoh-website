@@ -41,11 +41,13 @@ export function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
     setStatus("loading");
     try {
       const cleanPhone = phone.replace(/^0+/, "").replace(/\D/g, "");
-      const { error } = await supabase.from("waitlist").insert({
+      const { error } = await supabase.from("website_leads").insert({
         email: email.trim().toLowerCase(),
-        role,
-        country_code: cleanPhone ? countryCode : null,
+        source: "waitlist",
+        interest: role,
+        country_code: countryCode,
         phone: cleanPhone || null,
+        metadata: {},
       });
 
       if (error) {
