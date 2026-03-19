@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { supabase } from "@/lib/supabase";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, Loader2 } from "lucide-react";
+import { CheckCircle, Loader2, Upload, FileText, X } from "lucide-react";
 
 const COUNTRY_CODES = [
   { code: "+234", label: "\u{1F1F3}\u{1F1EC} Nigeria (+234)" },
@@ -31,6 +31,8 @@ const WAITLIST_OPTIONS = [
   { value: "both", label: "Both \u2014 I'm a client and a vendor" },
 ];
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
 export function LeadCaptureForm({
   source,
   interestOptions,
@@ -39,12 +41,34 @@ export function LeadCaptureForm({
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("+234");
   const [interest, setInterest] = useState("");
+  const [cvFile, setCvFile] = useState<File | null>(null);
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const options = interestOptions || (source === "waitlist" ? WAITLIST_OPTIONS : []);
+  const isCareers = source === "careers";
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.type !== "application/pdf") {
+      setErrorMsg("Please upload a PDF file only.");
+      setStatus("error");
+      return;
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      setErrorMsg("File size must be under 5MB (max 2 pages).");
+      setStatus("error");
+      return;
+    }
+
+    setCvFile(file);
+    if (status === "error") setStatus("idle");
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -52,6 +76,25 @@ export function LeadCaptureForm({
 
     setStatus("loading");
     try {
+      let cvUrl: string | null = null;
+
+      // Upload CV if provided
+      if (cvFile) {
+        const timestamp = Date.now();
+        const safeName = email.trim().toLowerCase().replace(/[^a-z0-9]/g, "_");
+        const filePath = `${safeName}_${timestamp}.pdf`;
+
+        const { error: uploadError } = await supabase.storage
+          .from("career-documents")
+          .upload(filePath, cvFile, {
+            contentType: "application/pdf",
+            upsert: false,
+          });
+
+        if (uploadError) throw new Error(`CV upload failed: ${uploadError.message}`);
+        cvUrl = filePath;
+      }
+
       const phoneClean = phone.trim().replace(/^0+/, "");
       const { error } = await supabase.from("website_leads").insert({
         email: email.trim().toLowerCase(),
@@ -59,7 +102,7 @@ export function LeadCaptureForm({
         country_code: countryCode,
         source,
         interest: interest || null,
-        metadata: {},
+        metadata: cvUrl ? { cv_path: cvUrl } : {},
       });
 
       if (error) {
@@ -89,10 +132,12 @@ export function LeadCaptureForm({
       >
         <CheckCircle size={36} className="text-vendoh-blue mx-auto mb-3" />
         <p className="font-semibold text-lg text-vendoh-blue">
-          You&apos;re on the list!
+          {isCareers ? "Application received!" : "You\u0027re on the list!"}
         </p>
         <p className="text-sm mt-1.5 text-text-secondary">
-          We&apos;ll be in touch when Vendoh launches.
+          {isCareers
+            ? "We\u0027ll review your profile and reach out when positions open."
+            : "We\u0027ll be in touch when Vendoh launches."}
         </p>
       </motion.div>
     );
@@ -146,6 +191,50 @@ export function LeadCaptureForm({
           ))}
         </select>
       )}
+
+      {/* CV Upload — careers only */}
+      {isCareers && (
+        <div>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/pdf"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+          {cvFile ? (
+            <div className="flex items-center gap-3 rounded-xl border border-vendoh-blue/20 bg-vendoh-blue-light/30 px-4 py-3">
+              <FileText size={18} className="text-vendoh-blue shrink-0" />
+              <span className="text-sm text-foreground truncate flex-1">
+                {cvFile.name}
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setCvFile(null);
+                  if (fileInputRef.current) fileInputRef.current.value = "";
+                }}
+                className="text-text-tertiary hover:text-foreground transition-colors"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="w-full flex items-center justify-center gap-2 rounded-xl border border-dashed border-border hover:border-vendoh-blue/40 bg-white px-4 py-3.5 text-sm text-text-secondary hover:text-vendoh-blue transition-all cursor-pointer"
+            >
+              <Upload size={16} />
+              Upload CV / Resume (PDF, max 2 pages)
+            </button>
+          )}
+          <p className="mt-1.5 text-xs text-text-tertiary">
+            Optional. PDF only, 5MB max.
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={status === "loading"}
