@@ -41,6 +41,8 @@ export function LeadCaptureForm({
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("+234");
   const [interest, setInterest] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [portfolio, setPortfolio] = useState("");
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -102,7 +104,11 @@ export function LeadCaptureForm({
         country_code: countryCode,
         source,
         interest: interest || null,
-        metadata: cvUrl ? { cv_path: cvUrl } : {},
+        metadata: {
+          ...(cvUrl ? { cv_path: cvUrl } : {}),
+          ...(linkedin.trim() ? { linkedin: linkedin.trim() } : {}),
+          ...(portfolio.trim() ? { portfolio: portfolio.trim() } : {}),
+        },
       });
 
       if (error) {
@@ -190,6 +196,26 @@ export function LeadCaptureForm({
             </option>
           ))}
         </select>
+      )}
+
+      {/* LinkedIn & Portfolio — careers only */}
+      {isCareers && (
+        <>
+          <input
+            type="url"
+            value={linkedin}
+            onChange={(e) => setLinkedin(e.target.value)}
+            placeholder="LinkedIn profile URL (optional)"
+            className="w-full rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all"
+          />
+          <input
+            type="url"
+            value={portfolio}
+            onChange={(e) => setPortfolio(e.target.value)}
+            placeholder="Portfolio / GitHub / Website URL (optional)"
+            className="w-full rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all"
+          />
+        </>
       )}
 
       {/* CV Upload — careers only */}
