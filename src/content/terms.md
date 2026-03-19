@@ -114,7 +114,7 @@ You are responsible for:
 
 - Maintaining the confidentiality of your password, biometric data, and Account login credentials.
 - All activities that occur under your Account, whether authorized by you or not.
-- Notifying Vendoh immediately (via support@vendoh.com or in-app reporting) of any unauthorized access or suspected security breach.
+- Notifying Vendoh immediately (via support@vendoh.io or in-app reporting) of any unauthorized access or suspected security breach.
 - Enabling available security features such as two-factor authentication when offered.
 
 Vendoh is not liable for unauthorized access resulting from your failure to secure your credentials, unless such breach results directly from Vendoh's gross negligence or willful misconduct.
@@ -135,7 +135,7 @@ Upon suspension, you will lose access to the Platform but retain the right to wi
 
 ### 3.6 Account Deletion by User
 
-You may request Account deletion at any time by contacting support@vendoh.com or using the Account deletion feature in the Platform. Upon deletion:
+You may request Account deletion at any time by contacting support@vendoh.io or using the Account deletion feature in the Platform. Upon deletion:
 
 - Active Bookings must be completed or cancelled before deletion is processed.
 - Outstanding Escrow funds will be settled per these Terms before Account closure.
@@ -202,7 +202,7 @@ Vendoh uses artificial intelligence and machine learning to:
 - **Voice Processing**: Convert your voice queries into text and understand your service requests using natural language processing.
 - **Fraud Detection**: Identify potentially fraudulent transactions, fake accounts, and suspicious activity patterns.
 
-**Transparency Commitment**: Vendoh is committed to algorithmic fairness in accordance with the National Information Technology Development Agency (NITDA) guidelines on responsible AI. Our AI systems are designed to be non-discriminatory with respect to ethnicity, religion, gender, or socioeconomic status. If you believe an AI-driven decision has adversely affected you, you may request a human review by contacting support@vendoh.com.
+**Transparency Commitment**: Vendoh is committed to algorithmic fairness in accordance with the National Information Technology Development Agency (NITDA) guidelines on responsible AI. Our AI systems are designed to be non-discriminatory with respect to ethnicity, religion, gender, or socioeconomic status. If you believe an AI-driven decision has adversely affected you, you may request a human review by contacting support@vendoh.io.
 
 ---
 
@@ -709,7 +709,7 @@ You are granted a limited, non-exclusive, non-transferable, revocable license to
 - Vendoh may use anonymized data to improve Platform algorithms, train AI models, and recommend Services.
 - Vendoh may display User reviews and ratings publicly on the Platform and in marketing materials.
 
-**Content Removal:** You may request removal of your content by contacting support@vendoh.com. However, reviews left by other Users about your Services cannot be removed at your request unless they violate the review standards in Section 11.2.
+**Content Removal:** You may request removal of your content by contacting support@vendoh.io. However, reviews left by other Users about your Services cannot be removed at your request unless they violate the review standards in Section 11.2.
 
 ### 12.3 Prohibited Use
 
@@ -899,7 +899,7 @@ If you use the Platform's AI Features (including voice search), you acknowledge 
 **Your Rights:**
 
 - You may opt out of voice features at any time by not using the voice input functionality. Voice features are optional and not required to use the Platform.
-- You may request deletion of any stored voice-related data by contacting privacy@vendoh.com.
+- You may request deletion of any stored voice-related data by contacting privacy@vendoh.io.
 
 ### 16.4 Cross-Border Data Transfer
 
@@ -928,7 +928,7 @@ Personal data is retained as follows:
 | Location data | Duration of Account | Contractual necessity |
 | KYC/verification documents | 5 years after Account closure | AML/KYC requirements |
 
-You may request data deletion (subject to legal retention obligations) by contacting privacy@vendoh.com. Vendoh will process deletion requests within **30 days** as required by the NDPA.
+You may request data deletion (subject to legal retention obligations) by contacting privacy@vendoh.io. Vendoh will process deletion requests within **30 days** as required by the NDPA.
 
 ### 16.6 Data Subject Rights
 
@@ -943,7 +943,7 @@ Under the NDPA, you have the right to:
 - **Withdraw Consent**: Withdraw consent for processing at any time (without affecting the lawfulness of prior processing).
 - **Automated Decision-Making**: Request human review of decisions made solely through automated processing that significantly affect you.
 
-To exercise any of these rights, contact privacy@vendoh.com or dpo@vendoh.com. Vendoh will respond within **30 days**.
+To exercise any of these rights, contact privacy@vendoh.io or dpo@vendoh.io. Vendoh will respond within **30 days**.
 
 ### 16.7 Data Breach Notification
 
@@ -1137,7 +1137,7 @@ Vendoh may deactivate or permanently remove a Vendor from the Platform for the f
 | Chargebacks or payment fraud | Critical | Immediate permanent removal; referral to authorities |
 | Repeated failed bank transfers (5+ consecutive) | Medium | Suspension until banking details are corrected |
 
-**Right to Appeal**: Deactivated Vendors may appeal within **14 days** by submitting a written appeal with supporting evidence to appeals@vendoh.com. Vendoh will review and respond within **10 business days**. Appeals related to permanent removal for criminal conduct, fraud, or serious safety violations are subject to a higher evidentiary standard for reinstatement.
+**Right to Appeal**: Deactivated Vendors may appeal within **14 days** by submitting a written appeal with supporting evidence to appeals@vendoh.io. Vendoh will review and respond within **10 business days**. Appeals related to permanent removal for criminal conduct, fraud, or serious safety violations are subject to a higher evidentiary standard for reinstatement.
 
 **FCCPC Escalation**: If a Vendor believes their deactivation was unfair or violated consumer protection principles, they may file a complaint with the Federal Competition and Consumer Protection Commission (FCCPC).
 
@@ -1187,10 +1187,10 @@ By creating an Account, you consent to receive electronic communications from Ve
 
 You may contact Vendoh at:
 
-- **General Support**: support@vendoh.com
-- **Legal/Disputes**: legal@vendoh.com
-- **Privacy/Data Protection**: privacy@vendoh.com / dpo@vendoh.com
-- **Appeals**: appeals@vendoh.com
+- **General Support**: support@vendoh.io
+- **Legal/Disputes**: legal@vendoh.io
+- **Privacy/Data Protection**: privacy@vendoh.io / dpo@vendoh.io
+- **Appeals**: appeals@vendoh.io
 - **In-App Support Chat**: Available within the Platform
 - **Mailing Address**: Vendoh Limited, [Insert Full Registered Address], Lagos, Nigeria
 
@@ -1266,19 +1266,19 @@ Vendoh's failure to enforce any provision does not constitute a waiver of that p
 
 ### 25.1 For Customer Support
 
-- **Email**: support@vendoh.com
+- **Email**: support@vendoh.io
 - **In-App Support Chat**: Available within the Platform
 - **Response Time**: We aim to respond within **24 hours** on business days
 
 ### 25.2 For Legal or Compliance Matters
 
-- **Email**: legal@vendoh.com
+- **Email**: legal@vendoh.io
 - **Mailing Address**: Vendoh Limited, [Insert Full Registered Address], Lagos, Nigeria
 
 ### 25.3 For Data Protection and Privacy Concerns
 
-- **Data Protection Officer**: dpo@vendoh.com
-- **General Privacy**: privacy@vendoh.com
+- **Data Protection Officer**: dpo@vendoh.io
+- **General Privacy**: privacy@vendoh.io
 - **NDPA Complaints**: If unsatisfied with our response, you may escalate to the **Nigeria Data Protection Commission (NDPC)** at www.ndpc.gov.ng
 
 ### 25.4 For Consumer Protection and Regulatory Issues
@@ -1356,7 +1356,7 @@ Commission rates are subject to change with **30 days' notice** to Vendors.
 
 ## CONCLUSION
 
-By using the Vendoh Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, the Privacy Policy, and all other referenced policies. If you have questions or concerns, please contact us at support@vendoh.com.
+By using the Vendoh Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, the Privacy Policy, and all other referenced policies. If you have questions or concerns, please contact us at support@vendoh.io.
 
 **Thank you for using Vendoh — connecting Nigeria's communities with trusted local services.**
 

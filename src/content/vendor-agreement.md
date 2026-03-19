@@ -989,7 +989,7 @@ Vendors enrolled in Pro Vendor shall receive:
    **Vendoh Limited**
    Legal Department
    Lagos, Nigeria
-   Email: legal@vendoh.ng
+   Email: legal@vendoh.io
 
 (d) Notices are deemed received:
    - Immediately upon email or platform notification
@@ -1094,7 +1094,7 @@ Vendor represents and warrants that:
 
 This Vendor Agreement is prepared in accordance with Nigerian law and is intended to be binding upon Vendor's acceptance. Vendoh reserves the right to update this Agreement as the Platform evolves.
 
-For questions regarding this Agreement, contact: **legal@vendoh.ng**
+For questions regarding this Agreement, contact: **legal@vendoh.io**
 
 ---
 

@@ -424,7 +424,7 @@ We implement industry-standard security measures to protect your personal data f
 
 ## 10. Your Rights Under NDPR and NDPA
 
-You have the following rights regarding your personal data. To exercise these rights, contact our Data Protection Officer at dpo@vendoh.com or through the settings in your Vendoh account:
+You have the following rights regarding your personal data. To exercise these rights, contact our Data Protection Officer at dpo@vendoh.io or through the settings in your Vendoh account:
 
 ### 10.1 Right of Access
 - You have the right to obtain confirmation of whether we process your personal data
@@ -495,7 +495,7 @@ You have the following rights regarding your personal data. To exercise these ri
 
 ### 10.10 How to Exercise Your Rights
 To exercise any of the above rights:
-1. Submit a written request to our Data Protection Officer at dpo@vendoh.com
+1. Submit a written request to our Data Protection Officer at dpo@vendoh.io
 2. Include your name, email, phone, and a clear description of your request
 3. Provide any relevant supporting documentation
 4. We will respond within 30 days
@@ -511,7 +511,7 @@ Vendoh is **not intended for children under 18 years of age**. We do not knowing
 - We do not offer services to children under 18
 - Service providers (vendors) must be at least 18 years old
 - Parents or guardians should not allow children to use Vendoh
-- If you believe a child's data has been collected, please contact us immediately at privacy@vendoh.com
+- If you believe a child's data has been collected, please contact us immediately at privacy@vendoh.io
 
 ---
 
@@ -662,13 +662,13 @@ For questions, concerns, or requests regarding this Privacy Policy and your pers
 
 ### 17.1 Data Protection Officer
 - **Name:** [DPO Name]
-- **Email:** dpo@vendoh.com
+- **Email:** dpo@vendoh.io
 - **Phone:** [Phone Number]
 - **Address:** Vendoh Limited, Lagos, Nigeria
 - **Response Time:** 30 days for data subject rights requests; 7-10 business days for inquiries
 
 ### 17.2 Privacy Inquiries
-- **Email:** privacy@vendoh.com
+- **Email:** privacy@vendoh.io
 - **In-App Support:** Use the "Help" or "Contact Us" feature in the Vendoh app
 - **Mailing Address:** Vendoh Limited, Lagos, Nigeria
 
