@@ -66,6 +66,43 @@ const POSTS = [
     gradient: "from-[#DC2626] to-vendoh-orange",
     emoji: "\u{1F389}",
   },
+  {
+    tag: "Origin Story",
+    title:
+      "From Food Vendor Naija to Vendoh: A Seven-Year Journey to Reimagine Africa's Service Economy",
+    desc: "In 2019, I recorded a 1-minute video about a food delivery app. Seven years later, that idea became a voice-powered marketplace for 321+ services. This is how it happened.",
+    read: "10 min read",
+    author: "Alex Nwoko",
+    gradient: "from-[#1A0E2E] to-vendoh-plum-400",
+    emoji: "\u{1F331}",
+  },
+  {
+    tag: "Origin Story",
+    title:
+      "Then vs. Now: How a 2019 Food Delivery App Became Nigeria's Voice-Powered Service Marketplace",
+    desc: "A side-by-side look at Food Vendor Naija's original concept and what Vendoh has become — what changed, what stayed the same, and why the evolution matters.",
+    read: "7 min read",
+    gradient: "from-vendoh-orange to-[#DC2626]",
+    emoji: "\u{1F504}",
+  },
+  {
+    tag: "Founder Perspective",
+    title:
+      "Why a GIS Expert Built Nigeria's Next Marketplace",
+    desc: "Most marketplace founders come from business or engineering. I came from maps. Here's why a geospatial background is Vendoh's secret advantage.",
+    read: "8 min read",
+    gradient: "from-[#0D9488] to-vendoh-blue",
+    emoji: "\u{1F30D}",
+  },
+  {
+    tag: "Market Insight",
+    title:
+      "Built from the Streets: How Nigeria's Informal Economy Inspired Vendoh",
+    desc: "From mama-put stalls to voice-powered AI — the story of how Nigeria's 65%-of-GDP informal service economy shaped every design decision in Vendoh.",
+    read: "9 min read",
+    gradient: "from-vendoh-plum-400 to-[#1A0E2E]",
+    emoji: "\u{1F3D8}\u{FE0F}",
+  },
 ];
 
 export function BlogContent() {

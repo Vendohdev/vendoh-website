@@ -10,9 +10,9 @@ import { Mic } from "lucide-react";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 
 const STATS = [
-  { value: "13", label: "Service Categories" },
-  { value: "321+", label: "Service Options" },
-  { value: "AI", label: "Voice-Powered Search" },
+  { value: "321+", label: "Services Available" },
+  { value: "5km", label: "Radius Matching" },
+  { value: "AI", label: "Voice-Powered" },
   { value: "2026", label: "Launching Soon" },
 ];
 
@@ -42,18 +42,27 @@ export function Hero() {
               </div>
             </ScrollReveal>
 
-            {/* Headline */}
+            {/* Brand Tagline */}
             <ScrollReveal delay={0.08}>
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight">
-                <TypingEffect />
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-foreground">
+                All your <span className="text-vendoh-orange">vendors</span> and{" "}
+                <span className="text-vendoh-blue">customers</span>{" "}
+                <span className="gradient-text">in one place.</span>
               </h1>
             </ScrollReveal>
 
+            {/* Voice search demo */}
+            <ScrollReveal delay={0.14}>
+              <div className="mt-6 text-2xl sm:text-3xl font-semibold leading-snug text-text-secondary/80">
+                <TypingEffect />
+              </div>
+            </ScrollReveal>
+
             {/* Subheadline */}
-            <ScrollReveal delay={0.16}>
-              <p className="mt-7 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-xl">
-                Nigeria&apos;s first voice-powered service marketplace — coming soon.
-                Find verified vendors near you with just a voice command.
+            <ScrollReveal delay={0.20}>
+              <p className="mt-5 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-xl">
+                Nigeria&apos;s first voice-powered service marketplace. Find verified
+                vendors near you — or get discovered by clients who need your skills.
               </p>
             </ScrollReveal>
 
@@ -72,24 +81,24 @@ export function Hero() {
               <div className="absolute -top-12 -right-12 w-80 h-80 bg-gradient-to-br from-vendoh-plum-200/25 to-vendoh-blue/10 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute top-1/3 -left-16 w-48 h-48 bg-gradient-to-tr from-vendoh-orange-200/20 to-transparent rounded-full blur-2xl pointer-events-none" />
 
-              {/* Phone frame */}
+              {/* Dual phone mockup — Explore + Dashboard */}
               <motion.div
-                className="relative w-[300px] sm:w-[340px] phone-glow phone-3d"
+                className="relative w-[340px] sm:w-[420px] lg:w-[480px]"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               >
                 <Image
-                  src="/screenshots/home-screen.png"
-                  alt="Vendoh App — Home Screen"
-                  width={680}
-                  height={1200}
-                  className="w-full h-auto rounded-2xl"
+                  src="/screenshots/explore-dashboard-combo.png"
+                  alt="Vendoh App — Client Explore and Vendor Dashboard"
+                  width={960}
+                  height={900}
+                  className="w-full h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
                   priority
                 />
               </motion.div>
 
-              {/* Floating card — active vendors */}
+              {/* Floating card — launch countdown */}
               <motion.div
                 className="absolute -left-6 sm:-left-10 bottom-28 glass-card rounded-2xl shadow-xl px-5 py-3.5"
                 initial={{ x: -30, opacity: 0 }}
@@ -97,15 +106,15 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.9, ease: "easeOut" }}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-vendoh-orange animate-pulse" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-sm font-semibold text-foreground">
-                    Join the waitlist
+                    Launching 2026
                   </span>
                 </div>
-                <p className="text-xs text-text-tertiary mt-0.5">Be first to know when we launch</p>
+                <p className="text-xs text-text-tertiary mt-0.5">Join the waitlist for early access</p>
               </motion.div>
 
-              {/* Floating card — rating */}
+              {/* Floating card — dual role */}
               <motion.div
                 className="absolute -right-2 sm:-right-6 top-20 glass-card rounded-2xl shadow-xl px-5 py-3.5"
                 initial={{ x: 30, opacity: 0 }}
@@ -113,10 +122,11 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 1.1, ease: "easeOut" }}
               >
                 <div className="flex items-center gap-1.5">
-                  <span className="text-amber-400 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                  <span className="text-sm font-semibold text-foreground">4.8</span>
+                  <span className="text-vendoh-blue font-bold text-sm">Client</span>
+                  <span className="text-text-tertiary text-xs">&amp;</span>
+                  <span className="text-vendoh-orange font-bold text-sm">Vendor</span>
                 </div>
-                <p className="text-xs text-text-tertiary mt-0.5">target vendor quality</p>
+                <p className="text-xs text-text-tertiary mt-0.5">Switch roles anytime</p>
               </motion.div>
             </div>
           </ScrollReveal>

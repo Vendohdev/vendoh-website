@@ -26,11 +26,11 @@ export function DownloadCTA() {
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
-              Be the first to experience Vendoh
+              Don&apos;t miss the launch
             </h2>
             <p className="mt-5 text-lg text-white/75 max-w-lg mx-auto">
-              Join our waitlist and get early access when we launch.
-              Home services, beauty, food, events, and more — all voice-powered.
+              Founding members get priority access, early vendor verification,
+              and exclusive launch perks. Spots are limited.
             </p>
           </ScrollReveal>
 

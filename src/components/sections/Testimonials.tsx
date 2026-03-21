@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 const TESTIMONIALS = [
   {
     name: "Ngozi O.",
-    role: "Beta Tester, Lagos",
-    text: "The voice search is incredibly smooth. I described what I needed in Pidgin and it understood perfectly. This is going to change how Nigerians find service providers.",
+    role: "Waitlist Member, Lekki",
+    text: "Last December I needed a makeup artist for owambe — spent 3 days asking on WhatsApp groups. With Vendoh I'll just say what I need and get matched instantly. Game changer.",
     rating: 5,
     avatar: "N",
     color: "bg-vendoh-blue",
@@ -16,15 +16,15 @@ const TESTIMONIALS = [
   {
     name: "Emeka K.",
     role: "Founding Vendor, Surulere",
-    text: "I've been waiting for something like this. A platform that actually helps artisans get discovered by people nearby — not just big companies. Signed up the moment I heard about it.",
+    text: "I'm a tiler and I lose jobs to guys who know people, not because they're better. Vendoh lets my ratings and work speak for itself — no more begging for referrals.",
     rating: 5,
     avatar: "E",
     color: "bg-vendoh-orange",
   },
   {
     name: "Fatima A.",
-    role: "Early Access, Abuja",
-    text: "The design is clean and the three-tier verification system gives me confidence. Knowing vendors will be vetted before I book them is exactly what we need.",
+    role: "Waitlist Member, Abuja",
+    text: "I've been scammed twice by 'recommended' cleaners. The verification system means I can trust who I'm booking. Plus the escrow — you only pay when satisfied.",
     rating: 5,
     avatar: "F",
     color: "bg-emerald-500",

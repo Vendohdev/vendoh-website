@@ -1,6 +1,6 @@
 "use client";
 
-import { Users, Wallet, Award, ArrowRight } from "lucide-react";
+import { Users, Wallet, Award, ArrowRight, TrendingUp } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -8,20 +8,26 @@ import { motion } from "framer-motion";
 const BENEFITS = [
   {
     icon: Users,
-    title: "Get discovered by nearby clients",
-    description: "Clients within 5km find you automatically. No cold calls.",
+    title: "Clients find you — no cold calls",
+    description: "Nearby clients within 5km are matched to you automatically based on your services, ratings, and availability.",
   },
   {
     icon: Wallet,
-    title: "Secure payments, fast payouts",
+    title: "Get paid securely, same-day",
     description:
-      "Money held in escrow. Released to you on completion. T+1 bank settlement.",
+      "Escrow-protected payments. Money released on job completion. Direct to your bank account.",
   },
   {
     icon: Award,
-    title: "Build your reputation",
+    title: "Earn your verified badge",
     description:
-      "Verified badges, ratings, and reviews. Stand out from the crowd.",
+      "3-tier verification system. Build trust with real ratings. Stand out from unverified competition.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Grow from side hustle to business",
+    description:
+      "Track your earnings, manage bookings, and build a client base — all from your phone.",
   },
 ];
 
@@ -45,11 +51,11 @@ export function ForVendors() {
                 For Vendors
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight">
-                Turn your skills into daily bookings
+                Your skills deserve more customers
               </h2>
               <p className="mt-5 text-lg text-white/75 leading-relaxed max-w-lg">
-                We bring the bookings. You bring the service. Be among the
-                first vendors to grow your business on Vendoh.
+                Stop depending on word-of-mouth alone. Vendoh connects you directly
+                with clients who need your services — right in your area.
               </p>
             </ScrollReveal>
 
