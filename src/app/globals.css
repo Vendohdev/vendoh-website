@@ -2,10 +2,10 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  /* Grape Plum — primary brand */
-  --color-vendoh-blue: #6B4A8A;
-  --color-vendoh-blue-dark: #553A70;
-  --color-vendoh-blue-light: #F0EAFF;
+  /* Vendoh Purple — anchored on logo badge #6354B8 */
+  --color-vendoh-blue: #6354B8;
+  --color-vendoh-blue-dark: #4A419A;
+  --color-vendoh-blue-light: #F0EAFC;
   --color-vendoh-blue-50: #F7F4FF;
   --color-vendoh-plum-100: #E0D1F0;
   --color-vendoh-plum-200: #C9ADE3;
@@ -13,7 +13,7 @@
   --color-vendoh-plum-400: #9B6DC4;
   --color-vendoh-plum-500: #8250B0;
 
-  /* Powder Orange — accent */
+  /* Powder Orange — accent (vendor color, untouched) */
   --color-vendoh-orange: #F07D4A;
   --color-vendoh-orange-dark: #D4612F;
   --color-vendoh-orange-light: #FFF3EB;
@@ -26,9 +26,9 @@
   --color-surface: #F8F7FC;
   --color-elevated: #FFFFFF;
 
-  /* Text — higher contrast */
-  --color-foreground: #1A0E2E;
-  --color-text-secondary: #4A3660;
+  /* Text — brand-aligned, lighter than the old near-black */
+  --color-foreground: #2A1F5C;
+  --color-text-secondary: #4A419A;
   --color-text-tertiary: #8878A0;
 
   /* Status */
@@ -66,13 +66,13 @@ html {
 
 /* Phone mockup premium shadow */
 .phone-glow {
-  filter: drop-shadow(0 20px 60px rgba(107, 74, 138, 0.18))
+  filter: drop-shadow(0 20px 60px rgba(99, 84, 184, 0.18))
           drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
 }
 
-/* Accent text utility — solid dusty purple (no gradient) */
+/* Accent text utility — solid brand purple (no gradient) */
 .gradient-text {
-  color: #6B4A8A;
+  color: #6354B8;
 }
 
 /* Glass card — enhanced glassmorphism */
@@ -81,7 +81,7 @@ html {
   backdrop-filter: blur(24px) saturate(1.4);
   -webkit-backdrop-filter: blur(24px) saturate(1.4);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 24px rgba(107, 74, 138, 0.06),
+  box-shadow: 0 4px 24px rgba(99, 84, 184, 0.06),
               0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
@@ -105,7 +105,7 @@ html {
   left: 10%;
   right: 10%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(107, 74, 138, 0.25), rgba(240, 125, 74, 0.18), transparent);
+  background: linear-gradient(90deg, transparent, rgba(99, 84, 184, 0.25), rgba(240, 125, 74, 0.18), transparent);
 }
 
 /* Marquee animations for PopularServices */

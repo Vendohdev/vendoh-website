@@ -29,19 +29,33 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#BEA5D4]/95 backdrop-blur-xl shadow-[0_2px_8px_rgba(139,106,168,0.25)] border-b border-[#BEA5D4]/20"
-          : "bg-[#BEA5D4]"
+          ? "bg-[#A69DF1]/95 backdrop-blur-xl shadow-[0_2px_8px_rgba(107,92,231,0.25)] border-b border-[#A69DF1]/20"
+          : "bg-[#A69DF1]"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 relative z-10">
+          <Link
+            href="/"
+            aria-label="Vendoh home"
+            className="flex items-center gap-2.5 relative z-10"
+          >
             <Image
-              src="/logos/vendoh_purple_w_logo.png"
-              alt="Vendoh"
-              width={110}
-              height={34}
+              src="/logos/vendoh-logo-main.png"
+              alt=""
+              width={40}
+              height={40}
               priority
+              sizes="40px"
+              className="rounded-[9px] shadow-[0_1px_2px_rgba(61,32,82,0.25)]"
+            />
+            <Image
+              src="/logos/vendoh-wordmark-white.png"
+              alt="Vendoh"
+              width={135}
+              height={44}
+              priority
+              sizes="135px"
             />
           </Link>
 
@@ -51,7 +65,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-bold text-[#3D2052] hover:text-[#3D2052]/70 transition-colors rounded-lg hover:bg-white/10"
+                  className="px-4 py-2 text-sm font-bold text-white hover:text-white/80 transition-colors rounded-lg hover:bg-white/10"
                 >
                   {link.label}
                 </Link>
@@ -59,7 +73,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-bold text-[#3D2052] hover:text-[#3D2052]/70 transition-colors rounded-lg hover:bg-white/10"
+                  className="px-4 py-2 text-sm font-bold text-white hover:text-white/80 transition-colors rounded-lg hover:bg-white/10"
                 >
                   {link.label}
                 </a>

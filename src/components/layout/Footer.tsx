@@ -24,7 +24,7 @@ const FOOTER_LINKS = {
 const SOCIALS = [
   {
     name: "X (Twitter)",
-    href: "#",
+    href: "https://x.com/Vendoh_HQ",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -72,31 +72,46 @@ const CITIES = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#1A0E2E] text-white">
+    <footer className="bg-[#2A1F5C] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         {/* Main Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Image
-              src="/logos/vendoh_purple_w_logo.png"
-              alt="Vendoh"
-              width={100}
-              height={31}
-              className="brightness-150"
-            />
-            <p className="mt-5 text-sm text-gray-400 leading-relaxed max-w-xs">
+            <Link
+              href="/"
+              aria-label="Vendoh home"
+              className="inline-flex items-center gap-2.5 -ml-[11px]"
+            >
+              <Image
+                src="/logos/vendoh-logo-white.svg"
+                alt=""
+                width={60}
+                height={60}
+                sizes="60px"
+              />
+              <Image
+                src="/logos/vendoh-wordmark-white.png"
+                alt="Vendoh"
+                width={166}
+                height={54}
+                sizes="166px"
+              />
+            </Link>
+            <p className="mt-1 text-sm text-gray-400 leading-relaxed max-w-xs">
               Nigeria&apos;s first voice-powered service marketplace.
               Coming soon to Lagos, Abuja, and more.
             </p>
             {/* Social Icons */}
             <div className="mt-6 flex gap-3">
-              {SOCIALS.map((social) => (
+              {SOCIALS.filter((s) => s.href !== "#").map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-                  aria-label={social.name}
+                  aria-label={`Vendoh on ${social.name}`}
                 >
                   {social.icon}
                 </a>
@@ -128,14 +143,14 @@ export function Footer() {
 
         {/* Cities */}
         <div className="mt-14 pt-8 border-t border-white/8">
-          <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-3">
+          <p className="text-xs text-white font-bold uppercase tracking-wider mb-3">
             Launching in
           </p>
           <div className="flex flex-wrap gap-2">
             {CITIES.map((city) => (
               <span
                 key={city}
-                className="text-xs text-gray-400 bg-white/5 rounded-full px-3.5 py-1.5 border border-white/5"
+                className="text-xs font-bold text-white bg-white/5 rounded-full px-3.5 py-1.5 border border-white/5"
               >
                 {city}
               </span>

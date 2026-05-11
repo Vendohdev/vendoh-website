@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Careers at Vendoh — Join the Team",
     description:
       "We're hiring soon. Explore roles and join our talent waitlist.",
-    url: "https://vendoh.io/careers",
+    url: "https://www.vendoh.io/careers",
   },
 };
 

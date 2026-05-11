@@ -52,7 +52,7 @@ export function VoiceOrb({ size = 80 }: { size?: number }) {
           marginTop: -coreSize / 2,
           marginLeft: -coreSize / 2,
           background:
-            "linear-gradient(135deg, #6B4A8A 0%, #A687C4 35%, #FF9A6C 70%, #F07D4A 100%)",
+            "linear-gradient(135deg, #6354B8 0%, #A687C4 35%, #FF9A6C 70%, #F07D4A 100%)",
           boxShadow:
             "0 0 24px rgba(107,74,138,0.35), 0 0 48px rgba(240,125,74,0.15), inset 0 -2px 6px rgba(0,0,0,0.1)",
         }}

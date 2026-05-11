@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "About Vendoh — Empowering Nigeria's Service Economy",
     description:
       "Learn about our mission to empower vendors and elevate Nigeria's service sector.",
-    url: "https://vendoh.io/about",
+    url: "https://www.vendoh.io/about",
   },
 };
 

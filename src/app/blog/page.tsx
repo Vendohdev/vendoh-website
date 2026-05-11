@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Vendoh Journal — Stories from Africa's Service Economy",
     description:
       "Insights and stories from the team building Nigeria's service marketplace.",
-    url: "https://vendoh.io/blog",
+    url: "https://www.vendoh.io/blog",
   },
 };
 

@@ -6,25 +6,25 @@ const ROW_1 = [
   { name: "Owambe Makeup", emoji: "💄", gradient: "from-[#F07D4A] to-[#FF8C52]" },
   { name: "Jollof Rice Catering", emoji: "🍚", gradient: "from-[#8250B0] to-[#9B6DC4]" },
   { name: "Verified Nannies", emoji: "👶", gradient: "from-[#D4612F] to-[#F07D4A]" },
-  { name: "AC Repair", emoji: "❄️", gradient: "from-[#6B4A8A] to-[#8250B0]" },
+  { name: "AC Repair", emoji: "❄️", gradient: "from-[#6354B8] to-[#8250B0]" },
   { name: "House Cleaning", emoji: "🧹", gradient: "from-[#FF8C52] to-[#FFA366]" },
   { name: "Wedding Planner", emoji: "💒", gradient: "from-[#9B6DC4] to-[#B08AD4]" },
   { name: "Mobile Mechanic", emoji: "🔧", gradient: "from-[#F07D4A] to-[#D4612F]" },
-  { name: "Private Chef", emoji: "👨‍🍳", gradient: "from-[#553A70] to-[#6B4A8A]" },
+  { name: "Private Chef", emoji: "👨‍🍳", gradient: "from-[#4A419A] to-[#6354B8]" },
   { name: "Generator Repair", emoji: "⚡", gradient: "from-[#FF8C52] to-[#F07D4A]" },
-  { name: "Home Painting", emoji: "🎨", gradient: "from-[#8250B0] to-[#6B4A8A]" },
+  { name: "Home Painting", emoji: "🎨", gradient: "from-[#8250B0] to-[#6354B8]" },
 ];
 
 const ROW_2 = [
-  { name: "Delivery Agents", emoji: "📦", gradient: "from-[#6B4A8A] to-[#553A70]" },
+  { name: "Delivery Agents", emoji: "📦", gradient: "from-[#6354B8] to-[#4A419A]" },
   { name: "Barber on Demand", emoji: "💈", gradient: "from-[#F07D4A] to-[#FF8C52]" },
   { name: "Ankara Tailor", emoji: "🧵", gradient: "from-[#9B6DC4] to-[#8250B0]" },
   { name: "Nannies on Demand", emoji: "🍼", gradient: "from-[#D4612F] to-[#F07D4A]" },
   { name: "Plumber", emoji: "🔩", gradient: "from-[#8250B0] to-[#9B6DC4]" },
   { name: "Electrician", emoji: "💡", gradient: "from-[#FF8C52] to-[#FFA366]" },
-  { name: "Makeup at Home", emoji: "✨", gradient: "from-[#6B4A8A] to-[#8250B0]" },
+  { name: "Makeup at Home", emoji: "✨", gradient: "from-[#6354B8] to-[#8250B0]" },
   { name: "Event DJ", emoji: "🎧", gradient: "from-[#F07D4A] to-[#D4612F]" },
-  { name: "Fumigation", emoji: "🛡️", gradient: "from-[#553A70] to-[#6B4A8A]" },
+  { name: "Fumigation", emoji: "🛡️", gradient: "from-[#4A419A] to-[#6354B8]" },
   { name: "Tiling Expert", emoji: "🏠", gradient: "from-[#9B6DC4] to-[#B08AD4]" },
 ];
 

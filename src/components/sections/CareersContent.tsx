@@ -32,7 +32,7 @@ const ROLES = [
     icon: Code2,
     title: "Chief Technology Officer (CTO)",
     type: "Full-time \u00b7 Remote / Lagos",
-    desc: "Own the technical vision. Lead architecture decisions across React Native, Supabase, and our voice AI pipeline. Build the engineering team from the ground up.",
+    desc: "Own the technical vision. Lead architecture decisions across mobile, backend, and our voice AI pipeline. Build the engineering team from the ground up.",
   },
   {
     icon: Megaphone,
@@ -50,7 +50,7 @@ const ROLES = [
     icon: Briefcase,
     title: "Junior Developer",
     type: "Full-time \u00b7 Remote / Lagos",
-    desc: "Ship features in React Native and TypeScript. Work directly with the CTO on the mobile app, voice AI integration, and Supabase backend.",
+    desc: "Ship features on the mobile app and backend. Work directly with the CTO on the product, voice AI integration, and platform infrastructure.",
   },
   {
     icon: Palette,
