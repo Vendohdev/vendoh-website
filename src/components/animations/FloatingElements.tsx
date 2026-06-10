@@ -1,6 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 import {
   Scissors,
   Wrench,
@@ -8,76 +15,95 @@ import {
   Zap,
   Sparkles,
   Car,
-  Baby,
   SprayCan,
 } from "lucide-react";
 
-const FLOAT_ITEMS = [
+type FloatItemSpec = {
+  icon: React.ElementType;
+  label: string;
+  color: string;
+  shadow: string;
+  size: number;
+  position: string;
+  delay: number;
+  duration: number;
+  rotate: number;
+  /** Parallax depth — higher moves more with the cursor (feels closer) */
+  depth: number;
+};
+
+const FLOAT_ITEMS: FloatItemSpec[] = [
   {
     icon: Scissors,
     label: "Beauty",
-    color: "from-vendoh-orange/80 to-vendoh-orange-400/80",
-    shadow: "rgba(240,125,74,0.3)",
+    color: "from-vendoh-orange/85 to-vendoh-orange-400/85",
+    shadow: "rgba(240,125,74,0.35)",
     size: 88,
     position: "top-[12%] left-[5%]",
     delay: 0,
     duration: 6,
     rotate: -12,
+    depth: 1.4,
   },
   {
     icon: Wrench,
     label: "Repairs",
-    color: "from-vendoh-blue/80 to-vendoh-plum-400/80",
-    shadow: "rgba(107,74,138,0.3)",
+    color: "from-vendoh-blue/85 to-vendoh-plum-400/85",
+    shadow: "rgba(107,74,138,0.35)",
     size: 80,
     position: "top-[8%] right-[12%]",
     delay: 1.2,
     duration: 7,
     rotate: 15,
+    depth: 1.0,
   },
   {
     icon: ChefHat,
     label: "Food",
-    color: "from-vendoh-orange-400/80 to-vendoh-orange-300/80",
-    shadow: "rgba(255,154,108,0.3)",
+    color: "from-vendoh-orange-400/85 to-vendoh-orange-300/85",
+    shadow: "rgba(255,154,108,0.35)",
     size: 76,
     position: "bottom-[28%] left-[2%]",
     delay: 0.8,
     duration: 5.5,
     rotate: -8,
+    depth: 0.7,
   },
   {
     icon: Zap,
     label: "Electric",
-    color: "from-vendoh-orange-300/80 to-vendoh-orange-200/80",
-    shadow: "rgba(255,163,102,0.3)",
+    color: "from-vendoh-orange-300/85 to-vendoh-orange-200/85",
+    shadow: "rgba(255,163,102,0.35)",
     size: 72,
     position: "top-[35%] left-[8%]",
     delay: 2,
     duration: 6.5,
     rotate: 20,
+    depth: 1.2,
   },
   {
     icon: Car,
     label: "Auto",
-    color: "from-vendoh-plum-400/80 to-vendoh-plum-300/80",
-    shadow: "rgba(166,135,196,0.3)",
+    color: "from-vendoh-plum-400/85 to-vendoh-plum-300/85",
+    shadow: "rgba(166,135,196,0.35)",
     size: 72,
     position: "bottom-[18%] right-[8%]",
     delay: 1.5,
     duration: 7.5,
     rotate: -18,
+    depth: 0.9,
   },
   {
     icon: SprayCan,
     label: "Cleaning",
-    color: "from-vendoh-plum-300/80 to-vendoh-plum-200/80",
-    shadow: "rgba(176,138,212,0.3)",
+    color: "from-vendoh-plum-300/85 to-vendoh-plum-200/85",
+    shadow: "rgba(176,138,212,0.35)",
     size: 68,
     position: "top-[55%] right-[3%]",
     delay: 0.5,
     duration: 6,
     rotate: 10,
+    depth: 1.6,
   },
 ];
 
@@ -90,6 +116,7 @@ const ORBS = [
     blur: "blur-3xl",
     delay: 0,
     duration: 8,
+    depth: 0.35,
   },
   {
     size: 240,
@@ -98,6 +125,7 @@ const ORBS = [
     blur: "blur-2xl",
     delay: 1.5,
     duration: 9,
+    depth: 0.5,
   },
   {
     size: 160,
@@ -106,76 +134,139 @@ const ORBS = [
     blur: "blur-xl",
     delay: 3,
     duration: 7,
+    depth: 0.65,
   },
 ];
 
-export function FloatingElements() {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {/* Glass orbs — large blurred gradient spheres for depth */}
-      {ORBS.map((orb, i) => (
-        <motion.div
-          key={`orb-${i}`}
-          className={`absolute ${orb.position} rounded-full ${orb.color} ${orb.blur}`}
-          style={{ width: orb.size, height: orb.size }}
-          animate={{
-            y: [0, -15, 0, 12, 0],
-            x: [0, 8, 0, -6, 0],
-            scale: [1, 1.05, 1, 0.97, 1],
-          }}
-          transition={{
-            duration: orb.duration,
-            repeat: Infinity,
-            delay: orb.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+const PARALLAX_RANGE = 26; // px of travel at depth 1.0
 
-      {/* Floating service icons — glassmorphic 3D cards */}
-      {FLOAT_ITEMS.map((item, i) => (
-        <motion.div
-          key={item.label}
-          className={`absolute ${item.position} hidden lg:flex`}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8 + item.delay * 0.3, duration: 0.6 }}
+function ParallaxLayer({
+  springX,
+  springY,
+  depth,
+  className,
+  children,
+}: {
+  springX: MotionValue<number>;
+  springY: MotionValue<number>;
+  depth: number;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const x = useTransform(springX, (v) => v * PARALLAX_RANGE * depth);
+  const y = useTransform(springY, (v) => v * PARALLAX_RANGE * depth);
+  return (
+    <motion.div className={className} style={{ x, y }}>
+      {children}
+    </motion.div>
+  );
+}
+
+export function FloatingElements() {
+  // Normalised cursor position (-1..1), spring-smoothed for weight
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 45, damping: 18, mass: 0.6 });
+  const springY = useSpring(mouseY, { stiffness: 45, damping: 18, mass: 0.6 });
+
+  useEffect(() => {
+    const fine = window.matchMedia("(pointer: fine)").matches;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduced) return;
+    const onMove = (e: PointerEvent) => {
+      mouseX.set((e.clientX / window.innerWidth) * 2 - 1);
+      mouseY.set((e.clientY / window.innerHeight) * 2 - 1);
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => window.removeEventListener("pointermove", onMove);
+  }, [mouseX, mouseY]);
+
+  return (
+    <div
+      className="absolute inset-0 pointer-events-none overflow-hidden"
+      style={{ perspective: 1000 }}
+    >
+      {/* Glass orbs — far layer, drifts gently against the cursor */}
+      {ORBS.map((orb, i) => (
+        <ParallaxLayer
+          key={`orb-${i}`}
+          springX={springX}
+          springY={springY}
+          depth={-orb.depth}
+          className={`absolute ${orb.position}`}
         >
           <motion.div
-            className="relative"
+            className={`rounded-full ${orb.color} ${orb.blur}`}
+            style={{ width: orb.size, height: orb.size }}
             animate={{
-              y: [0, -18, 0, 14, 0],
-              rotate: [item.rotate, item.rotate + 3, item.rotate, item.rotate - 2, item.rotate],
+              y: [0, -15, 0, 12, 0],
+              x: [0, 8, 0, -6, 0],
+              scale: [1, 1.05, 1, 0.97, 1],
             }}
             transition={{
-              duration: item.duration,
+              duration: orb.duration,
               repeat: Infinity,
+              delay: orb.delay,
               ease: "easeInOut",
-              delay: item.delay,
             }}
+          />
+        </ParallaxLayer>
+      ))}
+
+      {/* Floating service icons — near layer, follows the cursor in 3D */}
+      {FLOAT_ITEMS.map((item) => (
+        <ParallaxLayer
+          key={item.label}
+          springX={springX}
+          springY={springY}
+          depth={item.depth}
+          className={`absolute ${item.position} hidden lg:block`}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.8 + item.delay * 0.3, duration: 0.6 }}
           >
-            {/* 3D shadow layer */}
-            <div
-              className="absolute inset-0 rounded-2xl opacity-40 translate-y-2 blur-md"
-              style={{ background: item.shadow }}
-            />
-            {/* Glass card */}
-            <div
-              className={`relative flex items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} backdrop-blur-sm border border-white/30 shadow-lg`}
-              style={{
-                width: item.size,
-                height: item.size,
-                transform: `perspective(600px) rotateX(5deg) rotateY(${item.rotate > 0 ? -5 : 5}deg)`,
+            <motion.div
+              className="relative"
+              animate={{
+                y: [0, -18, 0, 14, 0],
+                rotate: [item.rotate, item.rotate + 3, item.rotate, item.rotate - 2, item.rotate],
+              }}
+              transition={{
+                duration: item.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: item.delay,
               }}
             >
-              <item.icon
-                size={item.size * 0.45}
-                className="text-white drop-shadow-sm"
-                strokeWidth={1.8}
+              {/* Grounded shadow — sells the depth */}
+              <div
+                className="absolute inset-0 rounded-2xl opacity-45 translate-y-3 scale-90 blur-lg"
+                style={{ background: item.shadow }}
               />
-            </div>
+              {/* Glass card with specular highlight */}
+              <div
+                className={`relative flex items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} backdrop-blur-sm border border-white/40 shadow-lg overflow-hidden`}
+                style={{
+                  width: item.size,
+                  height: item.size,
+                  transform: `perspective(600px) rotateX(8deg) rotateY(${item.rotate > 0 ? -8 : 8}deg)`,
+                }}
+              >
+                {/* Top specular sheen */}
+                <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/35 to-transparent" />
+                {/* Inner rim light */}
+                <div className="absolute inset-0 rounded-2xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-2px_6px_rgba(0,0,0,0.15)]" />
+                <item.icon
+                  size={item.size * 0.45}
+                  className="relative text-white drop-shadow-[0_2px_3px_rgba(0,0,0,0.25)]"
+                  strokeWidth={1.8}
+                />
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </ParallaxLayer>
       ))}
 
       {/* Sparkle accents */}

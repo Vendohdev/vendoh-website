@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Bagel_Fat_One } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileCTA } from "@/components/layout/MobileCTA";
 import { organizationGraph } from "@/lib/schema";
 
 const inter = Inter({
@@ -141,9 +143,14 @@ export default function RootLayout({
         >
           {JSON.stringify(organizationGraph)}
         </Script>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
+        <MobileCTA />
+        <Analytics />
       </body>
     </html>
   );

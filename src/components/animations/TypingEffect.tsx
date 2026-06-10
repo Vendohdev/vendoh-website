@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 const PHRASES = [
   "I need a plumber in Lekki",
   "find me a makeup artist for Saturday",
+  "abeg, who fit fix generator for Yaba?",
   "who can fix my AC today?",
-  "I need a private chef for my dinner party",
+  "I need a nanny for weekends, in Surulere",
   "find a reliable electrician nearby",
 ];
 

@@ -20,19 +20,19 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const CATEGORIES = [
-  { icon: Scissors, name: "Beauty & Grooming", image: "/categories/beauty-grooming.jpg", gradient: "from-vendoh-orange to-vendoh-orange-400" },
-  { icon: Wrench, name: "Home Services", image: "/categories/home-services.jpg", gradient: "from-vendoh-blue to-vendoh-plum-400" },
-  { icon: Hammer, name: "Artisans", image: "/categories/artisans.jpg", gradient: "from-vendoh-orange-dark to-vendoh-orange" },
-  { icon: Car, name: "Auto & Transport", image: "/categories/auto-transport.jpg", gradient: "from-vendoh-blue-dark to-vendoh-blue" },
-  { icon: SprayCan, name: "Cleaning", image: "/categories/cleaning.jpg", gradient: "from-teal-500 to-teal-400" },
-  { icon: ChefHat, name: "Food & Catering", image: "/categories/food-catering.jpg", gradient: "from-vendoh-orange-400 to-vendoh-orange-300" },
-  { icon: PartyPopper, name: "Events & Lifestyle", image: "/categories/events-lifestyle.jpg", gradient: "from-vendoh-plum-400 to-vendoh-plum-300" },
-  { icon: Truck, name: "Logistics & Errands", image: "/categories/logistics-errands.jpg", gradient: "from-emerald-500 to-emerald-400" },
-  { icon: Baby, name: "Childcare", image: "/categories/childcare.jpg", gradient: "from-vendoh-orange to-vendoh-orange-300" },
-  { icon: GraduationCap, name: "Education & Lessons", image: "/categories/education-lessons.jpg", gradient: "from-vendoh-blue to-vendoh-plum-300" },
-  { icon: Shirt, name: "Fashion & Tailoring", image: "/categories/fashion-tailoring.jpg", gradient: "from-vendoh-plum-500 to-vendoh-plum-400" },
-  { icon: Briefcase, name: "Business Services", image: "/categories/business-services.jpg", gradient: "from-vendoh-plum-300 to-vendoh-plum-200" },
-  { icon: Heart, name: "Health & Wellness", image: "/categories/health-wellness.jpg", gradient: "from-vendoh-orange to-vendoh-plum-400" },
+  { icon: Scissors, name: "Beauty & Grooming", image: "/categories/beauty-grooming.webp", gradient: "from-vendoh-orange to-vendoh-orange-400" },
+  { icon: Wrench, name: "Home Services", image: "/categories/home-services.webp", gradient: "from-vendoh-blue to-vendoh-plum-400" },
+  { icon: Hammer, name: "Artisans", image: "/categories/artisans.webp", gradient: "from-vendoh-orange-dark to-vendoh-orange" },
+  { icon: Car, name: "Auto & Transport", image: "/categories/auto-transport.webp", gradient: "from-vendoh-blue-dark to-vendoh-blue" },
+  { icon: SprayCan, name: "Cleaning", image: "/categories/cleaning.webp", gradient: "from-teal-500 to-teal-400" },
+  { icon: ChefHat, name: "Food & Catering", image: "/categories/food-catering.webp", gradient: "from-vendoh-orange-400 to-vendoh-orange-300" },
+  { icon: PartyPopper, name: "Events & Lifestyle", image: "/categories/events-lifestyle.webp", gradient: "from-vendoh-plum-400 to-vendoh-plum-300" },
+  { icon: Truck, name: "Logistics & Errands", image: "/categories/logistics-errands.webp", gradient: "from-emerald-500 to-emerald-400" },
+  { icon: Baby, name: "Childcare", image: "/categories/childcare.webp", gradient: "from-vendoh-orange to-vendoh-orange-300" },
+  { icon: GraduationCap, name: "Education & Lessons", image: "/categories/education-lessons.webp", gradient: "from-vendoh-blue to-vendoh-plum-300" },
+  { icon: Shirt, name: "Fashion & Tailoring", image: "/categories/fashion-tailoring.webp", gradient: "from-vendoh-plum-500 to-vendoh-plum-400" },
+  { icon: Briefcase, name: "Business Services", image: "/categories/business-services.webp", gradient: "from-vendoh-plum-300 to-vendoh-plum-200" },
+  { icon: Heart, name: "Health & Wellness", image: "/categories/health-wellness.webp", gradient: "from-vendoh-orange to-vendoh-plum-400" },
 ];
 
 export function Categories() {

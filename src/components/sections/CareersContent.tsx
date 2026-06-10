@@ -106,18 +106,19 @@ export function CareersContent() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
-        <div className="absolute inset-0 bg-gradient-to-b from-vendoh-orange-light via-surface to-background" />
+      <section className="relative overflow-hidden bg-vendoh-ink pt-32 pb-20 sm:pt-40 sm:pb-24">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-vendoh-orange/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-vendoh-blue/25 rounded-full blur-3xl pointer-events-none" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-orange/10 px-4 py-1.5 text-lg font-extrabold text-vendoh-orange mb-6">
-              Hiring Soon
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+            <p className="text-sm font-extrabold text-vendoh-orange-300 uppercase tracking-wider mb-4">
+              Hiring soon
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
               Build the Future of{" "}
-              <span className="text-vendoh-orange">Service in Africa</span>
+              <span className="text-vendoh-orange-300">Service in Africa</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
               Vendoh is assembling a founding team of builders, operators, and
               dreamers who want to reshape how 200 million Nigerians find and
               deliver services.

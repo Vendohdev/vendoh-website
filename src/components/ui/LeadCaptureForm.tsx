@@ -4,6 +4,8 @@ import { useState, useRef, FormEvent } from "react";
 import { supabase } from "@/lib/supabase";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, Loader2, Upload, FileText, X } from "lucide-react";
+import { track } from "@vercel/analytics";
+import { ReferralShare } from "@/components/ui/ReferralShare";
 
 const COUNTRY_CODES = [
   { code: "+234", label: "\u{1F1F3}\u{1F1EC} Nigeria (+234)" },
@@ -41,6 +43,10 @@ export function LeadCaptureForm({
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("+234");
   const [interest, setInterest] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [area, setArea] = useState("");
+  const [excitedAbout, setExcitedAbout] = useState("");
+  const [featureConsent, setFeatureConsent] = useState(false);
   const [linkedin, setLinkedin] = useState("");
   const [portfolio, setPortfolio] = useState("");
   const [cvFile, setCvFile] = useState<File | null>(null);
@@ -98,6 +104,7 @@ export function LeadCaptureForm({
       }
 
       const phoneClean = phone.trim().replace(/^0+/, "");
+      const quote = excitedAbout.trim().slice(0, 280);
       const { error } = await supabase.from("website_leads").insert({
         email: email.trim().toLowerCase(),
         phone: phoneClean || null,
@@ -108,6 +115,14 @@ export function LeadCaptureForm({
           ...(cvUrl ? { cv_path: cvUrl } : {}),
           ...(linkedin.trim() ? { linkedin: linkedin.trim() } : {}),
           ...(portfolio.trim() ? { portfolio: portfolio.trim() } : {}),
+          ...(!isCareers
+            ? {
+                feature_consent: featureConsent,
+                ...(firstName.trim() ? { first_name: firstName.trim() } : {}),
+                ...(area.trim() ? { area: area.trim() } : {}),
+                ...(quote ? { excited_about: quote } : {}),
+              }
+            : {}),
         },
       });
 
@@ -118,6 +133,7 @@ export function LeadCaptureForm({
         }
         throw error;
       }
+      track("waitlist_signup", { role: interest || "unspecified", source });
       setStatus("success");
     } catch (err: unknown) {
       setStatus("error");
@@ -145,6 +161,7 @@ export function LeadCaptureForm({
             ? "We\u0027ll review your profile and reach out when positions open."
             : "We\u0027ll be in touch when Vendoh launches."}
         </p>
+        {!isCareers && <ReferralShare />}
       </motion.div>
     );
   }
@@ -159,6 +176,8 @@ export function LeadCaptureForm({
           if (status === "error") setStatus("idle");
         }}
         placeholder="Email address"
+        aria-label="Email address"
+        autoComplete="email"
         required
         className="w-full rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all"
       />
@@ -166,6 +185,7 @@ export function LeadCaptureForm({
         <select
           value={countryCode}
           onChange={(e) => setCountryCode(e.target.value)}
+          aria-label="Country dialling code"
           className="rounded-xl px-3 py-3.5 text-sm bg-white border border-border text-foreground outline-none focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 transition-all cursor-pointer w-[120px]"
         >
           {COUNTRY_CODES.map((c) => (
@@ -179,6 +199,8 @@ export function LeadCaptureForm({
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="Phone number"
+          aria-label="Phone number"
+          autoComplete="tel-national"
           pattern="[0-9]{7,11}"
           className="flex-1 rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all"
         />
@@ -187,6 +209,7 @@ export function LeadCaptureForm({
         <select
           value={interest}
           onChange={(e) => setInterest(e.target.value)}
+          aria-label="Your interest"
           className="w-full rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground outline-none focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 transition-all cursor-pointer"
         >
           <option value="">Select your interest...</option>
@@ -196,6 +219,62 @@ export function LeadCaptureForm({
             </option>
           ))}
         </select>
+      )}
+
+      {/* First name + Area — waitlist only, backs the feature-consent promise */}
+      {!isCareers && (
+        <div className="grid grid-cols-2 gap-2">
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="First name (optional)"
+            aria-label="First name (optional)"
+            autoComplete="given-name"
+            maxLength={60}
+            className="w-full min-w-0 rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all"
+          />
+          <input
+            type="text"
+            value={area}
+            onChange={(e) => setArea(e.target.value)}
+            placeholder="Area / City (optional)"
+            aria-label="Area or city (optional)"
+            autoComplete="address-level2"
+            maxLength={60}
+            className="w-full min-w-0 rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all"
+          />
+        </div>
+      )}
+
+      {/* Feature excitement — waitlist only, optional */}
+      {!isCareers && (
+        <div>
+          <textarea
+            value={excitedAbout}
+            onChange={(e) => setExcitedAbout(e.target.value)}
+            placeholder="What feature are you most excited about? (optional)"
+            aria-label="What feature are you most excited about?"
+            rows={2}
+            maxLength={280}
+            className="w-full rounded-xl px-4 py-3.5 text-sm bg-white border border-border text-foreground placeholder:text-text-tertiary focus:border-vendoh-blue focus:ring-2 focus:ring-vendoh-blue/15 outline-none transition-all resize-none"
+          />
+          <div aria-live="polite" className="mt-1 text-right text-[11px] tabular-nums text-text-tertiary">
+            {excitedAbout.length}/280
+          </div>
+          {excitedAbout.trim().length > 0 && (
+            <label className="flex items-start gap-2 mt-1 cursor-pointer text-xs leading-snug text-text-secondary">
+              <input
+                type="checkbox"
+                checked={featureConsent}
+                onChange={(e) => setFeatureConsent(e.target.checked)}
+                className="mt-0.5 accent-[#6354B8]"
+              />
+              You can feature my answer on the Vendoh site (first name and
+              area only).
+            </label>
+          )}
+        </div>
       )}
 
       {/* LinkedIn & Portfolio — careers only */}

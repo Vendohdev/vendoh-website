@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 import { Phone, Clock, AlertTriangle, ArrowDown } from "lucide-react";
 import Image from "next/image";
 
+const MARKET_STATS = [
+  { value: "41M+", label: "Informal businesses powering Nigeria" },
+  { value: "~60%", label: "Of Nigeria's GDP is informal" },
+  { value: "78%", label: "Of Nigerians send voice notes daily" },
+  { value: "120M+", label: "Smartphone users ready to connect" },
+];
+
 const PAIN_POINTS = [
   {
     icon: Phone,
@@ -35,11 +42,12 @@ export function ProblemSection() {
                 The problem
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight leading-[1.15]">
-                Finding reliable service providers in Nigeria shouldn&apos;t be this hard.
+                Finding a trusted plumber in Lagos still means a WhatsApp scavenger hunt.
               </h2>
               <p className="mt-5 text-lg text-text-secondary leading-relaxed max-w-lg">
-                Over 41 million informal businesses power Nigeria&apos;s economy — but
-                there&apos;s no trusted way to find, vet, and pay them.
+                Over 41 million informal businesses power roughly 60% of Nigeria&apos;s
+                economy — but there&apos;s still no trusted way to find, vet, and pay them.
+                We fix that with voice.
               </p>
             </ScrollReveal>
 
@@ -84,16 +92,35 @@ export function ProblemSection() {
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 <Image
-                  src="/mockups/midnight-plumbing.png"
-                  alt="The struggle of finding reliable vendors in Nigeria"
+                  src="/mockups/verified-plumber.webp"
+                  alt="A verified Vendoh plumber fixing a bathroom leak while the family relaxes"
                   width={600}
-                  height={450}
+                  height={600}
                   className="w-full h-auto"
                 />
               </motion.div>
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Market reality — why voice, why now */}
+        <ScrollReveal delay={0.2}>
+          <div className="mt-16 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {MARKET_STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl bg-surface border border-border-light px-5 py-6 text-center"
+              >
+                <div className="text-2xl sm:text-3xl font-extrabold text-vendoh-blue tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-[13px] text-text-secondary mt-1.5 font-medium leading-snug">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

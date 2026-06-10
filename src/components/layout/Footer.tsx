@@ -3,15 +3,16 @@ import Image from "next/image";
 
 const FOOTER_LINKS = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "For Vendors", href: "#for-vendors" },
-    { label: "Service Categories", href: "#categories" },
-    { label: "Voice Search", href: "#how-it-works" },
+    { label: "Features", href: "/features" },
+    { label: "For Vendors", href: "/vendors" },
+    { label: "Service Categories", href: "/#categories" },
+    { label: "Voice Search", href: "/features#voice-search" },
   ],
   Company: [
     { label: "About Vendoh", href: "/about" },
     { label: "Careers", href: "/careers" },
     { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "mailto:hello@vendoh.io" },
   ],
   Legal: [
@@ -158,10 +159,28 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Trust signals */}
+        <div className="mt-8 pt-8 border-t border-white/8">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 text-xs text-gray-400">
+            <span className="inline-flex items-center gap-1.5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-emerald-400" aria-hidden><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Escrow payments held by CBN-licensed partners
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-emerald-400" aria-hidden><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              NDPR-aligned data protection
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-emerald-400" aria-hidden><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              Vendors verified with NIN/BVN identity checks
+            </span>
+          </div>
+        </div>
+
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-white/8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
-            &copy; 2025 Vendoh Limited &nbsp;|&nbsp; Registered in Nigeria
+            &copy; 2026 Vendoh Limited &nbsp;|&nbsp; Incorporated in Nigeria (CAC)
           </p>
           <div className="flex gap-5">
             <Link

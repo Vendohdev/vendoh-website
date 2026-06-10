@@ -2,6 +2,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
+  /* Deep Indigo — header/footer frame, anchored on brand ink */
+  --color-vendoh-ink: #2A1F5C;
+
   /* Vendoh Purple — anchored on logo badge #6354B8 */
   --color-vendoh-blue: #6354B8;
   --color-vendoh-blue-dark: #4A419A;
@@ -50,9 +53,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Brand text selection — deep indigo instead of stock browser blue */
+::selection {
+  background: #6354B8;
+  color: #FFFFFF;
+}
+::-moz-selection {
+  background: #6354B8;
+  color: #FFFFFF;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 17px;
+}
+
+/* Anchored sections clear the fixed header */
+section[id],
+[id="waitlist"] {
+  scroll-margin-top: 5rem;
+}
+
+/* Visible keyboard focus, brand-tinted */
+:focus-visible {
+  outline: 2px solid #6354B8;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link — hidden until keyboard-focused */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  background: #2A1F5C;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .typing-cursor {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 @keyframes blink {
@@ -108,16 +171,67 @@ html {
   background: linear-gradient(90deg, transparent, rgba(99, 84, 184, 0.25), rgba(240, 125, 74, 0.18), transparent);
 }
 
+/* Aurora backdrop — soft drifting gradient mesh for hero depth */
+.aurora {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(38% 45% at 18% 25%, rgba(99, 84, 184, 0.14) 0%, transparent 70%),
+    radial-gradient(32% 38% at 82% 18%, rgba(176, 138, 212, 0.16) 0%, transparent 70%),
+    radial-gradient(36% 42% at 75% 75%, rgba(240, 125, 74, 0.10) 0%, transparent 70%),
+    radial-gradient(28% 34% at 30% 85%, rgba(99, 84, 184, 0.08) 0%, transparent 70%);
+  animation: aurora-drift 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(2.5%, -2%, 0) scale(1.06); }
+  100% { transform: translate3d(-2%, 2.5%, 0) scale(1.02); }
+}
+
+/* Film grain — subtle analogue texture over hero surfaces */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* CTA shine — light sweep across primary buttons on hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.btn-shine:hover::after {
+  animation: btn-shine-sweep 0.9s ease;
+}
+@keyframes btn-shine-sweep {
+  to { left: 130%; }
+}
+
 /* Marquee animations for PopularServices */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 55s linear infinite;
 }
 .animate-marquee-reverse {
-  animation: marquee 35s linear infinite reverse;
+  animation: marquee 62s linear infinite reverse;
 }
 .marquee-track:hover .animate-marquee,
 .marquee-track:hover .animate-marquee-reverse {

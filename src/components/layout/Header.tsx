@@ -3,21 +3,28 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#features", label: "Features" },
   { href: "/#categories", label: "Services" },
+  { href: "/features", label: "Features" },
+  { href: "/vendors", label: "For Vendors" },
   { href: "/about", label: "About" },
   { href: "/careers", label: "Careers" },
   { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    !href.includes("#") && (pathname === href || pathname.startsWith(`${href}/`));
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -29,8 +36,8 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#A69DF1]/95 backdrop-blur-xl shadow-[0_2px_8px_rgba(107,92,231,0.25)] border-b border-[#A69DF1]/20"
-          : "bg-[#A69DF1]"
+          ? "bg-vendoh-ink/95 backdrop-blur-xl shadow-[0_2px_12px_rgba(42,31,92,0.35)] border-b border-white/10"
+          : "bg-vendoh-ink"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -41,13 +48,12 @@ export function Header() {
             className="flex items-center gap-2.5 relative z-10"
           >
             <Image
-              src="/logos/vendoh-logo-main.png"
+              src="/logos/vendoh-logo-white.svg"
               alt=""
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               priority
-              sizes="40px"
-              className="rounded-[9px] shadow-[0_1px_2px_rgba(61,32,82,0.25)]"
+              sizes="48px"
             />
             <Image
               src="/logos/vendoh-wordmark-white.png"
@@ -59,32 +65,27 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1">
-            {NAV_LINKS.map((link) =>
-              link.href.startsWith("/") ? (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-sm font-bold text-white hover:text-white/80 transition-colors rounded-lg hover:bg-white/10"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-sm font-bold text-white hover:text-white/80 transition-colors rounded-lg hover:bg-white/10"
-                >
-                  {link.label}
-                </a>
-              )
-            )}
+          <nav className="hidden lg:flex items-center gap-1">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`px-4 py-2 text-sm font-bold transition-colors rounded-lg ${
+                  isActive(link.href)
+                    ? "text-white bg-white/15"
+                    : "text-white hover:text-white/80 hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="/#waitlist"
-              className="inline-flex items-center justify-center rounded-full bg-[#FF9A6C] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(255,154,108,0.35)] hover:shadow-[0_4px_16px_rgba(255,154,108,0.45)] hover:bg-[#FF8A58] transition-all duration-200 hover:-translate-y-px"
+              className="btn-shine inline-flex items-center justify-center rounded-full bg-[#FF9A6C] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(255,154,108,0.35)] hover:shadow-[0_4px_16px_rgba(255,154,108,0.45)] hover:bg-[#FF8A58] transition-all duration-200 hover:-translate-y-px"
             >
               Get Early Access
             </a>
@@ -92,7 +93,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-white relative z-10"
+            className="lg:hidden p-2 text-white relative z-10"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -107,39 +108,28 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-border-light"
+            className="lg:hidden overflow-hidden bg-vendoh-ink/98 backdrop-blur-xl border-t border-white/10"
           >
             <div className="px-5 py-5 space-y-1">
-              {NAV_LINKS.map((link, i) =>
-                link.href.startsWith("/") ? (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="block text-base font-medium text-foreground hover:text-vendoh-blue py-3 px-3 rounded-lg hover:bg-vendoh-blue-light/50 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ) : (
-                  <motion.a
-                    key={link.href}
+              {NAV_LINKS.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="block text-base font-medium text-foreground hover:text-vendoh-blue py-3 px-3 rounded-lg hover:bg-vendoh-blue-light/50 transition-colors"
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    className={`block text-base font-medium text-white py-3 px-3 rounded-lg transition-colors ${
+                      isActive(link.href) ? "bg-white/15" : "hover:bg-white/10"
+                    }`}
                   >
                     {link.label}
-                  </motion.a>
-                )
-              )}
+                  </Link>
+                </motion.div>
+              ))}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

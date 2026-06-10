@@ -1,6 +1,6 @@
 "use client";
 
-import { Users, Wallet, Award, ArrowRight, TrendingUp } from "lucide-react";
+import { Users, Wallet, ArrowRight, TrendingUp } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,25 +9,14 @@ const BENEFITS = [
   {
     icon: Users,
     title: "Clients find you — no cold calls",
-    description: "Nearby clients within 5km are matched to you automatically based on your services, ratings, and availability.",
+    description:
+      "Nearby clients within 5km are matched to you by your services, ratings, and availability.",
   },
   {
     icon: Wallet,
     title: "Get paid securely, same-day",
     description:
-      "Escrow-protected payments. Money released on job completion. Direct to your bank account.",
-  },
-  {
-    icon: Award,
-    title: "Earn your verified badge",
-    description:
-      "3-tier verification system. Build trust with real ratings. Stand out from unverified competition.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Grow from side hustle to business",
-    description:
-      "Track your earnings, manage bookings, and build a client base — all from your phone.",
+      "Escrow-protected payments, released on job completion, straight to your bank account.",
   },
 ];
 
@@ -79,13 +68,36 @@ export function ForVendors() {
               ))}
             </div>
 
-            <ScrollReveal delay={0.35}>
-              <div className="mt-10">
+            <ScrollReveal delay={0.3}>
+              <a
+                href="/vendors#earnings"
+                className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white/12 border border-white/20 backdrop-blur-sm px-5 py-4 hover:bg-white/20 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                  <TrendingUp size={20} className="text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm font-bold text-white">
+                    See what your skills could earn
+                  </p>
+                  <p className="text-xs text-white/65">
+                    Try the earnings estimator — pick your trade, slide your prices
+                  </p>
+                </div>
+                <ArrowRight
+                  size={18}
+                  className="text-white/70 group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.4}>
+              <div className="mt-6">
                 <a
-                  href="#waitlist"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-vendoh-orange shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.15)] hover:-translate-y-px transition-all duration-200"
+                  href="/vendors"
+                  className="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-vendoh-orange shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.15)] hover:-translate-y-px transition-all duration-200"
                 >
-                  Join as a Vendor
+                  Become a Founding Vendor
                   <ArrowRight size={16} />
                 </a>
               </div>

@@ -1,38 +1,71 @@
 "use client";
 
+import Image from "next/image";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
-const ROW_1 = [
-  { name: "Owambe Makeup", emoji: "💄", gradient: "from-[#F07D4A] to-[#FF8C52]" },
-  { name: "Jollof Rice Catering", emoji: "🍚", gradient: "from-[#8250B0] to-[#9B6DC4]" },
-  { name: "Verified Nannies", emoji: "👶", gradient: "from-[#D4612F] to-[#F07D4A]" },
-  { name: "AC Repair", emoji: "❄️", gradient: "from-[#6354B8] to-[#8250B0]" },
-  { name: "House Cleaning", emoji: "🧹", gradient: "from-[#FF8C52] to-[#FFA366]" },
-  { name: "Wedding Planner", emoji: "💒", gradient: "from-[#9B6DC4] to-[#B08AD4]" },
-  { name: "Mobile Mechanic", emoji: "🔧", gradient: "from-[#F07D4A] to-[#D4612F]" },
-  { name: "Private Chef", emoji: "👨‍🍳", gradient: "from-[#4A419A] to-[#6354B8]" },
-  { name: "Generator Repair", emoji: "⚡", gradient: "from-[#FF8C52] to-[#F07D4A]" },
-  { name: "Home Painting", emoji: "🎨", gradient: "from-[#8250B0] to-[#6354B8]" },
+type Service = {
+  name: string;
+  category: string;
+  image: string;
+};
+
+const ROW_1: Service[] = [
+  { name: "Owambe Glam Makeup", category: "Beauty & Grooming", image: "/services/owambe_glam_makeup.webp" },
+  { name: "Party Jollof Catering", category: "Food & Catering", image: "/services/party_jollof_50_guests.webp" },
+  { name: "Verified Nannies", category: "Childcare", image: "/services/daytime_nanny_8hrs.webp" },
+  { name: "AC Repair", category: "Home Services", image: "/services/ac_repair_fault_diagnosis.webp" },
+  { name: "Weekly Deep Clean", category: "Cleaning", image: "/services/weekly_deep_clean.webp" },
+  { name: "Wedding Planning", category: "Events & Lifestyle", image: "/services/full_wedding_planning.webp" },
+  { name: "Mobile Mechanic", category: "Auto & Transport", image: "/services/brake_pad_replacement.webp" },
+  { name: "Private Chef", category: "Food & Catering", image: "/services/dinner_party_chef_8_guests.webp" },
+  { name: "Gele Tying at Home", category: "Beauty & Grooming", image: "/services/gele_tying_home_service.webp" },
+  { name: "Home Painting", category: "Artisans", image: "/services/room_painting_12x12ft.webp" },
 ];
 
-const ROW_2 = [
-  { name: "Delivery Agents", emoji: "📦", gradient: "from-[#6354B8] to-[#4A419A]" },
-  { name: "Barber on Demand", emoji: "💈", gradient: "from-[#F07D4A] to-[#FF8C52]" },
-  { name: "Ankara Tailor", emoji: "🧵", gradient: "from-[#9B6DC4] to-[#8250B0]" },
-  { name: "Nannies on Demand", emoji: "🍼", gradient: "from-[#D4612F] to-[#F07D4A]" },
-  { name: "Plumber", emoji: "🔩", gradient: "from-[#8250B0] to-[#9B6DC4]" },
-  { name: "Electrician", emoji: "💡", gradient: "from-[#FF8C52] to-[#FFA366]" },
-  { name: "Makeup at Home", emoji: "✨", gradient: "from-[#6354B8] to-[#8250B0]" },
-  { name: "Event DJ", emoji: "🎧", gradient: "from-[#F07D4A] to-[#D4612F]" },
-  { name: "Fumigation", emoji: "🛡️", gradient: "from-[#4A419A] to-[#6354B8]" },
-  { name: "Tiling Expert", emoji: "🏠", gradient: "from-[#9B6DC4] to-[#B08AD4]" },
+const ROW_2: Service[] = [
+  { name: "Same-City Delivery", category: "Logistics & Errands", image: "/services/same_city_delivery.webp" },
+  { name: "Barber on Demand", category: "Beauty & Grooming", image: "/services/skin_fade.webp" },
+  { name: "Agbada Tailoring", category: "Fashion & Tailoring", image: "/services/agbada_sewing.webp" },
+  { name: "Plumbing Repairs", category: "Home Services", image: "/services/pipe_leak_fix.webp" },
+  { name: "Electrician", category: "Artisans", image: "/services/construction_wiring.webp" },
+  { name: "Bridal Makeup at Home", category: "Beauty & Grooming", image: "/services/bridal_makeup_home_service.webp" },
+  { name: "Fumigation", category: "Cleaning", image: "/services/fumigation_3_bedroom.webp" },
+  { name: "Floor Tiling", category: "Artisans", image: "/services/floor_tiling.webp" },
+  { name: "Cornrow Braids", category: "Beauty & Grooming", image: "/services/cornrow_braids.webp" },
+  { name: "Event Photography", category: "Events & Lifestyle", image: "/services/event_coverage_full_day.webp" },
 ];
+
+function ServiceCard({ service }: { service: Service }) {
+  return (
+    <div className="group relative w-56 sm:w-64 shrink-0 rounded-2xl overflow-hidden shadow-[0_4px_16px_rgba(42,31,92,0.12)] hover:shadow-[0_8px_28px_rgba(42,31,92,0.22)] transition-shadow duration-300 cursor-default select-none">
+      <div className="relative aspect-[4/3]">
+        <Image
+          src={service.image}
+          alt={service.name}
+          fill
+          sizes="(max-width: 640px) 224px, 256px"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* Readability gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-vendoh-ink/85 via-vendoh-ink/15 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-white/70">
+            {service.category}
+          </p>
+          <p className="text-sm sm:text-base font-bold text-white leading-snug mt-0.5">
+            {service.name}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function MarqueeRow({
   items,
   reverse = false,
 }: {
-  items: typeof ROW_1;
+  items: Service[];
   reverse?: boolean;
 }) {
   const doubled = [...items, ...items];
@@ -44,17 +77,9 @@ function MarqueeRow({
       <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
       <div className={reverse ? "animate-marquee-reverse" : "animate-marquee"}>
-        <div className="flex gap-4 w-max">
-          {doubled.map((item, i) => (
-            <div
-              key={`${item.name}-${i}`}
-              className={`inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r ${item.gradient} px-6 py-3 shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 cursor-default select-none`}
-            >
-              <span className="text-lg">{item.emoji}</span>
-              <span className="text-sm sm:text-base font-semibold text-white whitespace-nowrap">
-                {item.name}
-              </span>
-            </div>
+        <div className="flex gap-5 w-max px-2 py-1">
+          {doubled.map((service, i) => (
+            <ServiceCard key={`${service.name}-${i}`} service={service} />
           ))}
         </div>
       </div>
@@ -75,7 +100,8 @@ export function PopularServices() {
               What Nigerians are searching for
             </h2>
             <p className="mt-4 text-lg text-text-secondary max-w-xl mx-auto">
-              Popular services on Vendoh — from owambe makeup to generator repair
+              Real services, real vendors — from owambe glam to same-day repairs,
+              321+ services across 13 categories.
             </p>
           </div>
         </ScrollReveal>

@@ -4,6 +4,7 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Features } from "@/components/sections/Features";
 import { Categories } from "@/components/sections/Categories";
+import { Personas } from "@/components/sections/Personas";
 import { ForVendors } from "@/components/sections/ForVendors";
 import { Trust } from "@/components/sections/Trust";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -18,6 +19,7 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <Categories />
+      <Personas />
       <ForVendors />
       <Trust />
       <Testimonials />

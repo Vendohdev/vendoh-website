@@ -120,7 +120,7 @@ export function Trust() {
         <ScrollReveal delay={0.3}>
           <div className="mt-14 text-center">
             <p className="text-xs text-text-tertiary font-medium">
-              &copy; 2025 Vendoh Limited &nbsp;|&nbsp; Registered in Nigeria
+              &copy; 2026 Vendoh Limited &nbsp;|&nbsp; Registered in Nigeria
             </p>
           </div>
         </ScrollReveal>

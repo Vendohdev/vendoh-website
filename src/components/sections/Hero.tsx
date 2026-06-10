@@ -1,6 +1,7 @@
 "use client";
 
 import { TypingEffect } from "@/components/animations/TypingEffect";
+import { TiltCard } from "@/components/animations/TiltCard";
 import { VoiceOrb } from "@/components/animations/VoiceOrb";
 import { WaitlistForm } from "@/components/ui/WaitlistForm";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -11,18 +12,18 @@ import { FloatingElements } from "@/components/animations/FloatingElements";
 
 const STATS = [
   { value: "321+", label: "Services Available" },
-  { value: "5km", label: "Radius Matching" },
-  { value: "AI", label: "Voice-Powered" },
-  { value: "2026", label: "Launching Soon" },
+  { value: "13", label: "Service Categories" },
+  { value: "5km", label: "Nearby Matching" },
+  { value: "EN + Pidgin", label: "Voice Languages" },
 ];
 
 export function Hero() {
   return (
-    <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Clean white base with subtle brand accent blushes */}
+    <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 overflow-hidden grain">
+      {/* Clean white base with drifting aurora mesh */}
       <div className="absolute inset-0 bg-white pointer-events-none" />
+      <div className="aurora" />
       <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-vendoh-blue-50/40 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-vendoh-orange-light/20 to-transparent pointer-events-none" />
 
       {/* Floating 3D service elements */}
       <FloatingElements />
@@ -81,21 +82,23 @@ export function Hero() {
               <div className="absolute -top-12 -right-12 w-80 h-80 bg-gradient-to-br from-vendoh-plum-200/25 to-vendoh-blue/10 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute top-1/3 -left-16 w-48 h-48 bg-gradient-to-tr from-vendoh-orange-200/20 to-transparent rounded-full blur-2xl pointer-events-none" />
 
-              {/* Dual phone mockup — Explore + Dashboard */}
+              {/* Dual phone mockup — Explore + Dashboard, tilts toward the cursor */}
               <motion.div
                 className="relative w-[340px] sm:w-[420px] lg:w-[480px]"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               >
-                <Image
-                  src="/screenshots/explore-dashboard-combo.png"
-                  alt="Vendoh App — Client Explore and Vendor Dashboard"
-                  width={960}
-                  height={900}
-                  className="w-full h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
-                  priority
-                />
+                <TiltCard max={6} glare={false} className="rounded-3xl">
+                  <Image
+                    src="/screenshots/explore-dashboard-combo.png"
+                    alt="Vendoh App — Client Explore and Vendor Dashboard"
+                    width={960}
+                    height={900}
+                    className="w-full h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+                    priority
+                  />
+                </TiltCard>
               </motion.div>
 
               {/* Floating card — launch countdown */}

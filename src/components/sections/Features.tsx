@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Mic,
   ShieldCheck,
@@ -7,6 +8,7 @@ import {
   Radio,
   ArrowLeftRight,
   MapPinned,
+  ArrowRight,
 } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
@@ -16,7 +18,7 @@ const FEATURES = [
     icon: Mic,
     title: "Voice Search",
     description:
-      "Just speak. Vendoh understands English and Pidgin — find vendors without typing.",
+      "Say it how you'd say it — \"I need a plumber near Ikeja\" — in English or Pidgin. No typing, no keyword guessing.",
     gradient: "from-vendoh-blue to-vendoh-plum-400",
     bgLight: "bg-vendoh-blue-light",
   },
@@ -24,7 +26,7 @@ const FEATURES = [
     icon: ShieldCheck,
     title: "Verified Vendors",
     description:
-      "Three-tier verification: Basic, Verified, and Certified. Know who you're hiring.",
+      "Three-tier verification — Basic, Verified, and Certified — backed by real ID checks. Know exactly who's coming to your door.",
     gradient: "from-emerald-500 to-green-400",
     bgLight: "bg-emerald-50",
   },
@@ -32,7 +34,7 @@ const FEATURES = [
     icon: CreditCard,
     title: "Secure Payments",
     description:
-      "Escrow protection on every booking. Your money is held safely until the job is done.",
+      "Escrow protection on every booking — your money is held safely and only released when the job is done. No more paying upfront and praying.",
     gradient: "from-vendoh-orange to-vendoh-orange-400",
     bgLight: "bg-vendoh-orange-light",
   },
@@ -48,7 +50,7 @@ const FEATURES = [
     icon: ArrowLeftRight,
     title: "Dual-Role Platform",
     description:
-      "Client today, vendor tomorrow. One app, both sides. Switch roles with a swipe.",
+      "The teacher who does makeup on weekends. The banker who caters events. One tap switches you between Client and Vendor.",
     gradient: "from-vendoh-orange to-vendoh-orange-300",
     bgLight: "bg-vendoh-orange-light",
   },
@@ -56,7 +58,7 @@ const FEATURES = [
     icon: MapPinned,
     title: "Nearby Matching",
     description:
-      "Find vendors within 5km of you. No more long waits or distant providers.",
+      "Matched with vendors within 5km — from Lekki to Surulere to Yaba. Less travel time, faster arrivals, hyperlocal trust.",
     gradient: "from-vendoh-blue to-vendoh-plum-300",
     bgLight: "bg-vendoh-blue-light",
   },
@@ -108,6 +110,17 @@ export function Features() {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal delay={0.2}>
+          <div className="mt-12 text-center">
+            <Link
+              href="/features"
+              className="inline-flex items-center gap-2 rounded-full border border-vendoh-blue/25 bg-vendoh-blue-50 px-7 py-3 text-sm font-semibold text-vendoh-blue hover:bg-vendoh-blue-light hover:gap-3 transition-all"
+            >
+              Explore all features in depth <ArrowRight size={16} />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
