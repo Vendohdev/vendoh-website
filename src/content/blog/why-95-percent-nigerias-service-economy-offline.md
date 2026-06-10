@@ -13,7 +13,7 @@ Nigeria has more than 120 million smartphone users. A Nigerian can now book a fl
 
 Nigeria's informal service economy employs roughly eighty percent of the workforce and accounts for about sixty percent of GDP. For all practical purposes, it is *the* economy. And yet it runs almost entirely on word of mouth, WhatsApp voice notes, Instagram DMs, and personal referrals. That stack is invisible to search engines, difficult to verify, and almost impossible to scale. The reason is not that Nigerians are reluctant to adopt technology. It is that the technology on offer has never solved the problem that actually matters: trust.
 
-Every transaction in this economy is gated by a single question. Can I trust this person? WhatsApp cannot answer that question. It can surface a message history, but it cannot provide verified reviews, confirmed identity, or escrow-protected payment. That missing layer is why ninety-five percent of service transactions in Nigeria still happen offline, even on the same smartphones that are used for everything else.
+Every transaction in this economy is gated by a single question. Can I trust this person? WhatsApp cannot answer that question. It can surface a message history, but it cannot provide verified reviews, confirmed identity, or secure, accountable payment. That missing layer is why ninety-five percent of service transactions in Nigeria still happen offline, even on the same smartphones that are used for everything else.
 
 ## Why listicles and directories did not fix it
 
@@ -21,7 +21,7 @@ Nigeria has had service directories since 2014. Jiji, ConnectNigeria, VConnect, 
 
 1. **Verified identity.** Does this person exist, and is their name tied to a real NIN or BVN?
 2. **Verified reputation.** Have genuine clients paid them for genuine jobs, and what did those clients say afterwards?
-3. **Escrow.** If something goes wrong, can the client recover their money?
+3. **Payment accountability.** If something goes wrong, is there a record — and a process — to put it right?
 4. **A way to describe the job in plain language.** "I need someone to fix my AC because it is making that strange noise again, the one we had last harmattan" is how people actually think about the problem. Taxonomies like "AC repair → split unit → compressor fault" are not how people speak, and asking them to translate is asking them to do the marketplace's work.
 
 Directories solved the discovery problem and little else. The four requirements above are, collectively, the actual product.
@@ -37,7 +37,7 @@ A text search box requires the user to translate a real human problem into keywo
 Bringing Nigeria's service economy online requires four things, and they must be shipped together rather than in isolation:
 
 - **Verified identity at the vendor layer.** Real NIN and BVN checks, not self-claimed badges.
-- **Escrow by default.** Held by CBN-licensed payment partners and released only on client confirmation.
+- **Secure payments.** Processed by CBN-licensed payment providers, with prices agreed upfront and every transaction on record.
 - **Voice-native search.** Fluent in both English and Nigerian Pidgin, and treating a request like "I need someone to fix my generator in Surulere before Saturday" as a first-class query rather than an edge case.
 - **A reputation layer that compounds.** Every completed booking should make the next booking easier, for the vendor, for the client, and for the system as a whole.
 

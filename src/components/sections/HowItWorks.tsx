@@ -25,7 +25,7 @@ const STEPS = [
     icon: ShieldCheck,
     title: "Book & Pay",
     description:
-      "Secure escrow payments. Real-time tracking. Pay only when you're satisfied.",
+      "Transparent pricing agreed upfront. Secure payments. Real-time tracking from booking to completion.",
     gradient: "from-emerald-500 to-green-400",
     bg: "bg-emerald-50",
   },

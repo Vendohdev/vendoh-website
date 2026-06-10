@@ -23,7 +23,7 @@ export const organizationGraph = {
       },
       image: `${SITE_URL}/og-image.png`,
       description:
-        "Africa's first voice-powered service marketplace. Nigerian-founded, Africa-focused. Find verified plumbers, electricians, makeup artists, chefs, nannies, tailors and 300+ other services through natural-language voice search in English and Nigerian Pidgin. Escrow-protected bookings, three-tier vendor verification. Launching in Lagos, Abuja and Port Harcourt ahead of a planned expansion across West, East and Southern Africa.",
+        "Africa's first voice-powered service marketplace. Nigerian-founded, Africa-focused. Find verified plumbers, electricians, makeup artists, chefs, nannies, tailors and 300+ other services through natural-language voice search in English and Nigerian Pidgin. Three-tier vendor verification and secure in-app bookings. Launching in Lagos, Abuja and Port Harcourt ahead of a planned expansion across West, East and Southern Africa.",
       foundingDate: "2026",
       founder: {
         "@type": "Person",
@@ -146,7 +146,7 @@ export const organizationGraph = {
           name: "What is Vendoh?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Vendoh is Africa's first voice-powered service marketplace, Nigerian-founded and Africa-focused. Clients speak naturally in English or Nigerian Pidgin to find and book verified local vendors, including plumbers, electricians, makeup artists, chefs, nannies and more, with escrow-protected payments.",
+            text: "Vendoh is Africa's first voice-powered service marketplace, Nigerian-founded and Africa-focused. Clients speak naturally in English or Nigerian Pidgin to find and book verified local vendors, including plumbers, electricians, makeup artists, chefs, nannies and more, with secure payments.",
           },
         },
         {
@@ -170,7 +170,7 @@ export const organizationGraph = {
           name: "Is payment on Vendoh safe?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. All payments are escrow-protected and held by CBN-licensed payment partners. Funds release to the vendor only after the client confirms job completion. Vendoh does not itself hold client funds.",
+            text: "Yes. Payments are processed by CBN-licensed payment providers, with prices agreed before you book and a full record of every transaction in the app. Vendors set the payment model that fits their service — for most services, you simply pay on completion.",
           },
         },
         {

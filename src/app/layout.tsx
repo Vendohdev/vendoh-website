@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     "voice-first marketplace",
     "voice AI marketplace",
     "AI-native service marketplace",
-    "escrow service marketplace",
     // African continental positioning
     "Africa service marketplace",
     "African service marketplace app",

@@ -6,7 +6,7 @@ import { track } from "@vercel/analytics";
 
 const SITE_URL = "https://www.vendoh.io";
 const SHARE_TEXT =
-  "I just joined the waitlist for Vendoh — Nigeria's first voice-powered service marketplace. Verified vendors, escrow payments, just say what you need. Join me:";
+  "I just joined the waitlist for Vendoh — Nigeria's first voice-powered service marketplace. Verified vendors, secure payments, just say what you need. Join me:";
 
 export function ReferralShare({ light = false }: { light?: boolean }) {
   const [copied, setCopied] = useState(false);

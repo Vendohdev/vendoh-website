@@ -27,7 +27,7 @@ const VOICES = [
     name: "Fatima A.",
     role: "Joining as a client",
     area: "Abuja",
-    text: "I've been scammed twice by 'recommended' cleaners. The verification system means I can trust who I'm booking. Plus the escrow — you only pay when satisfied.",
+    text: "I've been scammed twice by 'recommended' cleaners. The verification system means I can trust who I'm booking. Plus transparent pricing — no nasty surprises when the job is done.",
     avatar: "F",
     color: "bg-emerald-500",
     chip: "bg-emerald-50 text-emerald-600",

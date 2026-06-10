@@ -24,7 +24,7 @@ In this Agreement, the following terms shall have the meanings ascribed to them:
 - **"Account"** means the Vendor's registered account on the Vendoh Platform.
 - **"Client"** means any person or entity who engages Vendor's services through the Vendoh Platform.
 - **"Commission"** means the service fee charged by Vendoh and deducted from payments received by Vendor, calculated as a percentage of the Service Fee.
-- **"Escrow"** means the secure holding of Client payment by Vendoh's licensed payment service providers (OPay, Paystack, and Monnify) until Service completion and Client confirmation.
+- **"Escrow"** means the secure holding of Client payment by Vendoh's licensed payment service providers until Service completion and Client confirmation, **where and when Vendoh has enabled this feature for a given Booking or Service category**. Escrow-style protection may not be available for all Services or at launch; where it is not enabled, the Vendor's selected payment model applies (for many Services, payment on completion), and references to "Escrow" in this Agreement apply only to Escrow-enabled Bookings.
 - **"NIN"** means National Identification Number issued by the Nigeria Immigration Service.
 - **"Platform"** means the Vendoh mobile application, website, and associated systems through which Vendor may offer and provide services.
 - **"Pro Vendor"** means the optional premium subscription tier offering enhanced visibility and features.
@@ -268,7 +268,9 @@ Vendors enrolled in the Pro Vendor subscription shall receive a **reduced Commis
 
 **6.2 Escrow and Payment Processing**
 
-**6.2.1 Escrow Mechanism**
+**6.2.1 Escrow Mechanism (where enabled)**
+
+Escrow applies only to Bookings for which Vendoh has enabled Escrow-style payment protection. For all other Bookings, the payment model selected by the Vendor and displayed at Booking applies.
 
 (a) All Client payments for Services shall be held in Escrow by Vendoh until the Client confirms Service completion;
 

@@ -34,7 +34,7 @@ const FEATURES = [
     icon: CreditCard,
     title: "Secure Payments",
     description:
-      "Escrow protection on every booking — your money is held safely and only released when the job is done. No more paying upfront and praying.",
+      "Pay securely through the app at prices agreed upfront. Vendors set the payment model that fits their service — for most, you pay on completion.",
     gradient: "from-vendoh-orange to-vendoh-orange-400",
     bgLight: "bg-vendoh-orange-light",
   },

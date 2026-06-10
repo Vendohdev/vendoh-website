@@ -37,7 +37,7 @@ Two things.
 
 **The emotional load.** Building a product is a series of small hopes and small disappointments, and when there is nobody sitting next to you to share either, both get heavier than they should. I have had to get deliberate about calling a short list of friends, most of whom are not in tech, simply to hear a voice that is not speaking about Vendoh. That helps more than any productivity tool I have tried.
 
-**The regulatory surface area.** Running a marketplace with escrow, identity verification, voice data processing, and a commission model means you are subject to the NDPA, the FCCPA, the Cybercrimes Act, the CBN, and a handful of other acronyms. None of that is difficult in isolation; it is the *combination*, and the need to keep them consistent across the Terms, the Privacy Policy and the Vendor Agreement, that is expensive. I learned this the hard way.
+**The regulatory surface area.** Running a marketplace with secure payments, identity verification, voice data processing, and a commission model means you are subject to the NDPA, the FCCPA, the Cybercrimes Act, the CBN, and a handful of other acronyms. None of that is difficult in isolation; it is the *combination*, and the need to keep them consistent across the Terms, the Privacy Policy and the Vendor Agreement, that is expensive. I learned this the hard way.
 
 ## What I would tell someone considering it
 

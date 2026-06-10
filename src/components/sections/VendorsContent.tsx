@@ -44,7 +44,7 @@ const STEPS = [
   {
     icon: Wallet,
     title: "Get paid",
-    desc: "Escrow-protected payments released straight to your bank account when the client confirms the job.",
+    desc: "Secure payments straight to your bank account — you set the payment model that works for your service.",
   },
 ];
 
@@ -85,7 +85,7 @@ const FAQS = [
   },
   {
     q: "How do I get paid?",
-    a: "Clients pay into escrow when they book. The moment they confirm the job is complete, the money is released directly to your bank account. No chasing payments, no \"I'll send it later.\"",
+    a: "You set your own payment model — most vendors collect payment on completion of the service. Payments made through the app go directly to your bank account, with a clear record of every booking. No chasing payments, no \"I'll send it later.\"",
   },
   {
     q: "Can I be a client too?",

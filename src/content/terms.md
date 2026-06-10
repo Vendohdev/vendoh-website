@@ -20,7 +20,7 @@ In these Terms of Service ("Terms"), unless the context otherwise requires:
 - **"Client"** means any user of the Platform who requests services from Vendors through the Platform.
 - **"Commission"** means the service charge retained by Vendoh from the total Booking amount, calculated as a percentage of the Service Fee. Commission rates vary by service category (see Schedule A) and may be adjusted during promotional periods.
 - **"Dispute"** means any disagreement, complaint, or claim between a Client and Vendor relating to a Booking or the performance of Services.
-- **"Escrow"** means the secure holding of Client payment funds by Vendoh or its authorized payment partner pending completion of Services and release to the Vendor. Escrow is not a banking, deposit-taking, or financial savings service.
+- **"Escrow"** means the secure holding of Client payment funds by Vendoh's authorized payment partner pending completion of Services and release to the Vendor, **where and when Vendoh has enabled this feature for a given Booking or Service category**. Escrow-style payment protection may not be available for all Services or at launch; where it is not enabled, payment is collected per the payment model displayed at Booking (for many Services, payment on completion), and references to "Escrow" in these Terms apply only to Escrow-enabled Bookings. Escrow is not a banking, deposit-taking, or financial savings service.
 - **"FCCPA"** means the Federal Competition and Consumer Protection Act 2018.
 - **"NDPA"** means the Nigeria Data Protection Act 2023.
 - **"NDPC"** means the Nigeria Data Protection Commission, the regulatory authority for data protection in Nigeria.
@@ -289,9 +289,11 @@ After Service completion, Clients may optionally add a Tip to the Vendor via the
 
 ---
 
-## 6. ESCROW PAYMENT SYSTEM
+## 6. PAYMENTS AND PAYMENT PROTECTION
 
-### 6.1 How Escrow Works
+**Applicability.** This Section describes Vendoh's payment processing structure and the Escrow-style protection Vendoh may enable for eligible Bookings. **Escrow is not currently enabled for all Bookings.** Where Escrow is not enabled, payment is collected per the payment model displayed at the time of Booking (for many Services, payment upon Service completion), processed through the Platform via licensed Third-Party Payment Processors, and the fund-holding and release provisions of this Section do not apply.
+
+### 6.1 How Escrow Works (where enabled)
 
 Upon Client payment confirmation:
 

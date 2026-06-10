@@ -4,11 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "FAQ — Vendoh | Voice-Powered Service Marketplace",
   description:
-    "Frequently asked questions about Vendoh — how voice search works, how vendors are verified, how escrow payments protect you, and where Vendoh is launching.",
+    "Frequently asked questions about Vendoh — how voice search works, how vendors are verified, how payments work, and where Vendoh is launching.",
   openGraph: {
     title: "Vendoh FAQ — Everything you need to know",
     description:
-      "How voice search works, how vendors are verified, and how escrow keeps every booking safe.",
+      "How voice search works, how vendors are verified, and how secure payments keep every booking safe.",
     url: "https://www.vendoh.io/faq",
   },
 };
@@ -17,7 +17,7 @@ const FAQS = [
   {
     question: "What is Vendoh?",
     answer:
-      "Vendoh is Africa's first voice-powered service marketplace, Nigerian-founded and Africa-focused. Clients speak naturally in English or Nigerian Pidgin to find and book verified local vendors — plumbers, electricians, makeup artists, chefs, nannies and more — with escrow-protected payments.",
+      "Vendoh is Africa's first voice-powered service marketplace, Nigerian-founded and Africa-focused. Clients speak naturally in English or Nigerian Pidgin to find and book verified local vendors — plumbers, electricians, makeup artists, chefs, nannies and more — with secure payments.",
   },
   {
     question: "How does voice search work?",
@@ -37,7 +37,7 @@ const FAQS = [
   {
     question: "Is payment on Vendoh safe?",
     answer:
-      "Yes. All payments are escrow-protected and held by CBN-licensed payment partners. Funds release to the vendor only after you confirm the job is complete. No more paying upfront and hoping for the best.",
+      "Yes. Payments are processed by CBN-licensed payment providers, with prices agreed before you book and a full record of every transaction in the app. Vendors set the payment model that fits their service — for most services, you simply pay on completion.",
   },
   {
     question: "Can I be both a client and a vendor?",
@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: "How much does Vendoh cost?",
     answer:
-      "Vendoh is free to download and free to browse. You only pay for the services you book — and your payment is escrow-protected the whole way. Vendors keep the lion's share of every booking.",
+      "Vendoh is free to download and free to browse. You only pay for the services you book, at prices agreed upfront. Vendors keep the lion's share of every booking.",
   },
   {
     question: "When does Vendoh launch?",
@@ -80,7 +80,7 @@ export default function FAQPage() {
           </h1>
           <p className="mt-5 text-lg text-white/70 leading-relaxed">
             Everything you need to know about voice search, verification,
-            escrow payments, and the Vendoh launch.
+            secure payments, and the Vendoh launch.
           </p>
         </div>
       </section>

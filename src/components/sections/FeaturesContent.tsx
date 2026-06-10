@@ -66,16 +66,16 @@ const TIERS = [
   },
 ];
 
-const ESCROW_STEPS = [
+const PAYMENT_STEPS = [
   {
     step: "01",
-    title: "Book & pay",
-    desc: "You book a service and pay upfront — but the money doesn't go to the vendor yet.",
+    title: "Agree the price",
+    desc: "Clear, upfront pricing before you book — no haggling surprises when the job is done.",
   },
   {
     step: "02",
-    title: "Held in escrow",
-    desc: "Funds are held safely by CBN-licensed payment partners. Vendoh never holds your money itself.",
+    title: "Book in seconds",
+    desc: "Confirm your booking in the app and your vendor is notified instantly.",
   },
   {
     step: "03",
@@ -84,8 +84,8 @@ const ESCROW_STEPS = [
   },
   {
     step: "04",
-    title: "You confirm, vendor gets paid",
-    desc: "Only when you confirm the job is done to your satisfaction is the payment released.",
+    title: "Pay & rate",
+    desc: "Pay as agreed — vendors set the model that fits their service, and most are paid on completion. Then rate your experience.",
   },
 ];
 
@@ -145,7 +145,7 @@ export function FeaturesContent() {
             {[
               ["#voice-search", "Voice Search"],
               ["#verification", "Verification"],
-              ["#payments", "Escrow Payments"],
+              ["#payments", "Payments"],
               ["#tracking", "Tracking"],
               ["#dual-role", "Dual-Role"],
               ["#nearby", "Nearby Matching"],
@@ -269,7 +269,7 @@ export function FeaturesContent() {
         </div>
       </section>
 
-      {/* 3 — ESCROW PAYMENTS */}
+      {/* 3 — SECURE PAYMENTS */}
       <section id="payments" className="py-20 sm:py-28 section-glow">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto mb-14">
@@ -278,13 +278,13 @@ export function FeaturesContent() {
               No more paying upfront and praying
             </h2>
             <p className="mt-4 text-lg text-text-secondary">
-              Escrow protection on every single booking. Your money only moves
-              when the job is done — and you say so.
+              Transparent pricing and secure payments on every booking — for
+              most services, you simply pay when the job is done.
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {ESCROW_STEPS.map((s, i) => (
+            {PAYMENT_STEPS.map((s, i) => (
               <motion.div
                 key={s.step}
                 {...fadeUp}
@@ -298,7 +298,7 @@ export function FeaturesContent() {
                 <p className="mt-2 text-sm text-text-secondary leading-relaxed">
                   {s.desc}
                 </p>
-                {i < ESCROW_STEPS.length - 1 && (
+                {i < PAYMENT_STEPS.length - 1 && (
                   <ArrowRight
                     size={18}
                     className="hidden lg:block absolute top-1/2 -right-[21px] -translate-y-1/2 text-vendoh-plum-200"

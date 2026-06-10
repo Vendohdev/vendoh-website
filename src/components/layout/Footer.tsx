@@ -164,7 +164,7 @@ export function Footer() {
           <div className="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 text-xs text-gray-400">
             <span className="inline-flex items-center gap-1.5">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-emerald-400" aria-hidden><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Escrow payments held by CBN-licensed partners
+              Secure payments via CBN-licensed providers
             </span>
             <span className="inline-flex items-center gap-1.5">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-emerald-400" aria-hidden><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>

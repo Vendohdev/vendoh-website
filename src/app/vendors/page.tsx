@@ -4,7 +4,7 @@ import { VendorsContent } from "@/components/sections/VendorsContent";
 export const metadata: Metadata = {
   title: "For Vendors — Get Discovered, Get Booked, Get Paid",
   description:
-    "Join Vendoh as a vendor: get matched with clients within 5km, earn your verified badge, and get paid securely through escrow. Free to join — no signup fees, no monthly fees.",
+    "Join Vendoh as a vendor: get matched with clients within 5km, earn your verified badge, and get paid securely through the app. Free to join — no signup fees, no monthly fees.",
   alternates: {
     canonical: "/vendors",
   },

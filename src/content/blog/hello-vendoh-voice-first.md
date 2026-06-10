@@ -38,6 +38,6 @@ Three lessons, in order of importance:
 2. **Train for code-switching.** Real users mix languages inside a single query. A model that treats "send somebody wey sabi fix AC come my house" as malformed English has already lost the user, and possibly the market.
 3. **Build for the two-second ceiling.** The hardest engineering problem in voice is not accuracy. It is latency. If the system cannot respond within roughly two seconds, the user assumes they have not been heard, and the conversational illusion collapses immediately.
 
-Our aspiration is that voice will not remain merely a feature inside Vendoh. Over time, it will become central to the product itself. Every other pillar we are building, including escrow, verification, the dual-role economy, and the commission model, sits at the same level of priority as the voice-first experience, because none of them function in isolation. The voice-first experience is the core of what we are shipping, and every other decision we make is in service of it.
+Our aspiration is that voice will not remain merely a feature inside Vendoh. Over time, it will become central to the product itself. Every other pillar we are building, including secure payments, verification, the dual-role economy, and the commission model, sits at the same level of priority as the voice-first experience, because none of them function in isolation. The voice-first experience is the core of what we are shipping, and every other decision we make is in service of it.
 
 Hello, Vendoh.

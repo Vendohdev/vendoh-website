@@ -16,7 +16,7 @@ const BENEFITS = [
     icon: Wallet,
     title: "Get paid securely, same-day",
     description:
-      "Escrow-protected payments, released on job completion, straight to your bank account.",
+      "Secure payments straight to your bank account — you choose the model that fits your service.",
   },
 ];
 

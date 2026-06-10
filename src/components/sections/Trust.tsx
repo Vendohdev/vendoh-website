@@ -41,9 +41,9 @@ const TRUST_POINTS = [
   },
   {
     icon: Lock,
-    title: "Escrow-protected payments",
+    title: "Secure, transparent payments",
     description:
-      "Your payment is held securely until the service is completed to your satisfaction.",
+      "Prices agreed before you book, secure in-app payments, and a clear record of every transaction.",
   },
   {
     icon: Star,

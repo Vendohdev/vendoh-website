@@ -79,7 +79,7 @@ const VISION_PILLARS = [
   {
     icon: ShieldCheck,
     title: "Build Trust at Scale",
-    desc: "Our three-tier verification system and escrow payments create the trust layer the entire sector has been missing.",
+    desc: "Our three-tier verification system and secure, transparent payments create the trust layer the entire sector has been missing.",
   },
   {
     icon: Users,
@@ -288,8 +288,8 @@ export function AboutContent() {
               <p className="mt-7 text-text-secondary text-base sm:text-lg leading-relaxed">
                 That principle shows up everywhere in Vendoh: voice before
                 text for how Nigerians actually communicate, verification
-                anchored to national identity systems, escrow because trust
-                must be engineered — not assumed — and density in one
+                anchored to national identity systems, secure payments because
+                trust must be engineered — not assumed — and density in one
                 neighbourhood before breadth across a continent.
               </p>
             </motion.div>
