@@ -14,7 +14,10 @@ import {
   Check,
   Smartphone,
   ArrowLeftRight,
+  Users,
+  TrendingUp,
 } from "lucide-react";
+import { Starburst } from "@/components/animations/Doodles";
 import { WaitlistForm } from "@/components/ui/WaitlistForm";
 import { EarningsCalculator } from "@/components/ui/EarningsCalculator";
 
@@ -101,7 +104,7 @@ export function VendorsContent() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-vendoh-ink pt-32 pb-20 sm:pt-40 sm:pb-24">
+      <section className="relative overflow-hidden bg-[#3F2E6E] pt-32 pb-20 sm:pt-40 sm:pb-24">
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-vendoh-orange/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-vendoh-blue/25 rounded-full blur-3xl pointer-events-none" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -204,6 +207,78 @@ export function VendorsContent() {
         </div>
       </section>
 
+      {/* YOUR BUSINESS, ON YOUR PHONE — dashboard + core benefits */}
+      <section className="py-20 sm:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A6C] via-vendoh-orange to-[#D4612F]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.12),transparent_50%)]" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+            <div>
+              <motion.div {...fadeUp}>
+                <span className="text-lg font-extrabold uppercase tracking-wider text-white/60">
+                  Your business, in your pocket
+                </span>
+                <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-white leading-[1.1] tracking-tight">
+                  Run everything from one dashboard
+                </h2>
+              </motion.div>
+              <div className="mt-10 space-y-5">
+                {[
+                  {
+                    icon: Users,
+                    title: "Clients find you — no cold calls",
+                    desc: "Nearby clients within 5km are matched to you by your services, ratings, and availability.",
+                  },
+                  {
+                    icon: Wallet,
+                    title: "Get paid securely, same-day",
+                    desc: "Secure payments straight to your bank account — you choose the model that fits your service.",
+                  },
+                  {
+                    icon: Award,
+                    title: "Earn your verified badge",
+                    desc: "Three-tier verification and real ratings — stand out from unverified competition.",
+                  },
+                  {
+                    icon: TrendingUp,
+                    title: "Grow from side hustle to business",
+                    desc: "Track earnings, manage bookings, and build a client base — all from your phone.",
+                  },
+                ].map((benefit, i) => (
+                  <motion.div
+                    key={benefit.title}
+                    {...fadeUp}
+                    transition={{ ...fadeUp.transition, delay: i * 0.08 }}
+                    className="flex gap-4 items-start"
+                  >
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                      <benefit.icon size={22} className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white text-base">{benefit.title}</h3>
+                      <p className="text-sm text-white/65 mt-1 leading-relaxed">{benefit.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <motion.div {...fadeUp} className="relative flex justify-center">
+              <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full scale-75 pointer-events-none" />
+              <div className="relative w-[300px] sm:w-[340px]">
+                <Image
+                  src="/screenshots/vendor-dashboard.png"
+                  alt="Vendoh Vendor Dashboard"
+                  width={680}
+                  height={1200}
+                  className="w-full h-auto rounded-2xl drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* EARNINGS POTENTIAL */}
       <section id="earnings" className="py-20 sm:py-28 bg-surface section-glow">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -237,18 +312,13 @@ export function VendorsContent() {
                 If you have the skills, you&apos;re already qualified
               </h2>
               <p className="mt-5 text-lg text-text-secondary leading-relaxed">
-                No shop required. No CAC registration required to start. Vendoh
-                is built for the way Nigeria&apos;s 41 million informal
-                businesses actually operate — you bring the skills, we bring
-                the structure.
+                No shop required, and no CAC registration needed to sign up —
+                though as you grow, we encourage you to formally register your
+                business and craft: it builds credibility and deepens the
+                trust clients place in you. Vendoh is built for the way
+                Nigeria&apos;s 41 million informal businesses actually
+                operate — you bring the skills, we bring the structure.
               </p>
-              <div className="mt-7 flex items-center gap-3 rounded-2xl bg-vendoh-blue-light/60 border border-vendoh-blue/10 px-5 py-4">
-                <ArrowLeftRight size={20} className="text-vendoh-blue shrink-0" />
-                <p className="text-sm text-vendoh-blue font-medium leading-snug">
-                  Already a client on Vendoh? Switch to vendor mode with one
-                  tap — same account, same reputation.
-                </p>
-              </div>
             </motion.div>
             <div className="grid sm:grid-cols-2 gap-5">
               {NEEDS.map((need, i) => (
@@ -271,6 +341,50 @@ export function VendorsContent() {
               ))}
             </div>
           </div>
+
+          {/* Dual-role spotlight — already a client? One tap. */}
+          <motion.div
+            {...fadeUp}
+            className="mt-14 relative overflow-hidden rounded-3xl bg-gradient-to-br from-vendoh-blue via-vendoh-plum-500 to-vendoh-blue-dark px-8 py-10 sm:px-12 sm:py-12 grain"
+          >
+            <Starburst size={36} className="absolute top-6 right-8 text-white/20" />
+            <Starburst size={20} className="absolute bottom-8 left-[45%] text-vendoh-orange-300/40 hidden sm:block" />
+            <div className="relative grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="font-display text-2xl sm:text-3xl text-white leading-snug">
+                  Already a <span className="text-vendoh-orange-300">client</span> on
+                  Vendoh?
+                </h3>
+                <p className="mt-3 text-lg text-white/80 leading-relaxed">
+                  Switch to vendor mode with <strong className="text-white">one tap</strong> —
+                  same account, same reputation.
+                </p>
+              </div>
+
+              {/* Animated role switch visual */}
+              <div className="flex items-center justify-center lg:justify-end gap-4">
+                <div className="rounded-2xl bg-white px-6 py-4 text-center shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-text-tertiary">
+                    Today
+                  </p>
+                  <p className="text-lg font-bold text-vendoh-blue">Client</p>
+                </div>
+                <motion.div
+                  animate={{ x: [0, 6, 0, -6, 0] }}
+                  transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-12 h-12 rounded-full bg-white/15 border border-white/25 backdrop-blur flex items-center justify-center shrink-0"
+                >
+                  <ArrowLeftRight size={22} className="text-white" />
+                </motion.div>
+                <div className="rounded-2xl bg-vendoh-orange px-6 py-4 text-center shadow-[0_8px_24px_rgba(240,125,74,0.4)] rotate-2">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-white/70">
+                    This weekend
+                  </p>
+                  <p className="text-lg font-bold text-white">Vendor</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -310,15 +424,16 @@ export function VendorsContent() {
         </div>
       </section>
 
-      {/* VENDOR WAITLIST */}
-      <section id="vendor-waitlist" className="py-20 sm:py-24 bg-vendoh-ink relative overflow-hidden">
+      {/* VENDOR WAITLIST — warm beige, brown type, vendor-orange highlights */}
+      <section id="vendor-waitlist" className="py-20 sm:py-24 bg-[#F7EEE0] relative overflow-hidden">
         <div className="absolute -top-16 -left-16 w-72 h-72 bg-vendoh-orange/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -right-16 w-80 h-80 bg-[#E8D5BB]/60 rounded-full blur-3xl pointer-events-none" />
         <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeUp}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4A3526] tracking-tight">
               Become a founding vendor
             </h2>
-            <p className="mt-4 text-white/70">
+            <p className="mt-4 text-[#7A5C44]">
               Founding vendors get priority onboarding, early verification, and
               first access to clients in their area when Vendoh launches.
             </p>
@@ -328,14 +443,14 @@ export function VendorsContent() {
                 "Priority verification at launch",
                 "Founding vendor badge on your profile",
               ].map((perk) => (
-                <li key={perk} className="flex items-start gap-2.5 text-[15px] text-white/80">
-                  <Check size={18} className="text-vendoh-orange-300 mt-0.5 shrink-0" />
+                <li key={perk} className="flex items-start gap-2.5 text-[15px] text-[#5B4231]">
+                  <Check size={18} className="text-vendoh-orange mt-0.5 shrink-0" />
                   {perk}
                 </li>
               ))}
             </ul>
             <div className="mt-8 flex justify-center">
-              <WaitlistForm variant="footer" defaultRole="vendor" />
+              <WaitlistForm variant="hero" defaultRole="vendor" />
             </div>
           </motion.div>
         </div>

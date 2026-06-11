@@ -8,10 +8,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
+  { href: "/features", label: "Features" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#categories", label: "Services" },
-  { href: "/features", label: "Features" },
-  { href: "/vendors", label: "For Vendors" },
+  { href: "/vendors", label: "Become a Vendor" },
   { href: "/about", label: "About" },
   { href: "/careers", label: "Careers" },
   { href: "/blog", label: "Blog" },
@@ -48,14 +48,6 @@ export function Header() {
             className="flex items-center gap-2.5 relative z-10"
           >
             <Image
-              src="/logos/vendoh-logo-white.svg"
-              alt=""
-              width={48}
-              height={48}
-              priority
-              sizes="48px"
-            />
-            <Image
               src="/logos/vendoh-wordmark-white.png"
               alt="Vendoh"
               width={135}
@@ -65,13 +57,13 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className={`px-4 py-2 text-sm font-bold transition-colors rounded-lg ${
+                className={`px-3 xl:px-4 py-2 text-[13px] font-bold whitespace-nowrap transition-colors rounded-lg ${
                   isActive(link.href)
                     ? "text-white bg-white/15"
                     : "text-white hover:text-white/80 hover:bg-white/10"
@@ -82,10 +74,10 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <a
               href="/#waitlist"
-              className="btn-shine inline-flex items-center justify-center rounded-full bg-[#FF9A6C] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(255,154,108,0.35)] hover:shadow-[0_4px_16px_rgba(255,154,108,0.45)] hover:bg-[#FF8A58] transition-all duration-200 hover:-translate-y-px"
+              className="btn-shine inline-flex items-center justify-center rounded-full bg-[#FF9A6C] px-5 py-2 text-[13px] font-semibold text-white whitespace-nowrap shadow-[0_2px_8px_rgba(255,154,108,0.35)] hover:shadow-[0_4px_16px_rgba(255,154,108,0.45)] hover:bg-[#FF8A58] transition-all duration-200 hover:-translate-y-px"
             >
               Get Early Access
             </a>
@@ -93,7 +85,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-white relative z-10"
+            className="xl:hidden p-2 text-white relative z-10"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -108,7 +100,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden bg-vendoh-ink/98 backdrop-blur-xl border-t border-white/10"
+            className="xl:hidden overflow-hidden bg-vendoh-ink/98 backdrop-blur-xl border-t border-white/10"
           >
             <div className="px-5 py-5 space-y-1">
               {NAV_LINKS.map((link, i) => (
@@ -122,7 +114,7 @@ export function Header() {
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     aria-current={isActive(link.href) ? "page" : undefined}
-                    className={`block text-base font-medium text-white py-3 px-3 rounded-lg transition-colors ${
+                    className={`block text-[15px] font-medium text-white py-3 px-3 rounded-lg transition-colors ${
                       isActive(link.href) ? "bg-white/15" : "hover:bg-white/10"
                     }`}
                   >

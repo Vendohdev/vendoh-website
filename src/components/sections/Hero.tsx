@@ -9,6 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mic } from "lucide-react";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { Squiggle, Starburst, Blob } from "@/components/animations/Doodles";
 
 const STATS = [
   { value: "321+", label: "Services Available" },
@@ -48,7 +49,11 @@ export function Hero() {
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-foreground">
                 All your <span className="text-vendoh-orange">vendors</span> and{" "}
                 <span className="text-vendoh-blue">customers</span>{" "}
-                <span className="gradient-text">in one place.</span>
+                <span className="gradient-text relative inline-block">
+                  in one place.
+                  <Squiggle className="absolute -bottom-3 left-0 w-full h-3 text-vendoh-orange" />
+                </span>
+                <Starburst size={26} className="inline-block ml-3 -mt-6 text-vendoh-orange animate-pulse" />
               </h1>
             </ScrollReveal>
 
@@ -78,7 +83,8 @@ export function Hero() {
           {/* Right — Phone Mockup */}
           <ScrollReveal delay={0.15} direction="right">
             <div className="relative flex justify-center lg:justify-end">
-              {/* Layered gradient blobs behind phone — depth illusion */}
+              {/* Organic blob + gradient glow behind phone — cut-out feel */}
+              <Blob className="absolute -top-16 -right-10 w-[420px] h-[420px] text-vendoh-orange-200/40 pointer-events-none" />
               <div className="absolute -top-12 -right-12 w-80 h-80 bg-gradient-to-br from-vendoh-plum-200/25 to-vendoh-blue/10 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute top-1/3 -left-16 w-48 h-48 bg-gradient-to-tr from-vendoh-orange-200/20 to-transparent rounded-full blur-2xl pointer-events-none" />
 

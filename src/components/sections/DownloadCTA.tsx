@@ -1,6 +1,7 @@
 "use client";
 
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { WaveDivider, Starburst } from "@/components/animations/Doodles";
 import { WaitlistForm } from "@/components/ui/WaitlistForm";
 import { motion } from "framer-motion";
 
@@ -11,6 +12,9 @@ export function DownloadCTA() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#8250B0] via-vendoh-blue to-[#3D1F60]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.08),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(240,125,74,0.12),transparent_50%)]" />
+      <WaveDivider className="absolute top-0 left-0 right-0 text-surface" />
+      <Starburst size={30} className="absolute top-16 left-[10%] text-white/20 hidden lg:block" />
+      <Starburst size={20} className="absolute bottom-20 right-[12%] text-vendoh-orange-300/40 hidden lg:block" />
 
       {/* Decorative dots pattern */}
       <div className="absolute top-8 left-8 w-32 h-32 opacity-[0.06]" style={{

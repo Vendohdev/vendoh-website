@@ -2,27 +2,31 @@
 
 import { useEffect, useState } from "react";
 
-const PHRASES = [
-  "I need a plumber in Lekki",
-  "find me a makeup artist for Saturday",
-  "abeg, who fit fix generator for Yaba?",
-  "who can fix my AC today?",
-  "I need a nanny for weekends, in Surulere",
-  "find a reliable electrician nearby",
+/**
+ * English-only greeting for now — multilingual greetings (Bawo, Kedu, Sannu,
+ * How far) are parked until voice AI language support fully launches.
+ */
+const PAIRS: { greeting: string; phrase: string }[] = [
+  { greeting: "Hello", phrase: "I need a plumber in Lekki" },
+  { greeting: "Hello", phrase: "find me a makeup artist for Saturday" },
+  { greeting: "Hello", phrase: "abeg, who fit fix generator for Yaba?" },
+  { greeting: "Hello", phrase: "who can fix my AC today?" },
+  { greeting: "Hello", phrase: "I need a nanny for weekends, in Surulere" },
+  { greeting: "Hello", phrase: "find a reliable electrician nearby" },
 ];
 
 export function TypingEffect() {
-  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [pairIndex, setPairIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const currentPhrase = PHRASES[phraseIndex];
+  const { greeting, phrase } = PAIRS[pairIndex];
 
   useEffect(() => {
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
-          if (charIndex < currentPhrase.length) {
+          if (charIndex < phrase.length) {
             setCharIndex((c) => c + 1);
           } else {
             setTimeout(() => setIsDeleting(true), 2200);
@@ -32,7 +36,7 @@ export function TypingEffect() {
             setCharIndex((c) => c - 1);
           } else {
             setIsDeleting(false);
-            setPhraseIndex((p) => (p + 1) % PHRASES.length);
+            setPairIndex((p) => (p + 1) % PAIRS.length);
           }
         }
       },
@@ -40,15 +44,16 @@ export function TypingEffect() {
     );
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, currentPhrase.length]);
+  }, [charIndex, isDeleting, phrase.length]);
 
   return (
     <>
-      <span className="block text-foreground">
-        &ldquo;Hello Vendoh,
+      <span className="block font-display text-foreground">
+        &ldquo;<span className="text-vendoh-orange">{greeting}</span>{" "}
+        <span className="text-vendoh-blue">Vendoh,</span>
       </span>
       <span className="block mt-1">
-        <span className="gradient-text">{currentPhrase.slice(0, charIndex)}</span>
+        <span className="gradient-text">{phrase.slice(0, charIndex)}</span>
         <span className="typing-cursor text-vendoh-orange font-light">|</span>
         &rdquo;
       </span>

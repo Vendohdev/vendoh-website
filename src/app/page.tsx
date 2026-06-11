@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { PopularServices } from "@/components/sections/PopularServices";
+import { TickerBand } from "@/components/sections/TickerBand";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Features } from "@/components/sections/Features";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <TickerBand />
       <PopularServices />
       <ProblemSection />
       <HowItWorks />

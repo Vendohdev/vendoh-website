@@ -13,6 +13,7 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
+import { Squiggle, Starburst } from "@/components/animations/Doodles";
 import Link from "next/link";
 import Image from "next/image";
 import { LeadCaptureForm } from "@/components/ui/LeadCaptureForm";
@@ -106,20 +107,24 @@ const NUMBERS = [
 export function AboutContent() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-vendoh-ink pt-32 pb-16 sm:pt-40 sm:pb-20">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-vendoh-blue/25 rounded-full blur-3xl pointer-events-none" />
+      {/* HERO — light lavender tint of brand royal indigo */}
+      <section className="relative overflow-hidden bg-[#E9E6F8] pt-32 pb-16 sm:pt-40 sm:pb-20">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#443B8E]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-vendoh-orange/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
-            <p className="text-sm font-extrabold text-vendoh-orange-300 uppercase tracking-wider mb-4">
+            <p className="text-sm font-extrabold text-vendoh-orange uppercase tracking-wider mb-4">
               About Vendoh
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#372E85] leading-[1.1]">
               Empowering Vendors.{" "}
-              <span className="text-vendoh-orange-300">Elevating an Industry.</span>
+              <span className="text-vendoh-orange relative inline-block">
+                Elevating an Industry.
+                <Squiggle className="absolute -bottom-3 left-0 w-full h-3 text-[#443B8E]/50" />
+              </span>
+              <Starburst size={26} className="inline-block ml-3 -mt-8 text-vendoh-orange animate-pulse" />
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-[#5A51A8] max-w-2xl mx-auto leading-relaxed">
               Vendoh is building Africa&apos;s first voice-powered service
               marketplace, connecting clients with trusted, verified
               vendors through the power of voice, technology, and trust.
@@ -201,7 +206,7 @@ export function AboutContent() {
               Meet the Founder
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-              From crisis maps to marketplace trust
+              From development data systems to marketplace trust
             </h2>
           </motion.div>
 

@@ -16,6 +16,7 @@ import {
   Award,
   ArrowRight,
 } from "lucide-react";
+import { Squiggle, Starburst } from "@/components/animations/Doodles";
 import { VoiceOrb } from "@/components/animations/VoiceOrb";
 
 const fadeUp = {
@@ -121,9 +122,11 @@ export function FeaturesContent() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-vendoh-ink pt-32 pb-16 sm:pt-40 sm:pb-20 overflow-hidden relative">
+      <section className="bg-[#3F2E6E] pt-32 pb-16 sm:pt-40 sm:pb-20 overflow-hidden relative">
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-vendoh-blue/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-vendoh-orange/10 rounded-full blur-3xl pointer-events-none" />
+        <Starburst size={32} className="absolute top-28 left-[12%] text-white/25 hidden lg:block" />
+        <Starburst size={20} className="absolute bottom-16 right-[15%] text-vendoh-orange-300/50 hidden lg:block" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeUp}>
             <p className="text-sm font-extrabold text-vendoh-orange-300 uppercase tracking-wider mb-4">
@@ -132,7 +135,10 @@ export function FeaturesContent() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-[1.1]">
               Everything you need, from
               <span className="text-vendoh-orange-300"> “hello”</span> to
-              <span className="text-vendoh-orange-300"> job done</span>
+              <span className="text-vendoh-orange-300 relative inline-block ml-2">
+                job done
+                <Squiggle className="absolute -bottom-2.5 left-0 w-full h-3 text-vendoh-orange-300/80" />
+              </span>
             </h1>
             <p className="mt-5 text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               Six features, one goal: make finding and booking trusted services
@@ -192,7 +198,7 @@ export function FeaturesContent() {
             </motion.div>
 
             <motion.div {...fadeUp} className="relative">
-              <div className="rounded-3xl bg-vendoh-ink p-8 sm:p-10 shadow-[0_12px_40px_rgba(42,31,92,0.25)]">
+              <div className="rounded-3xl bg-[#3F2E6E] p-8 sm:p-10 shadow-[0_12px_40px_rgba(42,31,92,0.25)]">
                 <div className="flex items-center gap-3 mb-7">
                   <VoiceOrb size={40} />
                   <span className="text-white/80 font-semibold">Hello Vendoh…</span>

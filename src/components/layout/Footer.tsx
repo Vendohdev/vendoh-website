@@ -82,15 +82,8 @@ export function Footer() {
             <Link
               href="/"
               aria-label="Vendoh home"
-              className="inline-flex items-center gap-2.5 -ml-[11px]"
+              className="inline-block"
             >
-              <Image
-                src="/logos/vendoh-logo-white.svg"
-                alt=""
-                width={60}
-                height={60}
-                sizes="60px"
-              />
               <Image
                 src="/logos/vendoh-wordmark-white.png"
                 alt="Vendoh"

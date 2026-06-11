@@ -138,6 +138,12 @@ section[id],
   color: #6354B8;
 }
 
+/* Playful display accents — Bagel Fat One (already the Journal masthead font) */
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 400;
+}
+
 /* Glass card — enhanced glassmorphism */
 .glass-card {
   background: rgba(255, 255, 255, 0.65);

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Starburst } from "@/components/animations/Doodles";
 import Link from "next/link";
 import { isDraft } from "@/lib/blog-drafts";
 import { BlogCardArt, type BlogArtVariant } from "@/components/ui/BlogCardArt";
@@ -145,7 +146,9 @@ export function BlogContent() {
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <motion.div {...fadeUp}>
             <h1 className="text-5xl sm:text-7xl tracking-tight text-foreground font-[family-name:var(--font-display)]">
+              <Starburst size={30} className="inline-block mr-4 -mt-8 text-vendoh-orange" />
               Vendoh Journal
+              <Starburst size={22} className="inline-block ml-4 -mt-2 text-vendoh-blue" />
             </h1>
             <p className="mt-4 text-lg text-text-secondary">
               Stories from the frontlines of Africa&apos;s service economy

@@ -38,7 +38,11 @@ const CURRENCIES: Currency[] = [
   { code: "NGN", flag: "🇳🇬", name: "Nigeria", ngnPerUnit: 1, min: 1_000, max: 500_000, step: 1_000 },
   { code: "GHS", flag: "🇬🇭", name: "Ghana", ngnPerUnit: 116.65, min: 100, max: 25_000, step: 100 },
   { code: "KES", flag: "🇰🇪", name: "Kenya", ngnPerUnit: 10.51, min: 1_000, max: 250_000, step: 1_000 },
+  { code: "RWF", flag: "🇷🇼", name: "Rwanda", ngnPerUnit: 0.926, min: 10_000, max: 3_000_000, step: 10_000 },
+  { code: "ETB", flag: "🇪🇹", name: "Ethiopia", ngnPerUnit: 8.52, min: 1_500, max: 320_000, step: 500 },
   { code: "EGP", flag: "🇪🇬", name: "Egypt", ngnPerUnit: 26.29, min: 500, max: 100_000, step: 500 },
+  { code: "MAD", flag: "🇲🇦", name: "Morocco", ngnPerUnit: 147.08, min: 100, max: 20_000, step: 100 },
+  { code: "DZD", flag: "🇩🇿", name: "Algeria", ngnPerUnit: 10.18, min: 1_500, max: 270_000, step: 500 },
   { code: "ZAR", flag: "🇿🇦", name: "South Africa", ngnPerUnit: 82.38, min: 150, max: 35_000, step: 150 },
   { code: "USD", flag: "🇺🇸", name: "United States", ngnPerUnit: 1359.62, min: 10, max: 2_000, step: 10 },
   { code: "GBP", flag: "🇬🇧", name: "United Kingdom", ngnPerUnit: 1819.18, min: 10, max: 2_000, step: 10 },
@@ -72,6 +76,7 @@ export function EarningsCalculator() {
   const fmt = new Intl.NumberFormat("en", {
     style: "currency",
     currency: currency.code,
+    currencyDisplay: "narrowSymbol",
     maximumFractionDigits: 0,
   });
 
@@ -169,14 +174,15 @@ export function EarningsCalculator() {
                 Bookings per week
               </label>
               <span className="text-sm font-bold text-white tabular-nums">
-                {bookingsPerWeek} {bookingsPerWeek === 1 ? "job" : "jobs"}
+                {bookingsPerWeek.toLocaleString()}{" "}
+                {bookingsPerWeek === 1 ? "service order" : "service orders"}
               </span>
             </div>
             <input
               id="bookings-slider"
               type="range"
               min={1}
-              max={20}
+              max={5000}
               step={1}
               value={bookingsPerWeek}
               onChange={(e) => setBookingsPerWeek(Number(e.target.value))}

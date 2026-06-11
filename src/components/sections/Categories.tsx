@@ -15,6 +15,7 @@ import {
   Hammer,
   Heart,
 } from "lucide-react";
+import { Squiggle } from "@/components/animations/Doodles";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -45,7 +46,12 @@ export function Categories() {
               Service marketplace
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-              13 categories, 321+ services — launching soon
+              13 categories,{" "}
+              <span className="relative inline-block">
+                321+ services
+                <Squiggle className="absolute -bottom-2 left-0 w-full h-2.5 text-vendoh-orange" />
+              </span>{" "}
+              — launching soon
             </h2>
             <p className="mt-4 text-lg text-text-secondary font-bold italic">
               From plumbers to makeup artists, chefs to electricians — find exactly who you need.
@@ -58,7 +64,7 @@ export function Categories() {
             <ScrollReveal key={cat.name} delay={Math.min(i * 0.04, 0.4)}>
               <motion.div
                 className="group rounded-2xl overflow-hidden relative cursor-pointer h-44 sm:h-52"
-                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                whileHover={{ y: -4, rotate: -1.2, transition: { duration: 0.2 } }}
               >
                 <Image
                   src={cat.image}
