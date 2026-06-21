@@ -22,9 +22,9 @@ export const SIZES: Record<
     mark: number;
   }
 > = {
-  square: { width: 1080, height: 1080, pad: 88, eyebrow: 30, headline: 94, sub: 40, footer: 34, mark: 60 },
-  og: { width: 1200, height: 630, pad: 72, eyebrow: 26, headline: 76, sub: 34, footer: 30, mark: 54 },
-  story: { width: 1080, height: 1920, pad: 100, eyebrow: 34, headline: 108, sub: 46, footer: 38, mark: 66 },
+  square: { width: 1080, height: 1080, pad: 88, eyebrow: 30, headline: 94, sub: 40, footer: 34, mark: 96 },
+  og: { width: 1200, height: 630, pad: 72, eyebrow: 26, headline: 76, sub: 34, footer: 30, mark: 84 },
+  story: { width: 1080, height: 1920, pad: 100, eyebrow: 34, headline: 108, sub: 46, footer: 38, mark: 106 },
 };
 
 export type CardEntry = {
