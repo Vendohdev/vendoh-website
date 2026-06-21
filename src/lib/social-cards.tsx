@@ -208,13 +208,29 @@ function Dots({ total, index, dark }: { total: number; index: number; dark: bool
   );
 }
 
+/** Pixel dimensions for a format at a given scale (1× = base, 2×/3× = sharper). */
+export function dims(sizeKey: SizeKey, scale = 1) {
+  return { width: SIZES[sizeKey].width * scale, height: SIZES[sizeKey].height * scale };
+}
+
 export function cardElement(
   entry: CardEntry,
   sizeKey: SizeKey,
   logo: string,
-  carousel?: { index: number; total: number }
+  carousel?: { index: number; total: number },
+  scale = 1
 ): ReactElement {
-  const s = SIZES[sizeKey];
+  const base = SIZES[sizeKey];
+  const s = {
+    width: base.width * scale,
+    height: base.height * scale,
+    pad: base.pad * scale,
+    eyebrow: base.eyebrow * scale,
+    headline: base.headline * scale,
+    sub: base.sub * scale,
+    footer: base.footer * scale,
+    mark: base.mark * scale,
+  };
   const headlineColor = entry.dark ? "#FFFFFF" : INK;
   const accentColor = entry.dark ? ORANGE_SOFT : "#FFFFFF";
   const eyebrowColor = entry.dark ? ORANGE_300 : "rgba(42,31,92,0.7)";

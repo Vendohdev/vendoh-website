@@ -62,6 +62,8 @@ const CAPTIONS: { platform: string; text: string }[] = [
 
 function AssetCard({ asset }: { asset: Asset }) {
   const portrait = asset.h > asset.w;
+  // Link cards (OG) export at 2×; carousels & stories at 3× for max sharpness.
+  const dlScale = asset.src.includes("format=og") ? 2 : 3;
   return (
     <div className="rounded-2xl border border-border-light bg-elevated overflow-hidden">
       <div className="bg-surface p-3 flex items-center justify-center">
@@ -76,11 +78,11 @@ function AssetCard({ asset }: { asset: Asset }) {
         <div>
           <p className="text-sm font-semibold text-foreground">{asset.label}</p>
           <p className="text-xs text-text-tertiary">
-            {asset.w}×{asset.h}
+            {asset.w * dlScale}×{asset.h * dlScale} · {dlScale}×
           </p>
         </div>
         <a
-          href={asset.src}
+          href={`${asset.src}&scale=${dlScale}`}
           download={asset.file}
           className="inline-flex items-center gap-1.5 rounded-full bg-vendoh-blue px-3.5 py-2 text-xs font-semibold text-white hover:bg-vendoh-blue-dark transition-colors"
         >
