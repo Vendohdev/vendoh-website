@@ -161,27 +161,19 @@ export const VENDOR_OG: CardEntry = {
   footer: "vendoh.io/vendors",
 };
 
-function VendohMark({ size, dark }: { size: number; dark: boolean }) {
-  const chipBg = dark ? "#FFFFFF" : INK;
-  const vColor = dark ? INK : "#FFFFFF";
+function VendohMark({ size, dark, logo }: { size: number; dark: boolean; logo: string }) {
   const wordColor = dark ? "#FFFFFF" : INK;
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: size,
-          height: size,
-          borderRadius: size * 0.28,
-          backgroundColor: chipBg,
-          marginRight: size * 0.32,
-        }}
-      >
-        <div style={{ fontSize: size * 0.62, fontWeight: 800, color: vColor }}>V</div>
-      </div>
-      <div style={{ fontSize: size * 0.6, fontWeight: 800, color: wordColor, letterSpacing: -1 }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={logo}
+        width={size}
+        height={size}
+        alt="Vendoh"
+        style={{ marginRight: size * 0.34 }}
+      />
+      <div style={{ fontSize: size * 0.62, fontWeight: 800, color: wordColor, letterSpacing: -1 }}>
         Vendoh
       </div>
     </div>
@@ -217,6 +209,7 @@ function Dots({ total, index, dark }: { total: number; index: number; dark: bool
 export function cardElement(
   entry: CardEntry,
   sizeKey: SizeKey,
+  logo: string,
   carousel?: { index: number; total: number }
 ): ReactElement {
   const s = SIZES[sizeKey];
@@ -237,7 +230,7 @@ export function cardElement(
         backgroundColor: entry.bg,
         padding: s.pad,
         justifyContent: "space-between",
-        fontFamily: "sans-serif",
+        fontFamily: "Inter",
         position: "relative",
         overflow: "hidden",
       }}
@@ -268,7 +261,7 @@ export function cardElement(
 
       {/* Top row */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <VendohMark size={s.mark} dark={entry.dark} />
+        <VendohMark size={s.mark} dark={entry.dark} logo={logo} />
         {carousel ? (
           <Dots total={carousel.total} index={carousel.index} dark={entry.dark} />
         ) : (

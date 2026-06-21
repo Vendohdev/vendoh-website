@@ -7,6 +7,7 @@ import {
   cardElement,
   type SizeKey,
 } from "@/lib/social-cards";
+import { interFonts, LOGO_WHITE_URI, LOGO_APP_URI } from "@/lib/social-assets";
 
 export const runtime = "edge";
 
@@ -18,11 +19,14 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const format = (searchParams.get("format") ?? "square") as SizeKey;
   const sizeKey: SizeKey = format in SIZES ? format : "square";
+  const fonts = interFonts();
+  const logoFor = (dark: boolean) => (dark ? LOGO_WHITE_URI : LOGO_APP_URI);
 
   if (sizeKey === "og") {
-    return new ImageResponse(cardElement(VENDOR_OG, "og"), {
+    return new ImageResponse(cardElement(VENDOR_OG, "og", logoFor(VENDOR_OG.dark)), {
       width: SIZES.og.width,
       height: SIZES.og.height,
+      fonts,
     });
   }
 
@@ -30,11 +34,12 @@ export async function GET(req: NextRequest) {
     Math.max(Number(searchParams.get("slide") ?? 0) || 0, 0),
     VENDOR_SLIDES.length - 1
   );
+  const entry = VENDOR_SLIDES[slide];
   return new ImageResponse(
-    cardElement(VENDOR_SLIDES[slide], sizeKey, {
+    cardElement(entry, sizeKey, logoFor(entry.dark), {
       index: slide,
       total: VENDOR_SLIDES.length,
     }),
-    { width: SIZES[sizeKey].width, height: SIZES[sizeKey].height }
+    { width: SIZES[sizeKey].width, height: SIZES[sizeKey].height, fonts }
   );
 }
