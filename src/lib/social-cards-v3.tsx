@@ -118,7 +118,9 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const findCategory = (key: string) => CATEGORIES.find((c) => c.key === key);
-export const photoFile = (catKey: string, variant: 0 | 1) => `/ads/v2/${catKey}-${variant === 0 ? "a" : "b"}.jpg`;
+// Each creative (category × mode × variant) has its own distinct photo.
+export const photoFile = (catKey: string, mode: Mode, variant: 0 | 1) =>
+  `/ads/v3/${catKey}-${mode}-${variant + 1}.jpg`;
 
 const CLIENT_GRADIENTS = [["#2A1F5C", "#3F2E6E"], ["#3F2E6E", "#6354B8"], ["#241B4F", "#4A419A"], ["#4A419A", "#2A1F5C"], ["#3A2C66", "#6354B8"]];
 const VENDOR_GRADIENTS = [["#F07D4A", "#D4612F"], ["#FF9A6C", "#F07D4A"], ["#E86A3A", "#B8430F"], ["#F0834A", "#9C3A12"], ["#FF8A58", "#D4612F"]];
