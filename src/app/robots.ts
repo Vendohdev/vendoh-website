@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/share-kit"],
+        disallow: ["/api/", "/admin/", "/share-kit", "/share-kit-v1"],
       },
       // --- Generative AI / LLM crawlers (explicit allow) ---
       { userAgent: "GPTBot", allow: "/" },
