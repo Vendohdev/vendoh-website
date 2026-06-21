@@ -7,7 +7,7 @@ import {
   cardElement,
   type SizeKey,
 } from "@/lib/social-cards";
-import { interFonts, LOGO_WHITE_URI, LOGO_APP_URI } from "@/lib/social-assets";
+import { interFonts, LOGO_WHITE_URI, LOGO_PURPLE_URI } from "@/lib/social-assets";
 
 export const runtime = "edge";
 
@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
   const format = (searchParams.get("format") ?? "square") as SizeKey;
   const sizeKey: SizeKey = format in SIZES ? format : "square";
   const fonts = interFonts();
-  const logoFor = (dark: boolean) => (dark ? LOGO_WHITE_URI : LOGO_APP_URI);
+  const logoFor = (dark: boolean) => (dark ? LOGO_WHITE_URI : LOGO_PURPLE_URI);
 
   if (sizeKey === "og") {
     return new ImageResponse(cardElement(CLIENT_OG, "og", logoFor(CLIENT_OG.dark)), {

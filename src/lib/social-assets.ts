@@ -3,6 +3,7 @@ import {
   INTER_700,
   INTER_800,
   LOGO_WHITE,
+  LOGO_PURPLE,
   LOGO_APP,
 } from "@/lib/social-assets-data";
 
@@ -23,5 +24,6 @@ export function interFonts() {
 }
 
 /** Data URIs for the Vendoh logo marks. */
-export const LOGO_WHITE_URI = `data:image/png;base64,${LOGO_WHITE}`;
-export const LOGO_APP_URI = `data:image/png;base64,${LOGO_APP}`;
+export const LOGO_WHITE_URI = `data:image/png;base64,${LOGO_WHITE}`; // white V — dark backgrounds
+export const LOGO_PURPLE_URI = `data:image/png;base64,${LOGO_PURPLE}`; // purple V — light/orange backgrounds
+export const LOGO_APP_URI = `data:image/png;base64,${LOGO_APP}`; // purple app icon — avatars/standalone
