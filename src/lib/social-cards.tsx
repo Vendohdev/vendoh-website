@@ -161,19 +161,25 @@ export const VENDOR_OG: CardEntry = {
   footer: "vendoh.io/vendors",
 };
 
+// Logo marks are cropped to artwork bounds (no transparent padding) so the V's
+// visual left edge sits flush with the text below it. Aspect = 333/306.
+const MARK_ASPECT = 333 / 306;
+
 function VendohMark({ size, dark, logo }: { size: number; dark: boolean; logo: string }) {
   // Wordmark matches the logo mark and the headline: white on dark backgrounds,
   // deep indigo (#2A1F5C) on light/orange so it ties to the dark headline text.
   const wordColor = dark ? "#FFFFFF" : INK;
+  const logoH = size * 0.92;
+  const logoW = logoH * MARK_ASPECT;
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={logo}
-        width={size}
-        height={size}
+        width={logoW}
+        height={logoH}
         alt="Vendoh"
-        style={{ marginRight: size * 0.17 }}
+        style={{ marginRight: size * 0.22 }}
       />
       <div style={{ fontSize: size * 0.74, fontWeight: 800, color: wordColor, letterSpacing: -1 }}>
         Vendoh
@@ -316,7 +322,8 @@ export function cardElement(
               color: subColor,
               marginTop: s.pad * 0.45,
               lineHeight: 1.35,
-              maxWidth: sizeKey === "og" ? s.width * 0.72 : "100%",
+              whiteSpace: sizeKey === "og" ? "nowrap" : "normal",
+              maxWidth: "100%",
             }}
           >
             {entry.sub}
