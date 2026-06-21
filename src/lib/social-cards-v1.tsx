@@ -217,6 +217,7 @@ export function cardElementV1(
   const t = theme(mode, CATEGORIES.indexOf(cat) + variantIndex);
   const v = cat[mode][variantIndex];
   const chipGlyph = mode === "client" ? "🎙️" : "✨";
+  const isOG = sizeKey === "og";
 
   return (
     <div style={{
@@ -236,7 +237,7 @@ export function cardElementV1(
       </div>
 
       {/* Middle */}
-      <div style={{ display: "flex", flexDirection: "column", position: "relative" }}>
+      <div style={{ display: "flex", flexDirection: "column", position: "relative", marginTop: isOG ? s.pad * 1.5 : 0 }}>
         <div style={{ display: "flex", alignItems: "center", marginBottom: s.pad * 0.32 }}>
           <div style={{ width: s.eyebrow * 0.5, height: s.eyebrow * 0.5, backgroundColor: t.accent, borderRadius: 4, marginRight: s.eyebrow * 0.5, transform: "rotate(45deg)" }} />
           <div style={{ fontSize: s.eyebrow, fontWeight: 700, letterSpacing: 3, color: t.eyebrow, textTransform: "uppercase" }}>{cat.name}</div>
@@ -246,13 +247,15 @@ export function cardElementV1(
           <div style={{ fontSize: s.headline, fontWeight: 800, color: t.accent, letterSpacing: -3 }}>{v.l2}</div>
         </div>
         <div style={{ fontSize: s.sub, fontWeight: 500, color: t.sub, marginTop: s.pad * 0.4, lineHeight: 1.3, maxWidth: "92%" }}>{v.sub}</div>
-        {/* Voice / hustle chip */}
-        <div style={{ display: "flex", alignItems: "center", alignSelf: "flex-start", marginTop: s.pad * 0.5, backgroundColor: t.chipBg, borderRadius: 9999, padding: `${s.chip * 0.55}px ${s.chip * 0.9}px`, maxWidth: "94%" }}>
-          <div style={{ fontSize: s.chip * 1.05, marginRight: s.chip * 0.5, display: "flex" }}>{chipGlyph}</div>
-          <div style={{ fontSize: s.chip, fontWeight: 600, color: t.chipText }}>
-            {mode === "client" ? `“${v.chip}”` : v.chip}
+        {/* Voice / hustle chip — omitted on the short OG link card */}
+        {!isOG && (
+          <div style={{ display: "flex", alignItems: "center", alignSelf: "flex-start", marginTop: s.pad * 0.5, backgroundColor: t.chipBg, borderRadius: 9999, padding: `${s.chip * 0.55}px ${s.chip * 0.9}px`, maxWidth: "94%" }}>
+            <div style={{ fontSize: s.chip * 1.05, marginRight: s.chip * 0.5, display: "flex" }}>{chipGlyph}</div>
+            <div style={{ fontSize: s.chip, fontWeight: 600, color: t.chipText }}>
+              {mode === "client" ? `“${v.chip}”` : v.chip}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Footer */}
