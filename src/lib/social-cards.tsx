@@ -173,7 +173,7 @@ function VendohMark({ size, dark, logo }: { size: number; dark: boolean; logo: s
         width={size}
         height={size}
         alt="Vendoh"
-        style={{ marginRight: size * 0.34 }}
+        style={{ marginRight: size * 0.17 }}
       />
       <div style={{ fontSize: size * 0.62, fontWeight: 800, color: wordColor, letterSpacing: -1 }}>
         Vendoh
