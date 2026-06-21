@@ -169,19 +169,27 @@ function VendohMark({ size, dark, logo }: { size: number; dark: boolean; logo: s
   // Wordmark matches the logo mark and the headline: white on dark backgrounds,
   // deep indigo (#2A1F5C) on light/orange so it ties to the dark headline text.
   const wordColor = dark ? "#FFFFFF" : INK;
-  const logoH = size * 0.92;
+  const fontSize = size * 0.74;
+  // Match the V mark's height to the wordmark cap-height (Inter ≈ 0.73em).
+  const logoH = fontSize * 0.73;
   const logoW = logoH * MARK_ASPECT;
+  const gap = size * 0.14;
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={logo}
-        width={logoW}
-        height={logoH}
-        alt="Vendoh"
-        style={{ marginRight: size * 0.22 }}
+      <img src={logo} width={logoW} height={logoH} alt="Vendoh" />
+      {/* Vertical divider bar */}
+      <div
+        style={{
+          width: Math.max(2, size * 0.04),
+          height: logoH * 1.04,
+          backgroundColor: wordColor,
+          borderRadius: 9999,
+          marginLeft: gap,
+          marginRight: gap,
+        }}
       />
-      <div style={{ fontSize: size * 0.74, fontWeight: 800, color: wordColor, letterSpacing: -1 }}>
+      <div style={{ fontSize, fontWeight: 800, color: wordColor, letterSpacing: -1 }}>
         Vendoh
       </div>
     </div>
