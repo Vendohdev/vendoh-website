@@ -162,7 +162,9 @@ export const VENDOR_OG: CardEntry = {
 };
 
 function VendohMark({ size, dark, logo }: { size: number; dark: boolean; logo: string }) {
-  const wordColor = dark ? "#FFFFFF" : INK;
+  // Wordmark matches the logo mark: white V + white word on dark; purple V +
+  // purple word (#6354B8, sampled from the logo) on light/orange.
+  const wordColor = dark ? "#FFFFFF" : PURPLE;
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
