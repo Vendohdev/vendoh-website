@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
   const sizeKey: SizeKey = format in SIZES ? format : "square";
   const scale = Math.min(Math.max(Number(searchParams.get("scale") ?? 1) || 1, 1), 3);
 
-  const photoUrl = `${origin}${photoFile(cat.key, variant)}`;
+  const photoUrl = `${origin}${photoFile(cat.key, mode, variant)}`;
 
   return new ImageResponse(
     cardElementV2(cat, mode, variant, sizeKey, photoUrl, LOGO_WHITE_URI, scale),
